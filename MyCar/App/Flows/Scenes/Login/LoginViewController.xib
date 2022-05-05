@@ -11,6 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="MyCar" customModuleProvider="target">
             <connections>
+                <outlet property="firstDot" destination="kEB-PY-vZt" id="a3E-cs-6hH"/>
+                <outlet property="fourthDot" destination="eGr-1e-50S" id="XeF-4E-zSE"/>
+                <outlet property="numPadView" destination="W8F-Of-qhZ" id="JfS-Lo-WZh"/>
+                <outlet property="secondDot" destination="AfH-UF-6gq" id="XLe-9w-xsQ"/>
+                <outlet property="thirdDot" destination="d0O-Wq-dU8" id="kp9-SR-25i"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,14 +23,57 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W8F-Of-qhZ" customClass="NumPad" customModule="MyCar" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="324.5" width="414" height="537.5"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите пин-код" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qkz-fI-4el">
+                    <rect key="frame" x="91" y="114" width="232" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <color key="textColor" systemColor="systemBlueColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" alignment="top" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="gyi-nT-pJ5">
+                    <rect key="frame" x="92" y="200" width="230" height="20"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kEB-PY-vZt">
+                            <rect key="frame" x="0.0" y="0.5" width="20" height="19"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="AfH-UF-6gq">
+                            <rect key="frame" x="70" y="0.5" width="20" height="19"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="d0O-Wq-dU8">
+                            <rect key="frame" x="140" y="0.5" width="20" height="19"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="eGr-1e-50S">
+                            <rect key="frame" x="210" y="0.5" width="20" height="19"/>
+                        </imageView>
+                    </subviews>
+                </stackView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="W8F-Of-qhZ" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.6" id="3ag-93-QMz"/>
+                <constraint firstItem="Qkz-fI-4el" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="70" id="B7Q-Z9-BND"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="W8F-Of-qhZ" secondAttribute="trailing" id="EFP-7T-ct1"/>
+                <constraint firstItem="gyi-nT-pJ5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="LYk-3A-3dj"/>
+                <constraint firstItem="W8F-Of-qhZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="SfE-bL-7Xx"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="W8F-Of-qhZ" secondAttribute="bottom" id="SfR-SO-DP3"/>
+                <constraint firstItem="Qkz-fI-4el" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="nKp-TL-IjH"/>
+                <constraint firstItem="gyi-nT-pJ5" firstAttribute="top" secondItem="Qkz-fI-4el" secondAttribute="bottom" constant="50" id="pxF-9b-Cqp"/>
+            </constraints>
             <point key="canvasLocation" x="139" y="128"/>
         </view>
     </objects>
     <resources>
+        <image name="circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
