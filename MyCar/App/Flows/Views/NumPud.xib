@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="R8W-uD-j2J">
+            <rect key="frame" x="0.0" y="0.0" width="395" height="591"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F2c-mU-Kog" customClass="NumPad" customModule="MyCar" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="44" width="395" height="547"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="2rZ-3R-cDk"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="F2c-mU-Kog" firstAttribute="top" secondItem="2rZ-3R-cDk" secondAttribute="top" id="A1o-P4-JcU"/>
+                <constraint firstItem="2rZ-3R-cDk" firstAttribute="trailing" secondItem="F2c-mU-Kog" secondAttribute="trailing" id="HnD-bD-c8C"/>
+                <constraint firstItem="2rZ-3R-cDk" firstAttribute="bottom" secondItem="F2c-mU-Kog" secondAttribute="bottom" id="g2B-fn-IbD"/>
+                <constraint firstItem="F2c-mU-Kog" firstAttribute="leading" secondItem="2rZ-3R-cDk" secondAttribute="leading" id="xaY-Ft-I7B"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="65.94202898550725" y="187.83482142857142"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
