@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		435A2EB928255AD200BF10EA /* AddAutoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A2EB728255AD200BF10EA /* AddAutoViewController.swift */; };
+		435A2EBA28255AD200BF10EA /* AddAutoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 435A2EB828255AD200BF10EA /* AddAutoViewController.xib */; };
+		435A2EBC28255B5900BF10EA /* AutoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A2EBB28255B5900BF10EA /* AutoCell.swift */; };
+		435A2EBE28255BD400BF10EA /* AutoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A2EBD28255BD400BF10EA /* AutoModel.swift */; };
+		435A2EC1282592A000BF10EA /* GarageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A2EBF282592A000BF10EA /* GarageCollectionViewController.swift */; };
+		435A2EC2282592A000BF10EA /* GarageCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 435A2EC0282592A000BF10EA /* GarageCollectionViewController.xib */; };
+		435A2EC52825938700BF10EA /* GarageCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A2EC42825938700BF10EA /* GarageCellModel.swift */; };
+		435A2EC7282593F900BF10EA /* GarageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A2EC6282593F900BF10EA /* GarageCollectionViewCell.swift */; };
+		435A2EC92825943E00BF10EA /* CheckMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A2EC82825943E00BF10EA /* CheckMark.swift */; };
+		435A2ECD2825A29900BF10EA /* PopoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A2ECB2825A29900BF10EA /* PopoverTableViewController.swift */; };
+		435A2ECE2825A29900BF10EA /* PopoverTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 435A2ECC2825A29900BF10EA /* PopoverTableViewController.xib */; };
+		435A2ED02825A2E900BF10EA /* PopoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A2ECF2825A2E900BF10EA /* PopoverCell.swift */; };
+		435A2ED22825A32300BF10EA /* FuelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A2ED12825A32300BF10EA /* FuelModel.swift */; };
 		7A823626281A6DB6001C2AE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A823625281A6DB6001C2AE3 /* AppDelegate.swift */; };
 		7A823628281A6DB6001C2AE3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A823627281A6DB6001C2AE3 /* SceneDelegate.swift */; };
 		7A82362A281A6DB6001C2AE3 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A823629281A6DB6001C2AE3 /* StartViewController.swift */; };
@@ -46,6 +59,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		435A2EB728255AD200BF10EA /* AddAutoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAutoViewController.swift; sourceTree = "<group>"; };
+		435A2EB828255AD200BF10EA /* AddAutoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddAutoViewController.xib; sourceTree = "<group>"; };
+		435A2EBB28255B5900BF10EA /* AutoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCell.swift; sourceTree = "<group>"; };
+		435A2EBD28255BD400BF10EA /* AutoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoModel.swift; sourceTree = "<group>"; };
+		435A2EBF282592A000BF10EA /* GarageCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageCollectionViewController.swift; sourceTree = "<group>"; };
+		435A2EC0282592A000BF10EA /* GarageCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GarageCollectionViewController.xib; sourceTree = "<group>"; };
+		435A2EC42825938700BF10EA /* GarageCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageCellModel.swift; sourceTree = "<group>"; };
+		435A2EC6282593F900BF10EA /* GarageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageCollectionViewCell.swift; sourceTree = "<group>"; };
+		435A2EC82825943E00BF10EA /* CheckMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMark.swift; sourceTree = "<group>"; };
+		435A2ECB2825A29900BF10EA /* PopoverTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverTableViewController.swift; sourceTree = "<group>"; };
+		435A2ECC2825A29900BF10EA /* PopoverTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopoverTableViewController.xib; sourceTree = "<group>"; };
+		435A2ECF2825A2E900BF10EA /* PopoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverCell.swift; sourceTree = "<group>"; };
+		435A2ED12825A32300BF10EA /* FuelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelModel.swift; sourceTree = "<group>"; };
 		7A823622281A6DB6001C2AE3 /* MyCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A823625281A6DB6001C2AE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A823627281A6DB6001C2AE3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +122,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		435A2EB428255A6800BF10EA /* AddAuto */ = {
+			isa = PBXGroup;
+			children = (
+				435A2EB728255AD200BF10EA /* AddAutoViewController.swift */,
+				435A2EB828255AD200BF10EA /* AddAutoViewController.xib */,
+				435A2EBB28255B5900BF10EA /* AutoCell.swift */,
+				435A2EBD28255BD400BF10EA /* AutoModel.swift */,
+			);
+			path = AddAuto;
+			sourceTree = "<group>";
+		};
+		435A2EC3282592B800BF10EA /* Garage */ = {
+			isa = PBXGroup;
+			children = (
+				435A2EBF282592A000BF10EA /* GarageCollectionViewController.swift */,
+				435A2EC0282592A000BF10EA /* GarageCollectionViewController.xib */,
+				435A2EC42825938700BF10EA /* GarageCellModel.swift */,
+				435A2EC6282593F900BF10EA /* GarageCollectionViewCell.swift */,
+				435A2EC82825943E00BF10EA /* CheckMark.swift */,
+			);
+			path = Garage;
+			sourceTree = "<group>";
+		};
+		435A2ECA2825A25400BF10EA /* FuelPopOver */ = {
+			isa = PBXGroup;
+			children = (
+				435A2ECB2825A29900BF10EA /* PopoverTableViewController.swift */,
+				435A2ECC2825A29900BF10EA /* PopoverTableViewController.xib */,
+				435A2ECF2825A2E900BF10EA /* PopoverCell.swift */,
+				435A2ED12825A32300BF10EA /* FuelModel.swift */,
+			);
+			path = FuelPopOver;
+			sourceTree = "<group>";
+		};
 		7A823619281A6DB6001C2AE3 = {
 			isa = PBXGroup;
 			children = (
@@ -294,6 +354,9 @@
 		7AE5A5D4281E687600F008B0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				435A2ECA2825A25400BF10EA /* FuelPopOver */,
+				435A2EC3282592B800BF10EA /* Garage */,
+				435A2EB428255A6800BF10EA /* AddAuto */,
 				7AE5A5D5281E688900F008B0 /* Start */,
 				7AE5A5D6281E688F00F008B0 /* Login */,
 				7AF31183281E6B680097BF5A /* Main */,
@@ -437,9 +500,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				435A2EBA28255AD200BF10EA /* AddAutoViewController.xib in Resources */,
+				435A2EC2282592A000BF10EA /* GarageCollectionViewController.xib in Resources */,
 				7A823635281A6DB7001C2AE3 /* LaunchScreen.storyboard in Resources */,
 				7A823632281A6DB7001C2AE3 /* Assets.xcassets in Resources */,
 				7AF31187281E6BFF0097BF5A /* LoginViewController.xib in Resources */,
+				435A2ECE2825A29900BF10EA /* PopoverTableViewController.xib in Resources */,
 				7AF3118B281E6C1B0097BF5A /* MainViewController.xib in Resources */,
 				7A9C935A282426AD00FC40DE /* NumPud.xib in Resources */,
 				7AF3118D281E6D8E0097BF5A /* StartViewController.xib in Resources */,
@@ -469,14 +535,24 @@
 			files = (
 				7A82362A281A6DB6001C2AE3 /* StartViewController.swift in Sources */,
 				7A9C9354282424DD00FC40DE /* UIImage+Ext.swift in Sources */,
+				435A2EC92825943E00BF10EA /* CheckMark.swift in Sources */,
+				435A2ED22825A32300BF10EA /* FuelModel.swift in Sources */,
 				7A823626281A6DB6001C2AE3 /* AppDelegate.swift in Sources */,
+				435A2ED02825A2E900BF10EA /* PopoverCell.swift in Sources */,
+				435A2ECD2825A29900BF10EA /* PopoverTableViewController.swift in Sources */,
+				435A2EC52825938700BF10EA /* GarageCellModel.swift in Sources */,
+				435A2EC1282592A000BF10EA /* GarageCollectionViewController.swift in Sources */,
 				7A823630281A6DB6001C2AE3 /* MyCar.xcdatamodeld in Sources */,
+				435A2EBE28255BD400BF10EA /* AutoModel.swift in Sources */,
+				435A2EC7282593F900BF10EA /* GarageCollectionViewCell.swift in Sources */,
 				7AF31186281E6BFF0097BF5A /* LoginViewController.swift in Sources */,
 				7A823628281A6DB6001C2AE3 /* SceneDelegate.swift in Sources */,
 				7A9C9352282423EE00FC40DE /* NumPad.swift in Sources */,
 				7A9C9358282425BF00FC40DE /* PinState.swift in Sources */,
 				7A9C93562824251500FC40DE /* PinButton.swift in Sources */,
 				7AF3118A281E6C1B0097BF5A /* MainViewController.swift in Sources */,
+				435A2EBC28255B5900BF10EA /* AutoCell.swift in Sources */,
+				435A2EB928255AD200BF10EA /* AddAutoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,7 +726,6 @@
 				INFOPLIST_FILE = MyCar/Environments/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -680,7 +755,6 @@
 				INFOPLIST_FILE = MyCar/Environments/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
