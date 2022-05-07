@@ -26,6 +26,8 @@
 		7AF3118A281E6C1B0097BF5A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF31188281E6C1B0097BF5A /* MainViewController.swift */; };
 		7AF3118B281E6C1B0097BF5A /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AF31189281E6C1B0097BF5A /* MainViewController.xib */; };
 		7AF3118D281E6D8E0097BF5A /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AF3118C281E6D8E0097BF5A /* StartViewController.xib */; };
+		92C611E82826D443009A930E /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C611E72826D443009A930E /* KeychainService.swift */; };
+		92C611EA2826D4CC009A930E /* KeychainServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C611E92826D4CC009A930E /* KeychainServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		7AF31188281E6C1B0097BF5A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7AF31189281E6C1B0097BF5A /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		7AF3118C281E6D8E0097BF5A /* StartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
+		92C611E72826D443009A930E /* KeychainService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		92C611E92826D4CC009A930E /* KeychainServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				7A82363F281A6DB7001C2AE3 /* MyCarTests.swift */,
+				92C611E92826D4CC009A930E /* KeychainServiceTests.swift */,
 			);
 			path = MyCarTests;
 			sourceTree = "<group>";
@@ -164,6 +169,7 @@
 		7A8AA569281E74220071FDD4 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				92C611E62826D3FC009A930E /* KeychainService */,
 				7A8AA56D281E749E0071FDD4 /* Notifications */,
 				7A8AA56C281E74850071FDD4 /* Network */,
 				7A8AA56A281E74240071FDD4 /* Core Data */,
@@ -333,6 +339,14 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		92C611E62826D3FC009A930E /* KeychainService */ = {
+			isa = PBXGroup;
+			children = (
+				92C611E72826D443009A930E /* KeychainService.swift */,
+			);
+			path = KeychainService;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -471,6 +485,7 @@
 				7A9C9354282424DD00FC40DE /* UIImage+Ext.swift in Sources */,
 				7A823626281A6DB6001C2AE3 /* AppDelegate.swift in Sources */,
 				7A823630281A6DB6001C2AE3 /* MyCar.xcdatamodeld in Sources */,
+				92C611E82826D443009A930E /* KeychainService.swift in Sources */,
 				7AF31186281E6BFF0097BF5A /* LoginViewController.swift in Sources */,
 				7A823628281A6DB6001C2AE3 /* SceneDelegate.swift in Sources */,
 				7A9C9352282423EE00FC40DE /* NumPad.swift in Sources */,
@@ -485,6 +500,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A823640281A6DB7001C2AE3 /* MyCarTests.swift in Sources */,
+				92C611EA2826D4CC009A930E /* KeychainServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,7 +666,6 @@
 				INFOPLIST_FILE = MyCar/Environments/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -680,7 +695,6 @@
 				INFOPLIST_FILE = MyCar/Environments/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
