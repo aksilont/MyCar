@@ -90,11 +90,12 @@ class LoginViewController: UIViewController {
     }
     
     private func checkPin() {
-        print(currentPin)
         resetAllDots()
         currentPin = ""
-        let mainViewController = MainViewController()
-        mainViewController.modalPresentationStyle = .fullScreen
+        
+        let nibMainVC = UINib(nibName: "MainViewController", bundle: nil)
+        let mainViewController = nibMainVC.instantiate(withOwner: nil, options: nil).first as! MainViewController
+        
         navigationController?.pushViewController(mainViewController, animated: true)
     }
     
