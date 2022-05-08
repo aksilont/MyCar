@@ -99,7 +99,6 @@ class SSCheckMark: UIControl {
         uncheckedOvalPath.lineWidth = 1
         uncheckedOvalPath.stroke()
         let bezierPath = UIBezierPath()
-        
         bezierPath.move(to: CGPoint(x: group.minX + 0.27083 * group.width, y: group.minY + 0.54167 * group.height))
         bezierPath.addLine(to: CGPoint(x: group.minX + 0.41667 * group.width, y: group.minY + 0.68750 * group.height))
         bezierPath.addLine(to: CGPoint(x: group.minX + 0.75000 * group.width, y: group.minY + 0.35417 * group.height))

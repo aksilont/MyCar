@@ -9,6 +9,9 @@ import UIKit
 
 class AddAutoViewController: UIViewController {
     var fuelType = ""
+    var yearType = ""
+    let carParametrsModel = CarParametrsModel()
+    
     private var tableView: UITableView = {
         let tableView = UITableView()
         tableView.register(AutoCell.self, forCellReuseIdentifier: AutoCell.reuseID)
@@ -49,7 +52,7 @@ class AddAutoViewController: UIViewController {
         setupNavigationAttributes()
         configureTableView()
         configurElements()
-      
+        
     }
     func configurElements(){
         self.view.addSubview(readyButton)
@@ -77,11 +80,11 @@ class AddAutoViewController: UIViewController {
         self.title = "Добавить авто"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
- 
+    
 }
 extension AddAutoViewController: UITableViewDelegate, UITableViewDataSource {
     
-   
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return AutoModel.allCases.count
     }
@@ -93,7 +96,7 @@ extension AddAutoViewController: UITableViewDelegate, UITableViewDataSource {
         let indexCase = indexPath.section
         let autoModel = AutoModel(rawValue: indexCase)
         switch autoModel {
-    
+            
         case .Item:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AutoCell", for: indexPath) as? AutoCell else {return UITableViewCell()}
             cellContent(cell: cell, autoModel: autoModel ?? AutoModel.Model )
@@ -109,6 +112,7 @@ extension AddAutoViewController: UITableViewDelegate, UITableViewDataSource {
         case .Year:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AutoCell", for: indexPath) as? AutoCell else {return UITableViewCell()}
             cellContent(cell: cell, autoModel: autoModel ?? AutoModel.Model )
+            cell.infoTextField.text = yearType
             return cell
         case .Distance:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AutoCell", for: indexPath) as? AutoCell else {return UITableViewCell()}
@@ -125,7 +129,7 @@ extension AddAutoViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         case .none:
             break
-       
+            
         }
         return UITableViewCell()
     }
@@ -135,15 +139,15 @@ extension AddAutoViewController: UITableViewDelegate, UITableViewDataSource {
         cell.infoTextField.text = ""
         cell.selectionStyle = .none
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let cell = tableView.cellForRow(at: indexPath) as! AutoCell
-
+        
         let indexCase = indexPath.section
         let autoModel = AutoModel(rawValue: indexCase)
         switch autoModel {
-    
+            
         case .Item:
             cell.infoTextField.becomeFirstResponder()
             print("item")
@@ -154,37 +158,38 @@ extension AddAutoViewController: UITableViewDelegate, UITableViewDataSource {
             cell.infoTextField.becomeFirstResponder()
             print("Number")
         case .Year:
-            cell.infoTextField.becomeFirstResponder()
-            cell.infoTextField.inputView = datePicker
+            gotoPopover(cell: cell, model: carParametrsModel.year(), index: indexPath)
             print("Year")
         case .Distance:
             cell.infoTextField.becomeFirstResponder()
             print("Distance")
         case .FuelType:
-            cell.infoTextField.becomeFirstResponder()
-            gotoPopover(cell: cell)
+            gotoPopover(cell: cell, model: carParametrsModel.typeFuel, index: indexPath)
             print("FuelType")
         case .Vin:
             cell.infoTextField.becomeFirstResponder()
             print("VIN")
         case .none:
             break
-       
+            
         }
     }
-   
+    
 }
 
 extension AddAutoViewController: UIPopoverPresentationControllerDelegate{
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
     }
-    func gotoPopover(cell: AutoCell){
-      
+    func gotoPopover(cell: AutoCell, model: [String], index: IndexPath){
+        
         let popVC = PopoverTableViewController()
         popVC.modalPresentationStyle = .popover
+        popVC.delegate = self
         let popOverVC = popVC.popoverPresentationController
         popOverVC?.delegate = self
+        popVC.model = model
+        popVC.index = index
         popOverVC?.sourceView = cell
         popOverVC?.sourceRect = CGRect(x: cell.bounds.width, y: cell.bounds.minY, width: 0, height: 0)
         popVC.preferredContentSize = CGSize(width: 250, height: 250)
@@ -194,12 +199,14 @@ extension AddAutoViewController: UIPopoverPresentationControllerDelegate{
     
 }
 extension AddAutoViewController: PopoverTableViewControllerDelegate{
-    func fuelDidSelect(_ fuel: String) {
-        self.fuelType = fuel
-        print(fuel + fuel)
+    func fuelDidSelect(_ param: String, index: IndexPath) {
+        if index.section == 5 {
+            self.fuelType = param
+        }else if index.section == 3 {
+            self.yearType = param
+        }
         tableView.reloadData()
     }
-    
     
 }
 

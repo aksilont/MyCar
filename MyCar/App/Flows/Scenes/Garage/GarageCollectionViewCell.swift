@@ -17,7 +17,6 @@ class GarageCollectionViewCell: UICollectionViewCell {
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
-    
     let itemAutoLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
@@ -26,7 +25,6 @@ class GarageCollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
     let modelAutoLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
@@ -34,14 +32,12 @@ class GarageCollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
     let checkMarkImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "tickmark")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-    
     let numberAutoLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 12, weight: .bold)
@@ -55,14 +51,11 @@ class GarageCollectionViewCell: UICollectionViewCell {
         checkMark.backgroundColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
         checkMark.translatesAutoresizingMaskIntoConstraints = false
         return checkMark
-        
     }()
    
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
        
-        
         addSubview(autoImageView)
         addSubview(itemAutoLabel)
         addSubview(modelAutoLabel)
@@ -70,7 +63,7 @@ class GarageCollectionViewCell: UICollectionViewCell {
         addSubview(checkMarkView)
         backgroundColor = .lightGray
         
-        // autoImageView constraints
+        // constraints
         autoImageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         autoImageView.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
         autoImageView.widthAnchor.constraint(equalToConstant: 80).isActive = true
@@ -87,13 +80,9 @@ class GarageCollectionViewCell: UICollectionViewCell {
         checkMarkView.widthAnchor.constraint(equalToConstant: 30).isActive = true
         checkMarkView.heightAnchor.constraint(equalToConstant: 30).isActive = true
         checkMarkView.addTarget(self, action: #selector(changeState), for: .touchUpInside)
-        
-  
     }
     @objc func changeState(){
         checkMarkView.checked.toggle()
-        
-       
     }
 
     required init?(coder: NSCoder) {

@@ -7,12 +7,13 @@
 
 import UIKit
 protocol PopoverTableViewControllerDelegate: AnyObject {
-    func fuelDidSelect(_ fuel: String)
+    func fuelDidSelect(_ param: String, index: IndexPath)
 }
 
 class PopoverTableViewController: UITableViewController {
     weak var delegate: PopoverTableViewControllerDelegate?
-    
+    var model:[String] = []
+    var index:IndexPath = [0,0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,26 +27,23 @@ class PopoverTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return FuelModel.allCases.count
+        return model.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "PopoverCell", for: indexPath) as? PopoverCell else {return UITableViewCell()}
-        let fuelModel = FuelModel(rawValue: indexPath.row)
-        cell.textLabel?.text = fuelModel?.description
+        
+        let param = model[indexPath.row]
+        cell.textLabel?.text = param
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.dismiss(animated: true)
-        let indexCase = indexPath.row
-        let fuelModel = FuelModel(rawValue: indexCase)
-        let fuel = fuelModel?.description ?? ""
-        delegate?.fuelDidSelect(fuel)
-        
-        print(fuel)
-        
+        let param = model[indexPath.row]
+      
+        delegate?.fuelDidSelect(param, index: self.index )
     }
     
     
