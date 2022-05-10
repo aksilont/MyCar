@@ -46,7 +46,8 @@ class AutoCell: UITableViewCell {
         addSubview(iconImageView)
         addSubview(autoLabel)
         contentView.addSubview(infoTextField)
-        
+        infoTextField.returnKeyType = UIReturnKeyType.done
+        infoTextField.clearsOnBeginEditing = true
         
         backgroundColor = .clear
         // autoLabel constraints

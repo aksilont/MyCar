@@ -6,10 +6,15 @@
 //
 
 import UIKit
+protocol AddAutoViewControllerDelegate: AnyObject {
+    func appendAuto(_ auto: CarModel)
+}
 
-class AddAutoViewController: UIViewController {
-    var fuelType = ""
-    var yearType = ""
+class AddAutoViewController: UIViewController, UITextFieldDelegate {
+    weak var delegate: AddAutoViewControllerDelegate?
+    var indexText: IndexPath?
+    var carModel = CarModel(item: "", model: "", number: "", year: "", distance: 0, vin: "", activFlag: false, fuelType: "")
+    let carRepository = CarRepository()
     let carParametrsModel = CarParametrsModel()
     
     private var tableView: UITableView = {
@@ -28,24 +33,6 @@ class AddAutoViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-    let datePicker: UIDatePicker = {
-        let picker = UIDatePicker()
-        picker.preferredDatePickerStyle = .inline
-        picker.datePickerMode = .dateAndTime
-        picker.backgroundColor = #colorLiteral(red: 0.04778223485, green: 0.108998023, blue: 0.1143187657, alpha: 1)
-        picker.layer.cornerRadius = 20
-        picker.layer.masksToBounds = false
-        picker.sizeToFit()
-        picker.tintColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
-        let localID = "RU"//Locale.preferredLanguages.first
-        picker.locale = Locale(identifier: localID)
-        let dateAgo = Calendar.current.date(byAdding: .day, value: 0, to: Date())
-        let dateLater = Calendar.current.date(byAdding: .day, value: 1, to: Date())
-        picker.minimumDate = dateAgo
-        picker.maximumDate = dateLater
-        picker.translatesAutoresizingMaskIntoConstraints = false
-        return picker
-    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
@@ -60,6 +47,7 @@ class AddAutoViewController: UIViewController {
         readyButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
         readyButton.widthAnchor.constraint(equalToConstant: view.frame.size.width / 1.5).isActive = true
         readyButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        readyButton.addTarget(self, action: #selector(touchReady), for: .touchUpInside)
     }
     
     func configureTableView() {
@@ -80,7 +68,15 @@ class AddAutoViewController: UIViewController {
         self.title = "Добавить авто"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
-    
+    @objc func touchReady(){
+        if carModel.item != "" && carModel.number != "" {
+        carRepository.saveCar(carModel: carModel)
+        delegate?.appendAuto(carModel)
+            self.navigationController?.popToRootViewController(animated: true)
+        } else {
+            print("no item and no number")
+        }
+    }
 }
 extension AddAutoViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -100,32 +96,46 @@ extension AddAutoViewController: UITableViewDelegate, UITableViewDataSource {
         case .Item:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AutoCell", for: indexPath) as? AutoCell else {return UITableViewCell()}
             cellContent(cell: cell, autoModel: autoModel ?? AutoModel.Model )
+            cell.infoTextField.delegate = self
+            cell.infoTextField.text = carModel.item
             return cell
         case .Model:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AutoCell", for: indexPath) as? AutoCell else {return UITableViewCell()}
             cellContent(cell: cell, autoModel: autoModel ?? AutoModel.Model )
+            cell.infoTextField.delegate = self
+            cell.infoTextField.text = carModel.model
             return cell
         case .Number:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AutoCell", for: indexPath) as? AutoCell else {return UITableViewCell()}
             cellContent(cell: cell, autoModel: autoModel ?? AutoModel.Model )
+            cell.infoTextField.delegate = self
+            cell.infoTextField.text = carModel.number
             return cell
         case .Year:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AutoCell", for: indexPath) as? AutoCell else {return UITableViewCell()}
             cellContent(cell: cell, autoModel: autoModel ?? AutoModel.Model )
-            cell.infoTextField.text = yearType
+            cell.infoTextField.delegate = self
+            cell.infoTextField.text = carModel.year
             return cell
         case .Distance:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AutoCell", for: indexPath) as? AutoCell else {return UITableViewCell()}
             cellContent(cell: cell, autoModel: autoModel ?? AutoModel.Model )
+            cell.infoTextField.delegate = self
+            cell.infoTextField.keyboardType = .numbersAndPunctuation
+            cell.infoTextField.returnKeyType = .done
+            cell.infoTextField.text = String(carModel.distance)
             return cell
         case .FuelType:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AutoCell", for: indexPath) as? AutoCell else {return UITableViewCell()}
             cellContent(cell: cell, autoModel: autoModel ?? AutoModel.Model )
-            cell.infoTextField.text = fuelType
+            cell.infoTextField.delegate = self
+            cell.infoTextField.text = carModel.fuelType
             return cell
         case .Vin:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AutoCell", for: indexPath) as? AutoCell else {return UITableViewCell()}
             cellContent(cell: cell, autoModel: autoModel ?? AutoModel.Model )
+            cell.infoTextField.delegate = self
+            cell.infoTextField.text = carModel.vin
             return cell
         case .none:
             break
@@ -143,38 +153,62 @@ extension AddAutoViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let cell = tableView.cellForRow(at: indexPath) as! AutoCell
-        
         let indexCase = indexPath.section
         let autoModel = AutoModel(rawValue: indexCase)
         switch autoModel {
             
         case .Item:
             cell.infoTextField.becomeFirstResponder()
-            print("item")
+            self.indexText = indexPath
         case .Model:
             cell.infoTextField.becomeFirstResponder()
-            print("Model")
+            self.indexText = indexPath
         case .Number:
             cell.infoTextField.becomeFirstResponder()
-            print("Number")
+            self.indexText = indexPath
         case .Year:
             gotoPopover(cell: cell, model: carParametrsModel.year(), index: indexPath)
-            print("Year")
+            self.indexText = indexPath
         case .Distance:
             cell.infoTextField.becomeFirstResponder()
-            print("Distance")
+           // cell.infoTextField.keyboardType = .numberPad
+            self.indexText = indexPath
         case .FuelType:
             gotoPopover(cell: cell, model: carParametrsModel.typeFuel, index: indexPath)
-            print("FuelType")
+            self.indexText = indexPath
         case .Vin:
             cell.infoTextField.becomeFirstResponder()
-            print("VIN")
+            self.indexText = indexPath
         case .none:
             break
             
         }
     }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        let indexCase = indexText?.section ?? 0
+        let autoModel = AutoModel(rawValue: indexCase)
+        switch autoModel {
     
+        case .Item:
+            self.carModel.item = textField.text ?? ""
+        case .Model:
+            self.carModel.model = textField.text ?? ""
+        case .Number:
+            self.carModel.number = textField.text ?? ""
+        case .Year:
+            self.carModel.year = textField.text ?? ""
+        case .Distance:
+            self.carModel.distance = Float(textField.text ?? "0") ?? 0
+        case .FuelType:
+            self.carModel.fuelType = textField.text ?? ""
+        case .Vin:
+            self.carModel.vin = textField.text ?? ""
+        case .none:
+            break
+        }
+        return false
+    }
 }
 
 extension AddAutoViewController: UIPopoverPresentationControllerDelegate{
@@ -201,9 +235,9 @@ extension AddAutoViewController: UIPopoverPresentationControllerDelegate{
 extension AddAutoViewController: PopoverTableViewControllerDelegate{
     func fuelDidSelect(_ param: String, index: IndexPath) {
         if index.section == 5 {
-            self.fuelType = param
+            self.carModel.fuelType = param
         }else if index.section == 3 {
-            self.yearType = param
+            self.carModel.year = param
         }
         tableView.reloadData()
     }

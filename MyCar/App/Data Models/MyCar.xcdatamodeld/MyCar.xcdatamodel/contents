@@ -1,4 +1,70 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E230" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Car" representedClassName="Car" syncable="YES">
+        <attribute name="activFlag" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="distance" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="fuelType" optional="YES" attributeType="String"/>
+        <attribute name="item" optional="YES" attributeType="String"/>
+        <attribute name="model" optional="YES" attributeType="String"/>
+        <attribute name="number" optional="YES" attributeType="String"/>
+        <attribute name="vin" optional="YES" attributeType="String"/>
+        <attribute name="year" optional="YES" attributeType="String"/>
+        <relationship name="toFinance" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FinanceExpenses" inverseName="toCar" inverseEntity="FinanceExpenses"/>
+        <relationship name="toFix" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FixExpenses" inverseName="toCar" inverseEntity="FixExpenses"/>
+        <relationship name="toFuel" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FuelExpenses" inverseName="toCar" inverseEntity="FuelExpenses"/>
+        <relationship name="toOther" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="OtherExpenses" inverseName="toCar" inverseEntity="OtherExpenses"/>
+        <relationship name="toParking" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ParkingExpenses" inverseName="toCar" inverseEntity="ParkingExpenses"/>
+        <relationship name="toWash" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WashExpenses" inverseName="toCar" inverseEntity="WashExpenses"/>
+    </entity>
+    <entity name="FinanceExpenses" representedClassName="FinanceExpenses" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="descript" optional="YES" attributeType="String"/>
+        <attribute name="distance" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="price" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="toCar" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Car" inverseName="toFinance" inverseEntity="Car"/>
+    </entity>
+    <entity name="FixExpenses" representedClassName="FixExpenses" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="discript" optional="YES" attributeType="String"/>
+        <attribute name="distance" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="price" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="toCar" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Car" inverseName="toFix" inverseEntity="Car"/>
+    </entity>
+    <entity name="FuelExpenses" representedClassName="FuelExpenses" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="discript" optional="YES" attributeType="String"/>
+        <attribute name="distance" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="price" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="toCar" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Car" inverseName="toFuel" inverseEntity="Car"/>
+    </entity>
+    <entity name="OtherExpenses" representedClassName="OtherExpenses" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="discript" optional="YES" attributeType="String"/>
+        <attribute name="distance" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="price" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="toCar" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Car" inverseName="toOther" inverseEntity="Car"/>
+    </entity>
+    <entity name="ParkingExpenses" representedClassName="ParkingExpenses" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="discript" optional="YES" attributeType="String"/>
+        <attribute name="distance" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="price" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="toCar" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Car" inverseName="toParking" inverseEntity="Car"/>
+    </entity>
+    <entity name="WashExpenses" representedClassName="WashExpenses" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="discript" optional="YES" attributeType="String"/>
+        <attribute name="distance" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="price" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="toCar" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Car" inverseName="toWash" inverseEntity="Car"/>
+    </entity>
+    <elements>
+        <element name="Car" positionX="-817.5344848632812" positionY="-142.906982421875" width="128" height="253"/>
+        <element name="FuelExpenses" positionX="-304.7142944335938" positionY="-157.3264770507812" width="128" height="118"/>
+        <element name="WashExpenses" positionX="-715.303955078125" positionY="228.086669921875" width="128" height="118"/>
+        <element name="FinanceExpenses" positionX="-653.0994873046875" positionY="-280.0814361572266" width="128" height="118"/>
+        <element name="ParkingExpenses" positionX="-470.94140625" positionY="172.21240234375" width="128" height="118"/>
+        <element name="FixExpenses" positionX="-478.064453125" positionY="-225.5751037597656" width="128" height="118"/>
+        <element name="OtherExpenses" positionX="-301.1101684570312" positionY="40.81057739257812" width="128" height="118"/>
+    </elements>
 </model>

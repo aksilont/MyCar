@@ -12,6 +12,8 @@ protocol CellMarker {
 }
 
 class GarageCollectionViewController: UICollectionViewController {
+    var cars:[CarModel] = []
+    let carRepository = CarRepository()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +27,13 @@ class GarageCollectionViewController: UICollectionViewController {
         let rightButton = UIBarButtonItem(title: "Добавить", style: .done, target: self, action: #selector(addAuto))
         navigationItem.rightBarButtonItem = rightButton
         navigationItem.title = titleGarage
+        
+        let carsFromCoreData = carRepository.fetchCars()
+        cars = carRepository.convertModel(coreDataModel: carsFromCoreData)
     }
     @objc func addAuto(){
         let vc = AddAutoViewController(nibName: "AddAutoViewController", bundle: nil)
+        vc.delegate = self
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -56,12 +62,16 @@ class GarageCollectionViewController: UICollectionViewController {
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return cars.count
+        
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GarageCollectionViewCell.reuseId, for: indexPath) as! GarageCollectionViewCell
-        cell.checkMarkView.checked.toggle()
+        cell.itemAutoLabel.text = cars[indexPath.row].item
+        cell.modelAutoLabel.text = cars[indexPath.row].model
+        cell.numberAutoLabel.text = cars[indexPath.row].number
+        cell.checkMarkView.checked = cars[indexPath.row].activFlag
         return cell
     }
     
@@ -78,4 +88,14 @@ class GarageCollectionViewController: UICollectionViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
+extension GarageCollectionViewController: AddAutoViewControllerDelegate{
+    func appendAuto(_ auto: CarModel) {
+        let carsFromCoreData = carRepository.fetchCars()
+        cars = carRepository.convertModel(coreDataModel: carsFromCoreData)
+        collectionView.reloadData()
+       
+    }
+    
+    
 }

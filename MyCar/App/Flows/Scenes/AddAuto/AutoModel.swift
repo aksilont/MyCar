@@ -25,7 +25,6 @@ enum AutoModel: Int, CustomStringConvertible, CaseIterable {
         case .Distance: return "Пробег"
         case .FuelType: return "Тип топлива"
         case .Vin: return "VIN"
-            
         }
     }
     
@@ -38,10 +37,22 @@ enum AutoModel: Int, CustomStringConvertible, CaseIterable {
         case .Distance: return UIImage(named: "penwriting") ?? UIImage()
         case .FuelType: return UIImage(named: "penwriting") ?? UIImage()
         case .Vin: return UIImage(named: "penwriting") ?? UIImage()
-            
         }
-        
-        
     }
+}
+struct CarModel {
+    var item: String
+    var model: String
+    var number: String
+    var year: String
+    var distance: Float
+    var vin: String
+    var activFlag: Bool
+    var fuelType: String
     
+    static func fetchPass() -> [CarModel] {
+        
+        let firstItem = CarModel(item: "", model: "", number: "", year: "", distance: 0, vin: "", activFlag: false, fuelType: "")
+        return [firstItem]
+    }
 }

@@ -20,6 +20,21 @@
 		435A2ECE2825A29900BF10EA /* PopoverTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 435A2ECC2825A29900BF10EA /* PopoverTableViewController.xib */; };
 		435A2ED02825A2E900BF10EA /* PopoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A2ECF2825A2E900BF10EA /* PopoverCell.swift */; };
 		435A2ED22825A32300BF10EA /* FuelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A2ED12825A32300BF10EA /* FuelModel.swift */; };
+		435A2F5E282AFA1700BF10EA /* WashExpenses+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A2F50282AFA1600BF10EA /* WashExpenses+CoreDataClass.swift */; };
+		435A2F5F282AFA1700BF10EA /* WashExpenses+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A2F51282AFA1600BF10EA /* WashExpenses+CoreDataProperties.swift */; };
+		435A2F60282AFA1700BF10EA /* OtherExpenses+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A2F52282AFA1700BF10EA /* OtherExpenses+CoreDataClass.swift */; };
+		435A2F61282AFA1700BF10EA /* OtherExpenses+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A2F53282AFA1700BF10EA /* OtherExpenses+CoreDataProperties.swift */; };
+		435A2F62282AFA1700BF10EA /* Car+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A2F54282AFA1700BF10EA /* Car+CoreDataClass.swift */; };
+		435A2F63282AFA1700BF10EA /* Car+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A2F55282AFA1700BF10EA /* Car+CoreDataProperties.swift */; };
+		435A2F64282AFA1700BF10EA /* FixExpenses+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A2F56282AFA1700BF10EA /* FixExpenses+CoreDataClass.swift */; };
+		435A2F65282AFA1700BF10EA /* FixExpenses+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A2F57282AFA1700BF10EA /* FixExpenses+CoreDataProperties.swift */; };
+		435A2F66282AFA1700BF10EA /* FuelExpenses+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A2F58282AFA1700BF10EA /* FuelExpenses+CoreDataClass.swift */; };
+		435A2F67282AFA1700BF10EA /* FuelExpenses+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A2F59282AFA1700BF10EA /* FuelExpenses+CoreDataProperties.swift */; };
+		435A2F68282AFA1700BF10EA /* FinanceExpenses+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A2F5A282AFA1700BF10EA /* FinanceExpenses+CoreDataClass.swift */; };
+		435A2F69282AFA1700BF10EA /* FinanceExpenses+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A2F5B282AFA1700BF10EA /* FinanceExpenses+CoreDataProperties.swift */; };
+		435A2F6A282AFA1700BF10EA /* ParkingExpenses+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A2F5C282AFA1700BF10EA /* ParkingExpenses+CoreDataClass.swift */; };
+		435A2F6B282AFA1700BF10EA /* ParkingExpenses+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A2F5D282AFA1700BF10EA /* ParkingExpenses+CoreDataProperties.swift */; };
+		435A2F6F282AFCDC00BF10EA /* CarRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A2F6E282AFCDC00BF10EA /* CarRepository.swift */; };
 		7A823626281A6DB6001C2AE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A823625281A6DB6001C2AE3 /* AppDelegate.swift */; };
 		7A823628281A6DB6001C2AE3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A823627281A6DB6001C2AE3 /* SceneDelegate.swift */; };
 		7A82362A281A6DB6001C2AE3 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A823629281A6DB6001C2AE3 /* StartViewController.swift */; };
@@ -72,6 +87,21 @@
 		435A2ECC2825A29900BF10EA /* PopoverTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopoverTableViewController.xib; sourceTree = "<group>"; };
 		435A2ECF2825A2E900BF10EA /* PopoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverCell.swift; sourceTree = "<group>"; };
 		435A2ED12825A32300BF10EA /* FuelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelModel.swift; sourceTree = "<group>"; };
+		435A2F50282AFA1600BF10EA /* WashExpenses+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WashExpenses+CoreDataClass.swift"; sourceTree = "<group>"; };
+		435A2F51282AFA1600BF10EA /* WashExpenses+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WashExpenses+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		435A2F52282AFA1700BF10EA /* OtherExpenses+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OtherExpenses+CoreDataClass.swift"; sourceTree = "<group>"; };
+		435A2F53282AFA1700BF10EA /* OtherExpenses+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OtherExpenses+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		435A2F54282AFA1700BF10EA /* Car+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Car+CoreDataClass.swift"; sourceTree = "<group>"; };
+		435A2F55282AFA1700BF10EA /* Car+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Car+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		435A2F56282AFA1700BF10EA /* FixExpenses+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FixExpenses+CoreDataClass.swift"; sourceTree = "<group>"; };
+		435A2F57282AFA1700BF10EA /* FixExpenses+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FixExpenses+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		435A2F58282AFA1700BF10EA /* FuelExpenses+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FuelExpenses+CoreDataClass.swift"; sourceTree = "<group>"; };
+		435A2F59282AFA1700BF10EA /* FuelExpenses+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FuelExpenses+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		435A2F5A282AFA1700BF10EA /* FinanceExpenses+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FinanceExpenses+CoreDataClass.swift"; sourceTree = "<group>"; };
+		435A2F5B282AFA1700BF10EA /* FinanceExpenses+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FinanceExpenses+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		435A2F5C282AFA1700BF10EA /* ParkingExpenses+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParkingExpenses+CoreDataClass.swift"; sourceTree = "<group>"; };
+		435A2F5D282AFA1700BF10EA /* ParkingExpenses+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParkingExpenses+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		435A2F6E282AFCDC00BF10EA /* CarRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CarRepository.swift; path = "Core Data/CoreDataRepository/CarRepository.swift"; sourceTree = SOURCE_ROOT; };
 		7A823622281A6DB6001C2AE3 /* MyCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A823625281A6DB6001C2AE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A823627281A6DB6001C2AE3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +186,35 @@
 			path = FuelPopOver;
 			sourceTree = "<group>";
 		};
+		435A2F6C282AFBED00BF10EA /* NSManagedObjectSubclass */ = {
+			isa = PBXGroup;
+			children = (
+				435A2F50282AFA1600BF10EA /* WashExpenses+CoreDataClass.swift */,
+				435A2F51282AFA1600BF10EA /* WashExpenses+CoreDataProperties.swift */,
+				435A2F52282AFA1700BF10EA /* OtherExpenses+CoreDataClass.swift */,
+				435A2F53282AFA1700BF10EA /* OtherExpenses+CoreDataProperties.swift */,
+				435A2F54282AFA1700BF10EA /* Car+CoreDataClass.swift */,
+				435A2F55282AFA1700BF10EA /* Car+CoreDataProperties.swift */,
+				435A2F56282AFA1700BF10EA /* FixExpenses+CoreDataClass.swift */,
+				435A2F57282AFA1700BF10EA /* FixExpenses+CoreDataProperties.swift */,
+				435A2F58282AFA1700BF10EA /* FuelExpenses+CoreDataClass.swift */,
+				435A2F59282AFA1700BF10EA /* FuelExpenses+CoreDataProperties.swift */,
+				435A2F5A282AFA1700BF10EA /* FinanceExpenses+CoreDataClass.swift */,
+				435A2F5B282AFA1700BF10EA /* FinanceExpenses+CoreDataProperties.swift */,
+				435A2F5C282AFA1700BF10EA /* ParkingExpenses+CoreDataClass.swift */,
+				435A2F5D282AFA1700BF10EA /* ParkingExpenses+CoreDataProperties.swift */,
+			);
+			path = NSManagedObjectSubclass;
+			sourceTree = "<group>";
+		};
+		435A2F6D282AFC8500BF10EA /* CoreDataRepository */ = {
+			isa = PBXGroup;
+			children = (
+				435A2F6E282AFCDC00BF10EA /* CarRepository.swift */,
+			);
+			path = CoreDataRepository;
+			sourceTree = "<group>";
+		};
 		7A823619281A6DB6001C2AE3 = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +275,7 @@
 		7A8AA568281E73A60071FDD4 /* Data Models */ = {
 			isa = PBXGroup;
 			children = (
+				435A2F6C282AFBED00BF10EA /* NSManagedObjectSubclass */,
 				7A82362E281A6DB6001C2AE3 /* MyCar.xcdatamodeld */,
 			);
 			path = "Data Models";
@@ -234,6 +294,7 @@
 		7A8AA56A281E74240071FDD4 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				435A2F6D282AFC8500BF10EA /* CoreDataRepository */,
 				7A8AA56B281E74440071FDD4 /* Migrations Policy */,
 			);
 			path = "Core Data";
@@ -533,24 +594,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				435A2F60282AFA1700BF10EA /* OtherExpenses+CoreDataClass.swift in Sources */,
+				435A2F68282AFA1700BF10EA /* FinanceExpenses+CoreDataClass.swift in Sources */,
 				7A82362A281A6DB6001C2AE3 /* StartViewController.swift in Sources */,
+				435A2F5F282AFA1700BF10EA /* WashExpenses+CoreDataProperties.swift in Sources */,
+				435A2F62282AFA1700BF10EA /* Car+CoreDataClass.swift in Sources */,
+				435A2F6B282AFA1700BF10EA /* ParkingExpenses+CoreDataProperties.swift in Sources */,
 				7A9C9354282424DD00FC40DE /* UIImage+Ext.swift in Sources */,
+				435A2F6A282AFA1700BF10EA /* ParkingExpenses+CoreDataClass.swift in Sources */,
 				435A2EC92825943E00BF10EA /* CheckMark.swift in Sources */,
 				435A2ED22825A32300BF10EA /* FuelModel.swift in Sources */,
 				7A823626281A6DB6001C2AE3 /* AppDelegate.swift in Sources */,
 				435A2ED02825A2E900BF10EA /* PopoverCell.swift in Sources */,
 				435A2ECD2825A29900BF10EA /* PopoverTableViewController.swift in Sources */,
+				435A2F67282AFA1700BF10EA /* FuelExpenses+CoreDataProperties.swift in Sources */,
+				435A2F61282AFA1700BF10EA /* OtherExpenses+CoreDataProperties.swift in Sources */,
+				435A2F6F282AFCDC00BF10EA /* CarRepository.swift in Sources */,
 				435A2EC52825938700BF10EA /* GarageCellModel.swift in Sources */,
+				435A2F65282AFA1700BF10EA /* FixExpenses+CoreDataProperties.swift in Sources */,
 				435A2EC1282592A000BF10EA /* GarageCollectionViewController.swift in Sources */,
 				7A823630281A6DB6001C2AE3 /* MyCar.xcdatamodeld in Sources */,
+				435A2F63282AFA1700BF10EA /* Car+CoreDataProperties.swift in Sources */,
+				435A2F64282AFA1700BF10EA /* FixExpenses+CoreDataClass.swift in Sources */,
 				435A2EBE28255BD400BF10EA /* AutoModel.swift in Sources */,
 				435A2EC7282593F900BF10EA /* GarageCollectionViewCell.swift in Sources */,
 				7AF31186281E6BFF0097BF5A /* LoginViewController.swift in Sources */,
 				7A823628281A6DB6001C2AE3 /* SceneDelegate.swift in Sources */,
+				435A2F5E282AFA1700BF10EA /* WashExpenses+CoreDataClass.swift in Sources */,
 				7A9C9352282423EE00FC40DE /* NumPad.swift in Sources */,
+				435A2F66282AFA1700BF10EA /* FuelExpenses+CoreDataClass.swift in Sources */,
 				7A9C9358282425BF00FC40DE /* PinState.swift in Sources */,
 				7A9C93562824251500FC40DE /* PinButton.swift in Sources */,
 				7AF3118A281E6C1B0097BF5A /* MainViewController.swift in Sources */,
+				435A2F69282AFA1700BF10EA /* FinanceExpenses+CoreDataProperties.swift in Sources */,
 				435A2EBC28255B5900BF10EA /* AutoCell.swift in Sources */,
 				435A2EB928255AD200BF10EA /* AddAutoViewController.swift in Sources */,
 			);
