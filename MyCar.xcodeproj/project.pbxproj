@@ -21,10 +21,20 @@
 		7A9C93562824251500FC40DE /* PinButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9C93552824251500FC40DE /* PinButton.swift */; };
 		7A9C9358282425BF00FC40DE /* PinState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9C9357282425BF00FC40DE /* PinState.swift */; };
 		7A9C935A282426AD00FC40DE /* NumPud.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A9C9359282426AD00FC40DE /* NumPud.xib */; };
+		7AD4D97A28258AE80083A7A4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD4D97828258AE80083A7A4 /* HomeViewController.swift */; };
+		7AD4D97B28258AE80083A7A4 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AD4D97928258AE80083A7A4 /* HomeViewController.xib */; };
+		7AD4D97E28258D000083A7A4 /* StaticticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD4D97C28258D000083A7A4 /* StaticticsViewController.swift */; };
+		7AD4D97F28258D000083A7A4 /* StaticticsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AD4D97D28258D000083A7A4 /* StaticticsViewController.xib */; };
+		7AD4D98228258F0E0083A7A4 /* DocumentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD4D98028258F0E0083A7A4 /* DocumentsViewController.swift */; };
+		7AD4D98328258F0E0083A7A4 /* DocumentsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AD4D98128258F0E0083A7A4 /* DocumentsViewController.xib */; };
+		7AD4D98628258F1F0083A7A4 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD4D98428258F1F0083A7A4 /* EventsViewController.swift */; };
+		7AD4D98728258F1F0083A7A4 /* EventsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AD4D98528258F1F0083A7A4 /* EventsViewController.xib */; };
+		7AD4D98A28258F2C0083A7A4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD4D98828258F2C0083A7A4 /* SettingsViewController.swift */; };
+		7AD4D98B28258F2C0083A7A4 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AD4D98928258F2C0083A7A4 /* SettingsViewController.xib */; };
+		7AD4D98D282597BC0083A7A4 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AD4D98C282597BC0083A7A4 /* MainViewController.xib */; };
 		7AF31186281E6BFF0097BF5A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF31184281E6BFF0097BF5A /* LoginViewController.swift */; };
 		7AF31187281E6BFF0097BF5A /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AF31185281E6BFF0097BF5A /* LoginViewController.xib */; };
 		7AF3118A281E6C1B0097BF5A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF31188281E6C1B0097BF5A /* MainViewController.swift */; };
-		7AF3118B281E6C1B0097BF5A /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AF31189281E6C1B0097BF5A /* MainViewController.xib */; };
 		7AF3118D281E6D8E0097BF5A /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AF3118C281E6D8E0097BF5A /* StartViewController.xib */; };
 		92C611E82826D443009A930E /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C611E72826D443009A930E /* KeychainService.swift */; };
 		92C611EA2826D4CC009A930E /* KeychainServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C611E92826D4CC009A930E /* KeychainServiceTests.swift */; };
@@ -66,10 +76,20 @@
 		7A9C93552824251500FC40DE /* PinButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinButton.swift; sourceTree = "<group>"; };
 		7A9C9357282425BF00FC40DE /* PinState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinState.swift; sourceTree = "<group>"; };
 		7A9C9359282426AD00FC40DE /* NumPud.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumPud.xib; sourceTree = "<group>"; };
+		7AD4D97828258AE80083A7A4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		7AD4D97928258AE80083A7A4 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		7AD4D97C28258D000083A7A4 /* StaticticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticticsViewController.swift; sourceTree = "<group>"; };
+		7AD4D97D28258D000083A7A4 /* StaticticsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StaticticsViewController.xib; sourceTree = "<group>"; };
+		7AD4D98028258F0E0083A7A4 /* DocumentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsViewController.swift; sourceTree = "<group>"; };
+		7AD4D98128258F0E0083A7A4 /* DocumentsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DocumentsViewController.xib; sourceTree = "<group>"; };
+		7AD4D98428258F1F0083A7A4 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		7AD4D98528258F1F0083A7A4 /* EventsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventsViewController.xib; sourceTree = "<group>"; };
+		7AD4D98828258F2C0083A7A4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		7AD4D98928258F2C0083A7A4 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		7AD4D98C282597BC0083A7A4 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		7AF31184281E6BFF0097BF5A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7AF31185281E6BFF0097BF5A /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		7AF31188281E6C1B0097BF5A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		7AF31189281E6C1B0097BF5A /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		7AF3118C281E6D8E0097BF5A /* StartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
 		92C611E72826D443009A930E /* KeychainService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		92C611E92826D4CC009A930E /* KeychainServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainServiceTests.swift; sourceTree = "<group>"; };
@@ -209,6 +229,8 @@
 		7A8AA56E281E75E70071FDD4 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				7AD4D97828258AE80083A7A4 /* HomeViewController.swift */,
+				7AD4D97928258AE80083A7A4 /* HomeViewController.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -216,6 +238,8 @@
 		7A8AA56F281E75EB0071FDD4 /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
+				7AD4D97C28258D000083A7A4 /* StaticticsViewController.swift */,
+				7AD4D97D28258D000083A7A4 /* StaticticsViewController.xib */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";
@@ -223,6 +247,8 @@
 		7A8AA570281E77160071FDD4 /* Documents */ = {
 			isa = PBXGroup;
 			children = (
+				7AD4D98028258F0E0083A7A4 /* DocumentsViewController.swift */,
+				7AD4D98128258F0E0083A7A4 /* DocumentsViewController.xib */,
 			);
 			path = Documents;
 			sourceTree = "<group>";
@@ -230,6 +256,8 @@
 		7A8AA571281E771C0071FDD4 /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				7AD4D98428258F1F0083A7A4 /* EventsViewController.swift */,
+				7AD4D98528258F1F0083A7A4 /* EventsViewController.xib */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -237,6 +265,8 @@
 		7A8AA572281E77230071FDD4 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				7AD4D98828258F2C0083A7A4 /* SettingsViewController.swift */,
+				7AD4D98928258F2C0083A7A4 /* SettingsViewController.xib */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -334,7 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				7AF31188281E6C1B0097BF5A /* MainViewController.swift */,
-				7AF31189281E6C1B0097BF5A /* MainViewController.xib */,
+				7AD4D98C282597BC0083A7A4 /* MainViewController.xib */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -452,11 +482,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A823635281A6DB7001C2AE3 /* LaunchScreen.storyboard in Resources */,
+				7AD4D98728258F1F0083A7A4 /* EventsViewController.xib in Resources */,
+				7AD4D98B28258F2C0083A7A4 /* SettingsViewController.xib in Resources */,
 				7A823632281A6DB7001C2AE3 /* Assets.xcassets in Resources */,
 				7AF31187281E6BFF0097BF5A /* LoginViewController.xib in Resources */,
-				7AF3118B281E6C1B0097BF5A /* MainViewController.xib in Resources */,
+				7AD4D98D282597BC0083A7A4 /* MainViewController.xib in Resources */,
 				7A9C935A282426AD00FC40DE /* NumPud.xib in Resources */,
+				7AD4D97B28258AE80083A7A4 /* HomeViewController.xib in Resources */,
 				7AF3118D281E6D8E0097BF5A /* StartViewController.xib in Resources */,
+				7AD4D98328258F0E0083A7A4 /* DocumentsViewController.xib in Resources */,
+				7AD4D97F28258D000083A7A4 /* StaticticsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +517,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A82362A281A6DB6001C2AE3 /* StartViewController.swift in Sources */,
+				7AD4D98228258F0E0083A7A4 /* DocumentsViewController.swift in Sources */,
 				7A9C9354282424DD00FC40DE /* UIImage+Ext.swift in Sources */,
 				7A823626281A6DB6001C2AE3 /* AppDelegate.swift in Sources */,
 				7A823630281A6DB6001C2AE3 /* MyCar.xcdatamodeld in Sources */,
@@ -489,7 +525,11 @@
 				7AF31186281E6BFF0097BF5A /* LoginViewController.swift in Sources */,
 				7A823628281A6DB6001C2AE3 /* SceneDelegate.swift in Sources */,
 				7A9C9352282423EE00FC40DE /* NumPad.swift in Sources */,
+				7AD4D98A28258F2C0083A7A4 /* SettingsViewController.swift in Sources */,
+				7AD4D97E28258D000083A7A4 /* StaticticsViewController.swift in Sources */,
+				7AD4D97A28258AE80083A7A4 /* HomeViewController.swift in Sources */,
 				7A9C9358282425BF00FC40DE /* PinState.swift in Sources */,
+				7AD4D98628258F1F0083A7A4 /* EventsViewController.swift in Sources */,
 				7A9C93562824251500FC40DE /* PinButton.swift in Sources */,
 				7AF3118A281E6C1B0097BF5A /* MainViewController.swift in Sources */,
 			);
