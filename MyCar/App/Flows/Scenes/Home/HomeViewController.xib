@@ -35,12 +35,24 @@
                         <action selector="exitDidTap:" destination="-1" eventType="touchUpInside" id="C5i-yb-S6X"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IUj-9P-Kfj">
+                    <rect key="frame" x="20" y="44" width="81" height="38"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Гараж">
+                        <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="garageDidTap:" destination="-1" eventType="touchUpInside" id="vMe-Id-zNY"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="IUj-9P-Kfj" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="H1Z-7H-eQP"/>
                 <constraint firstItem="g5Y-K1-aR5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Kah-bm-lmm"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JWy-7Z-8Eh" secondAttribute="trailing" constant="20" id="UhJ-5A-6UE"/>
+                <constraint firstItem="IUj-9P-Kfj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="fsX-vs-jps"/>
                 <constraint firstItem="JWy-7Z-8Eh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="lqL-oW-C6N"/>
                 <constraint firstItem="g5Y-K1-aR5" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="tNz-hE-Klk"/>
             </constraints>
