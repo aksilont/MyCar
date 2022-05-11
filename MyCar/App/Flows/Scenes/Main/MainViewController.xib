@@ -4,28 +4,42 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="MyCar" customModuleProvider="target">
-            <connections>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="MyCar" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="139" y="128"/>
-        </view>
+        <tabBarController id="2qJ-Cz-wgG" customClass="MainViewController" customModule="MyCar" customModuleProvider="target">
+            <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="N7R-tz-MuS">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            </tabBar>
+            <viewControllers>
+                <viewController title="Домой" nibName="HomeViewController" id="Xba-tI-dVO" customClass="HomeViewController" customModule="MyCar" customModuleProvider="target">
+                    <tabBarItem key="tabBarItem" title="" image="house" catalog="system" id="BsF-U3-Tts"/>
+                </viewController>
+                <viewController title="Статистика" nibName="StaticticsViewController" id="RmW-CU-8rV" customClass="StaticticsViewController" customModule="MyCar" customModuleProvider="target">
+                    <tabBarItem key="tabBarItem" title="" image="waveform.path.ecg.rectangle" catalog="system" id="fDl-cO-bvI"/>
+                </viewController>
+                <viewController title="Документы" nibName="DocumentsViewController" id="MAd-32-ANw" customClass="DocumentsViewController" customModule="MyCar" customModuleProvider="target">
+                    <tabBarItem key="tabBarItem" title="" image="doc.on.doc" catalog="system" id="ryJ-fg-iH4"/>
+                </viewController>
+                <viewController title="События" nibName="EventsViewController" id="SxL-xK-DN9" customClass="EventsViewController" customModule="MyCar" customModuleProvider="target">
+                    <tabBarItem key="tabBarItem" title="" image="calendar" catalog="system" id="EPS-sd-AeZ"/>
+                </viewController>
+                <viewController title="Ещё" nibName="SettingsViewController" id="QVz-jU-yUo" customClass="SettingsViewController" customModule="MyCar" customModuleProvider="target">
+                    <tabBarItem key="tabBarItem" title="" image="ellipsis" catalog="system" id="3Lt-xR-r8b"/>
+                </viewController>
+            </viewControllers>
+            <point key="canvasLocation" x="1068" y="78"/>
+        </tabBarController>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <image name="calendar" catalog="system" width="128" height="106"/>
+        <image name="doc.on.doc" catalog="system" width="116" height="128"/>
+        <image name="ellipsis" catalog="system" width="128" height="37"/>
+        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="waveform.path.ecg.rectangle" catalog="system" width="128" height="93"/>
     </resources>
 </document>
