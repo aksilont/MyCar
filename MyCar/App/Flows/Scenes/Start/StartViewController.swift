@@ -13,8 +13,7 @@ class StartViewController: UIViewController {
         super.viewDidLoad()
         
         let loginViewController = LoginViewController()
-        loginViewController.modalPresentationStyle = .fullScreen
-        navigationController?.pushViewController(loginViewController, animated: true)
+        navigationController?.pushViewController(loginViewController, animated: false)
     }
 
 

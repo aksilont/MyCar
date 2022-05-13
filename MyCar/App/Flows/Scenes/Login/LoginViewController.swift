@@ -17,6 +17,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var thirdDot: UIImageView!
     @IBOutlet weak var fourthDot: UIImageView!
     
+    private let viewModel = LoginViewModel()
+    
     private var currentPin = ""
     
     private let imageDotted = UIImage(systemName: "circle")
@@ -26,6 +28,15 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupUI()
+    }
+
+    private func setupUI() {
+        if !viewModel.hasPinCode() {
+            let mainVC = MainViewController()
+            navigationController?.pushViewController(mainVC, animated: true)
+        }
         
         numPadView.subject.sink { [unowned self] value in
             switch value {
@@ -51,7 +62,7 @@ class LoginViewController: UIViewController {
         }
         .store(in: &subscriptions)
     }
-
+    
     private func checkInputPin() {
         switch currentPin.count {
         case 1:
@@ -93,10 +104,7 @@ class LoginViewController: UIViewController {
         resetAllDots()
         currentPin = ""
         
-        let nibMainVC = UINib(nibName: "MainViewController", bundle: nil)
-        let mainViewController = nibMainVC.instantiate(withOwner: nil, options: nil).first as! MainViewController
-        
-        navigationController?.pushViewController(mainViewController, animated: true)
+        navigationController?.pushViewController(MainViewController(), animated: true)
     }
     
 }
