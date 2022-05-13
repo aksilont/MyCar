@@ -116,7 +116,7 @@
 		435A2F5B282AFA1700BF10EA /* FinanceExpenses+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FinanceExpenses+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		435A2F5C282AFA1700BF10EA /* ParkingExpenses+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParkingExpenses+CoreDataClass.swift"; sourceTree = "<group>"; };
 		435A2F5D282AFA1700BF10EA /* ParkingExpenses+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParkingExpenses+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		435A2F6E282AFCDC00BF10EA /* CarRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CarRepository.swift; path = "Core Data/CoreDataRepository/CarRepository.swift"; sourceTree = SOURCE_ROOT; };
+		435A2F6E282AFCDC00BF10EA /* CarRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CarRepository.swift; path = "MyCar/Core/Core Data/CoreDataRepository/CarRepository.swift"; sourceTree = SOURCE_ROOT; };
 		7A823622281A6DB6001C2AE3 /* MyCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A823625281A6DB6001C2AE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A823627281A6DB6001C2AE3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -144,10 +144,10 @@
 		7AD4D98428258F1F0083A7A4 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		7AD4D98528258F1F0083A7A4 /* EventsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventsViewController.xib; sourceTree = "<group>"; };
 		7AD4D98C282597BC0083A7A4 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
-		7AF081E9282EF37B00025CA4 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsView.swift; path = ../../../../../../../SettingsView.swift; sourceTree = "<group>"; };
-		7AF081EB282EF39C00025CA4 /* SettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewModel.swift; path = ../../../../../../../SettingsViewModel.swift; sourceTree = "<group>"; };
-		7AF081ED282EF3A800025CA4 /* UIApplication+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIApplication+Ext.swift"; path = "../../../../UIApplication+Ext.swift"; sourceTree = "<group>"; };
-		7AF081EF282EF43300025CA4 /* UIHostingControllerCustom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIHostingControllerCustom.swift; path = ../../../../UIHostingControllerCustom.swift; sourceTree = "<group>"; };
+		7AF081E9282EF37B00025CA4 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		7AF081EB282EF39C00025CA4 /* SettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		7AF081ED282EF3A800025CA4 /* UIApplication+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+Ext.swift"; sourceTree = "<group>"; };
+		7AF081EF282EF43300025CA4 /* UIHostingControllerCustom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIHostingControllerCustom.swift; sourceTree = "<group>"; };
 		7AF081F1282EF49300025CA4 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		7AF31184281E6BFF0097BF5A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7AF31185281E6BFF0097BF5A /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -270,7 +270,6 @@
 			children = (
 				7AE5A5CE281E66BF00F008B0 /* App */,
 				7A8AA569281E74220071FDD4 /* Core */,
-				7A8AA567281E73820071FDD4 /* Extensions */,
 				7AE5A5CF281E674200F008B0 /* Resources */,
 				7AE5A5D0281E676200F008B0 /* Environments */,
 			);
@@ -321,6 +320,7 @@
 				7A8AA56D281E749E0071FDD4 /* Notifications */,
 				7A8AA56C281E74850071FDD4 /* Network */,
 				7A8AA56A281E74240071FDD4 /* Core Data */,
+				7A8AA567281E73820071FDD4 /* Extensions */,
 			);
 			path = Core;
 			sourceTree = "<group>";
