@@ -35,6 +35,8 @@
 		435A2F6A282AFA1700BF10EA /* ParkingExpenses+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A2F5C282AFA1700BF10EA /* ParkingExpenses+CoreDataClass.swift */; };
 		435A2F6B282AFA1700BF10EA /* ParkingExpenses+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A2F5D282AFA1700BF10EA /* ParkingExpenses+CoreDataProperties.swift */; };
 		435A2F6F282AFCDC00BF10EA /* CarRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A2F6E282AFCDC00BF10EA /* CarRepository.swift */; };
+		43C9C0F5282EF8A600F6CED9 /* CollectionView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C9C0F4282EF8A600F6CED9 /* CollectionView + Extension.swift */; };
+		43C9C0F7282EFB5A00F6CED9 /* TableView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C9C0F6282EFB5A00F6CED9 /* TableView + Extension.swift */; };
 		7A823626281A6DB6001C2AE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A823625281A6DB6001C2AE3 /* AppDelegate.swift */; };
 		7A823628281A6DB6001C2AE3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A823627281A6DB6001C2AE3 /* SceneDelegate.swift */; };
 		7A82362A281A6DB6001C2AE3 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A823629281A6DB6001C2AE3 /* StartViewController.swift */; };
@@ -114,6 +116,8 @@
 		435A2F5C282AFA1700BF10EA /* ParkingExpenses+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParkingExpenses+CoreDataClass.swift"; sourceTree = "<group>"; };
 		435A2F5D282AFA1700BF10EA /* ParkingExpenses+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParkingExpenses+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		435A2F6E282AFCDC00BF10EA /* CarRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CarRepository.swift; path = "Core Data/CoreDataRepository/CarRepository.swift"; sourceTree = SOURCE_ROOT; };
+		43C9C0F4282EF8A600F6CED9 /* CollectionView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionView + Extension.swift"; sourceTree = "<group>"; };
+		43C9C0F6282EFB5A00F6CED9 /* TableView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableView + Extension.swift"; sourceTree = "<group>"; };
 		7A823622281A6DB6001C2AE3 /* MyCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A823625281A6DB6001C2AE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A823627281A6DB6001C2AE3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -293,6 +297,8 @@
 			isa = PBXGroup;
 			children = (
 				7A9C9353282424DD00FC40DE /* UIImage+Ext.swift */,
+				43C9C0F4282EF8A600F6CED9 /* CollectionView + Extension.swift */,
+				43C9C0F6282EFB5A00F6CED9 /* TableView + Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -659,12 +665,14 @@
 				435A2ECD2825A29900BF10EA /* PopoverTableViewController.swift in Sources */,
 				435A2F67282AFA1700BF10EA /* FuelExpenses+CoreDataProperties.swift in Sources */,
 				435A2F61282AFA1700BF10EA /* OtherExpenses+CoreDataProperties.swift in Sources */,
+				43C9C0F7282EFB5A00F6CED9 /* TableView + Extension.swift in Sources */,
 				435A2F6F282AFCDC00BF10EA /* CarRepository.swift in Sources */,
 				435A2EC52825938700BF10EA /* GarageCellModel.swift in Sources */,
 				435A2F65282AFA1700BF10EA /* FixExpenses+CoreDataProperties.swift in Sources */,
 				435A2EC1282592A000BF10EA /* GarageCollectionViewController.swift in Sources */,
 				7A823630281A6DB6001C2AE3 /* MyCar.xcdatamodeld in Sources */,
 				435A2F63282AFA1700BF10EA /* Car+CoreDataProperties.swift in Sources */,
+				43C9C0F5282EF8A600F6CED9 /* CollectionView + Extension.swift in Sources */,
 				435A2F64282AFA1700BF10EA /* FixExpenses+CoreDataClass.swift in Sources */,
 				435A2EBE28255BD400BF10EA /* AutoModel.swift in Sources */,
 				435A2EC7282593F900BF10EA /* GarageCollectionViewCell.swift in Sources */,

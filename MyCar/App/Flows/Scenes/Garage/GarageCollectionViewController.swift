@@ -17,24 +17,23 @@ class GarageCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Register cell classes
-        self.collectionView!.register(GarageCollectionViewCell.self, forCellWithReuseIdentifier: "GarageCell")
+        self.collectionView.register(registerClass: GarageCollectionViewCell.self)
         self.collectionView.collectionViewLayout = createLayout()
         collectionView.backgroundColor = .black
-        // navigationItem.title = "Гараж"
+        setupNavigationAttributes()
+        getCarsFromCoreData()
+    }
+    
+    func setupNavigationAttributes(){
         let titleGarage = "Гараж"
-        
         let rightButton = UIBarButtonItem(title: "Добавить", style: .done, target: self, action: #selector(addAuto))
         navigationItem.rightBarButtonItem = rightButton
         navigationItem.title = titleGarage
-        
+    }
+    
+    func getCarsFromCoreData() {
         let carsFromCoreData = carRepository.fetchCars()
         cars = carRepository.convertModel(coreDataModel: carsFromCoreData)
-    }
-    @objc func addAuto(){
-        let vc = AddAutoViewController(nibName: "AddAutoViewController", bundle: nil)
-        vc.delegate = self
-        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func createLayout() -> UICollectionViewLayout {
@@ -54,22 +53,21 @@ class GarageCollectionViewController: UICollectionViewController {
         return layout
     }
     
-    // MARK: UICollectionViewDataSource
-    
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+    @objc func addAuto(){
+        let vc = AddAutoViewController(nibName: "AddAutoViewController", bundle: nil)
+        vc.delegate = self
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    // MARK: UICollectionViewDataSource
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return cars.count
-        
+        cars.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GarageCollectionViewCell.reuseId, for: indexPath) as! GarageCollectionViewCell
+        let cell: GarageCollectionViewCell = collectionView.dequeueReusableCell(forIndexPath: indexPath)
         cell.itemAutoLabel.text = cars[indexPath.row].item
-        cell.modelAutoLabel.text = cars[indexPath.row].model
         cell.numberAutoLabel.text = cars[indexPath.row].number
         cell.checkMarkView.checked = cars[indexPath.row].activFlag
         return cell
@@ -77,25 +75,27 @@ class GarageCollectionViewController: UICollectionViewController {
     
     // MARK: UICollectionViewDelegate
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath)
+        
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize.init(width: view.frame.width, height: view.frame.height)
     }
+    
     init() {
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
 extension GarageCollectionViewController: AddAutoViewControllerDelegate{
     func appendAuto(_ auto: CarModel) {
         let carsFromCoreData = carRepository.fetchCars()
         cars = carRepository.convertModel(coreDataModel: carsFromCoreData)
         collectionView.reloadData()
-       
+        
     }
-    
-    
 }
