@@ -10,7 +10,7 @@ import SwiftUI
 
 class UIHostingViewControllerCustom<Content>: UIHostingController<Content> where Content: View {
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
-//        let _ = rootView.navigationBarBackButtonHidden(true)
     }
 }

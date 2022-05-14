@@ -6,16 +6,13 @@
 //
 
 import Foundation
+import UIKit
 import Combine
 
 class SettingsViewModel: ObservableObject {
-    @Published var pinCode: String = "" {
-        didSet {
-            if pinCode.count > 5 {
-                pinCode.removeLast()
-            }
-        }
-    }
+    @Published var pinCode = ""
+    
+    let lenghtPinCode = 4
     
     private let keyChain = KeychainService.standart
     
