@@ -16,24 +16,28 @@ struct SettingsView: View {
             GeometryReader { geometry in
                 VStack {
                     HStack {
-                        Text("PIN код")
-                        TextField("", text: $viewModel.pinCode)
-                            .limitInputLength(value: $viewModel.pinCode, length: viewModel.lenghtPinCode)
-                            .multilineTextAlignment(.center)
-                            .padding(.horizontal, 10)
-                            .keyboardType(.numberPad)
-                            .overlay(RoundedRectangle(cornerRadius: 5).stroke(lineWidth: 1))
+                        Toggle("", isOn: $viewModel.usePinCode)
+                            .labelsHidden()
+                        
+                        Text("PIN")
+                        HStack {
+                            TextField("", text: $viewModel.pinCode)
+                                .limitInputLength(value: $viewModel.pinCode, length: viewModel.lenghtPinCode)
+                                .multilineTextAlignment(.center)
+                                .keyboardType(.numberPad)
+                            
+                        }
+                        .padding(.horizontal, 5)
+                        .overlay(RoundedRectangle(cornerRadius: 5).stroke(lineWidth: 1))
+                        
+                        Image(systemName: "lock")
+                            .foregroundColor(viewModel.correctPinCode ? .green : .red)
                     }
                     .padding()
                     .background(Color(red: 28/255, green: 42/255, blue: 90/255))
                     .cornerRadius(10)
                     .padding()
                     .foregroundColor(.white)
-                    
-                    Button("Save") {
-                        viewModel.savePinCode()
-                        UIApplication.shared.endEditing()
-                    }
                 }
             }
             .navigationBarTitleDisplayMode(.inline)
