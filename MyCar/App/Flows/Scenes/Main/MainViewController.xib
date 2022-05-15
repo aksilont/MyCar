@@ -16,7 +16,7 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             </tabBar>
             <viewControllers>
-                <viewController title="Домой" nibName="HomeViewController" id="Xba-tI-dVO" customClass="HomeViewController" customModule="MyCar" customModuleProvider="target">
+                <viewController title="Домой" nibName="HomeViewController" id="Xba-tI-dVO" customClass="HomeViewController" customModule="MyCar">
                     <tabBarItem key="tabBarItem" title="" image="house" catalog="system" id="BsF-U3-Tts"/>
                 </viewController>
                 <viewController title="Статистика" nibName="StaticticsViewController" id="RmW-CU-8rV" customClass="StaticticsViewController" customModule="MyCar" customModuleProvider="target">

@@ -6,14 +6,15 @@
 //
 
 import UIKit
+import SwiftUI
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var garageButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.isNavigationBarHidden = true
+        setupView()
     }
     
     @IBAction func exitDidTap(_ sender: UIButton) {
@@ -26,4 +27,18 @@ class HomeViewController: UIViewController {
         navigationController?.pushViewController(garageVC, animated: true)
     }
 
+    private func setupView() {
+        let child = HomeViewHostingController(shouldShowNavigationBar: false, rootView: HomeView(viewModel: HomeViewModel()))
+        addChild(child)
+        view.addSubview(child.view)
+        child.didMove(toParent: self)
+        
+        child.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            child.view.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            child.view.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            child.view.topAnchor.constraint(equalTo:  self.garageButton.bottomAnchor),
+            child.view.bottomAnchor.constraint(equalTo:self.view.safeAreaLayoutGuide.bottomAnchor),
+        ])
+    }
 }
