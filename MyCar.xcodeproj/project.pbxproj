@@ -64,6 +64,7 @@
 		7AF081F0282EF43300025CA4 /* UIHostingControllerCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF081EF282EF43300025CA4 /* UIHostingControllerCustom.swift */; };
 		7AF081F2282EF49300025CA4 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF081F1282EF49300025CA4 /* LoginViewModel.swift */; };
 		7AF081F4282FA08700025CA4 /* TextFieldLimitModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF081F3282FA08700025CA4 /* TextFieldLimitModifier.swift */; };
+		7AF081F6283150D400025CA4 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF081F5283150D400025CA4 /* CheckBoxView.swift */; };
 		7AF31186281E6BFF0097BF5A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF31184281E6BFF0097BF5A /* LoginViewController.swift */; };
 		7AF31187281E6BFF0097BF5A /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AF31185281E6BFF0097BF5A /* LoginViewController.xib */; };
 		7AF3118A281E6C1B0097BF5A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF31188281E6C1B0097BF5A /* MainViewController.swift */; };
@@ -151,6 +152,7 @@
 		7AF081EF282EF43300025CA4 /* UIHostingControllerCustom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIHostingControllerCustom.swift; sourceTree = "<group>"; };
 		7AF081F1282EF49300025CA4 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		7AF081F3282FA08700025CA4 /* TextFieldLimitModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldLimitModifier.swift; sourceTree = "<group>"; };
+		7AF081F5283150D400025CA4 /* CheckBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxView.swift; sourceTree = "<group>"; };
 		7AF31184281E6BFF0097BF5A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7AF31185281E6BFF0097BF5A /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		7AF31188281E6C1B0097BF5A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -399,6 +401,7 @@
 				7AF081F3282FA08700025CA4 /* TextFieldLimitModifier.swift */,
 				7AF081EB282EF39C00025CA4 /* SettingsViewModel.swift */,
 				7AF081E9282EF37B00025CA4 /* SettingsView.swift */,
+				7AF081F5283150D400025CA4 /* CheckBoxView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -660,6 +663,7 @@
 				7A82362A281A6DB6001C2AE3 /* StartViewController.swift in Sources */,
 				435A2F5F282AFA1700BF10EA /* WashExpenses+CoreDataProperties.swift in Sources */,
 				435A2F62282AFA1700BF10EA /* Car+CoreDataClass.swift in Sources */,
+				7AF081F6283150D400025CA4 /* CheckBoxView.swift in Sources */,
 				435A2F6B282AFA1700BF10EA /* ParkingExpenses+CoreDataProperties.swift in Sources */,
 				7AD4D98228258F0E0083A7A4 /* DocumentsViewController.swift in Sources */,
 				7A9C9354282424DD00FC40DE /* UIImage+Ext.swift in Sources */,

@@ -25,7 +25,7 @@ class SettingsViewModel: ObservableObject {
     @Published var correctPinCode = false
     @Published var pinCode = "" {
         didSet {
-            if pinCode.count == lenghtPinCode || !usePinCode{
+            if pinCode.count == lenghtPinCode || !usePinCode {
                 correctPinCode = true
                 if savePinCode() { UIApplication.shared.endEditing() }
             } else {
