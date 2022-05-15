@@ -12,9 +12,16 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var garageButton: UIButton!
     
+    var viewModel = HomeViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.reloadData()
     }
     
     @IBAction func exitDidTap(_ sender: UIButton) {
@@ -28,7 +35,7 @@ class HomeViewController: UIViewController {
     }
 
     private func setupView() {
-        let child = HomeViewHostingController(shouldShowNavigationBar: false, rootView: HomeView(viewModel: HomeViewModel()))
+        let child = HomeViewHostingController(shouldShowNavigationBar: false, rootView: HomeView(viewModel: viewModel))
         addChild(child)
         view.addSubview(child.view)
         child.didMove(toParent: self)

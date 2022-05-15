@@ -56,6 +56,24 @@ class CarRepository {
         return cars
     }
     
+    func getActiveCar() -> Car? {
+        var cars: [Car] = []
+
+        guard let context = getContext() else { return nil }
+        do {
+            let request = Car.fetchRequest() as NSFetchRequest<Car>
+            cars = try context.fetch(request)
+            DispatchQueue.main.async {
+                print("Fetch Passes from CoreData")
+            }
+            
+        } catch  let error as NSError {
+            print(error.localizedDescription)
+            
+        }
+        return cars.first { $0.activFlag }
+    }
+    
     func  deleteAllCars() {
         guard let context = getContext() else {return}
         let fetchRequest: NSFetchRequest<Car> = Car.fetchRequest()
