@@ -9,40 +9,39 @@ import SwiftUI
 
 class HomeViewModel: ObservableObject {
     @Published var segments: [Double] = []
-    @Published var names: [String] = []
-    @Published var colors: [Color] = []
-    var carName: String = ""
-    var carNumber: String = ""
-    var allExpencies: String = ""
-    var expenciesPerDistanceUnit: String = ""
-    var currencySign: String = ""
-    var distanceUnitSign: String = ""
+    @Published var names: [String] = ["Парковка", "Мойка", "Ремонт", "Топливо", "Финансы", "Прочее"]
+    @Published var colors: [Color] = [Color.park, Color.wash, Color.repair, Color.fuel, Color.finance, Color.other]
+    @Published var carName: String = ""
+    @Published var carNumber: String = ""
+    @Published var allExpencies: String = ""
+    @Published var expenciesPerDistanceUnit: String = ""
+    private var currencySign: String = "₽"
+    private var distanceUnit: String = "км"
+    
+    private var car: Car?
     
     init() {
-        
-        
-        colors = [Color.park, Color.wash, Color.repair, Color.fuel, Color.finance, Color.other]
-        names = ["Парковка","Мойка","Ремонт","Топливо","Финансы","Прочее"]
-        segments = [100,120,120, 50, 70, 90]
-        carName = ""
-        carNumber = "C073CT150"
-        allExpencies = "1000000"
-        expenciesPerDistanceUnit = "500"
-        currencySign = "Р"
-        distanceUnitSign = "км"
-        let carRepository = CarRepository()
-        guard let car = carRepository.getActiveCar() else { return }
-        
-        carName = car.item ?? ""
-        carNumber = car.number ?? ""
-        
+        loadCArData()
     }
     
-    func reloadData() {
+    func loadCArData() {
         let carRepository = CarRepository()
-        guard let car = carRepository.getActiveCar() else { return }
+        car = carRepository.getActiveCar()
         
-        carName = car.item ?? ""
-        carNumber = car.number ?? ""
+        carName = car?.item ?? "Мой автомобиль"
+        carNumber = car?.number ?? ""
+        calculateExpencies()
+    }
+    
+    private func calculateExpencies() {
+        let calculatedAllExpencies = 1_000_000.0
+        segments = [100000, 200000, 50000, 150000, 275000, 225000]
+        allExpencies = "Всего \(calculatedAllExpencies) \(currencySign)"
+        if let car = car, car.distance > 0 {
+            expenciesPerDistanceUnit = "\(calculatedAllExpencies / Double(car.distance))"
+        } else {
+            expenciesPerDistanceUnit = "неизвестно"
+        }
+        expenciesPerDistanceUnit += " \(currencySign)/\(distanceUnit)"
     }
 }

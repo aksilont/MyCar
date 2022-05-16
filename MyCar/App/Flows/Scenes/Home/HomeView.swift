@@ -22,10 +22,10 @@ struct HomeView: View {
                         .frame(width: geometry.size.width * 0.75, height: geometry.size.width * 0.75)
                         .background(Color.black)
                     HStack(alignment: .center, spacing: 20.0) {
-                        Text("Всего \(viewModel.allExpencies) \(viewModel.currencySign)")
+                        Text(viewModel.allExpencies)
                             .foregroundColor(Color.white)
                             .font(Font.title2)
-                        Text("\(viewModel.expenciesPerDistanceUnit) \(viewModel.currencySign)/\(viewModel.distanceUnitSign)")
+                        Text(viewModel.expenciesPerDistanceUnit)
                             .foregroundColor(viewModel.colors[2])
                     }
                     VStack(spacing: geometry.size.width / 16) {
