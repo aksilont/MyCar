@@ -125,6 +125,26 @@ class CarRepository {
         }
     }
     
+    func  deleteCar(number: String) {
+        guard let context = getContext() else {return}
+        let fetchRequest: NSFetchRequest<Car> = Car.fetchRequest()
+        if let cars = try? context.fetch(fetchRequest) {
+            for car in cars {
+                if car.number == number {
+                    context.delete(car)
+                }
+            }
+        }
+        do {
+            try context.save()
+            DispatchQueue.main.async {
+            print("Delete One Pass from CoreData")
+            }
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+    }
+    
     func convertModel(coreDataModel: [Car]) -> [CarModel]{
         var carModelArray:[CarModel] = []
         coreDataModel.forEach { car in

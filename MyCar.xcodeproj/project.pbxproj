@@ -37,6 +37,8 @@
 		435A2F6F282AFCDC00BF10EA /* CarRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A2F6E282AFCDC00BF10EA /* CarRepository.swift */; };
 		43C9C0F5282EF8A600F6CED9 /* CollectionView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C9C0F4282EF8A600F6CED9 /* CollectionView + Extension.swift */; };
 		43C9C0F7282EFB5A00F6CED9 /* TableView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C9C0F6282EFB5A00F6CED9 /* TableView + Extension.swift */; };
+		43C9C0FB2832A17D00F6CED9 /* AddItemAndModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C9C0F92832A17D00F6CED9 /* AddItemAndModelViewController.swift */; };
+		43C9C0FC2832A17D00F6CED9 /* AddItemAndModelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43C9C0FA2832A17D00F6CED9 /* AddItemAndModelViewController.xib */; };
 		7A823626281A6DB6001C2AE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A823625281A6DB6001C2AE3 /* AppDelegate.swift */; };
 		7A823628281A6DB6001C2AE3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A823627281A6DB6001C2AE3 /* SceneDelegate.swift */; };
 		7A82362A281A6DB6001C2AE3 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A823629281A6DB6001C2AE3 /* StartViewController.swift */; };
@@ -131,6 +133,8 @@
 		435A2F6E282AFCDC00BF10EA /* CarRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CarRepository.swift; path = "MyCar/Core/Core Data/CoreDataRepository/CarRepository.swift"; sourceTree = SOURCE_ROOT; };
 		43C9C0F4282EF8A600F6CED9 /* CollectionView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionView + Extension.swift"; sourceTree = "<group>"; };
 		43C9C0F6282EFB5A00F6CED9 /* TableView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableView + Extension.swift"; sourceTree = "<group>"; };
+		43C9C0F92832A17D00F6CED9 /* AddItemAndModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemAndModelViewController.swift; sourceTree = "<group>"; };
+		43C9C0FA2832A17D00F6CED9 /* AddItemAndModelViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddItemAndModelViewController.xib; sourceTree = "<group>"; };
 		7A823622281A6DB6001C2AE3 /* MyCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A823625281A6DB6001C2AE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A823627281A6DB6001C2AE3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -267,6 +271,15 @@
 				435A2F6E282AFCDC00BF10EA /* CarRepository.swift */,
 			);
 			path = CoreDataRepository;
+			sourceTree = "<group>";
+		};
+		43C9C0F82832A12200F6CED9 /* AddItemAndModel */ = {
+			isa = PBXGroup;
+			children = (
+				43C9C0F92832A17D00F6CED9 /* AddItemAndModelViewController.swift */,
+				43C9C0FA2832A17D00F6CED9 /* AddItemAndModelViewController.xib */,
+			);
+			path = AddItemAndModel;
 			sourceTree = "<group>";
 		};
 		7A823619281A6DB6001C2AE3 = {
@@ -492,6 +505,7 @@
 		7AE5A5D4281E687600F008B0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				43C9C0F82832A12200F6CED9 /* AddItemAndModel */,
 				435A2ECA2825A25400BF10EA /* FuelPopOver */,
 				435A2EC3282592B800BF10EA /* Garage */,
 				435A2EB428255A6800BF10EA /* AddAuto */,
@@ -665,6 +679,7 @@
 				7AD4D98728258F1F0083A7A4 /* EventsViewController.xib in Resources */,
 				7A823632281A6DB7001C2AE3 /* Assets.xcassets in Resources */,
 				7AF31187281E6BFF0097BF5A /* LoginViewController.xib in Resources */,
+				43C9C0FC2832A17D00F6CED9 /* AddItemAndModelViewController.xib in Resources */,
 				435A2ECE2825A29900BF10EA /* PopoverTableViewController.xib in Resources */,
 				7AD4D98D282597BC0083A7A4 /* MainViewController.xib in Resources */,
 				7A9C935A282426AD00FC40DE /* NumPud.xib in Resources */,
@@ -750,6 +765,7 @@
 				92C6124028306469009A930E /* HomeViewModel.swift in Sources */,
 				7AF3118A281E6C1B0097BF5A /* MainViewController.swift in Sources */,
 				435A2F69282AFA1700BF10EA /* FinanceExpenses+CoreDataProperties.swift in Sources */,
+				43C9C0FB2832A17D00F6CED9 /* AddItemAndModelViewController.swift in Sources */,
 				435A2EBC28255B5900BF10EA /* AutoCell.swift in Sources */,
 				435A2EB928255AD200BF10EA /* AddAutoViewController.swift in Sources */,
 			);

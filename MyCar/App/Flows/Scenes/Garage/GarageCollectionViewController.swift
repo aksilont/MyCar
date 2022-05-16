@@ -9,7 +9,11 @@ import UIKit
 
 protocol CheckMarkerDelegate {
     func setFlag(indexPath: IndexPath)
+    func showAlert(_: GarageCollectionViewCell)
+    func showDeleteIndex(indexPath: IndexPath)
 }
+
+
 
 class GarageCollectionViewController: UICollectionViewController {
     var cars:[CarModel] = []
@@ -120,5 +124,35 @@ extension GarageCollectionViewController: CheckMarkerDelegate {
             }
             collectionView.reloadData()
         }
+    }
+    func showDeleteIndex(indexPath: IndexPath) {
+        self.indexPath = indexPath
+    }
+   
+    func showAlert(_: GarageCollectionViewCell) {
+       showAction()
+    }
+    
+    func showAction() {
+        let alertController = UIAlertController(title: "", message: "вы уверены что хотите удалить этот авто", preferredStyle: .actionSheet)
+       
+        let okButton = UIAlertAction(title: "Удалить", style: .default, handler: { (action) -> Void in
+            print("Ok button tapped")
+            let number = self.cars[self.indexPath?.row ?? 0].number
+            self.carRepository.deleteCar(number: number)
+
+            let cars = self.carRepository.fetchCars()
+            self.cars = self.carRepository.convertModel(coreDataModel:cars)
+            self.collectionView.reloadData()
+        })
+      
+        let deleteButton = UIAlertAction(title: "Назад", style: .destructive, handler: { (action) -> Void in
+            print("Delete button tapped")
+        })
+
+        alertController.addAction(okButton)
+        alertController.addAction(deleteButton)
+
+        self.present(alertController, animated: true, completion: nil)
     }
 }

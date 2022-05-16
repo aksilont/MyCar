@@ -125,7 +125,9 @@ extension AddAutoViewController: UITableViewDelegate, UITableViewDataSource {
         let autoModel = AutoModel(rawValue: indexCase)
         switch autoModel {
             
-        case .item, .model, .number, .distance, .vin:
+        case .item:
+            gotoAddItemAndModel()
+        case .model, .number, .distance, .vin:
             cell.infoTextField.becomeFirstResponder()
         case .year:
             gotoPopover(cell: cell, model: carParametrsModel.year(), index: indexPath)
@@ -202,6 +204,13 @@ extension AddAutoViewController: UITextFieldDelegate {
         case .none:
             break
         }
+    }
+}
+
+extension AddAutoViewController {
+    func gotoAddItemAndModel() {
+        let vc = AddItemAndModelViewController(nibName: "AddItemAndModelViewController", bundle: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
