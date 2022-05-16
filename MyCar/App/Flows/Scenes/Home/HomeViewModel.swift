@@ -36,9 +36,9 @@ class HomeViewModel: ObservableObject {
     private func calculateExpencies() {
         let calculatedAllExpencies = 1_000_000.0
         segments = [100000, 200000, 50000, 150000, 275000, 225000]
-        allExpencies = "Всего \(calculatedAllExpencies) \(currencySign)"
+        allExpencies = "Всего \(String(format: "%.2f", calculatedAllExpencies)) \(currencySign)"
         if let car = car, car.distance > 0 {
-            expenciesPerDistanceUnit = "\(calculatedAllExpencies / Double(car.distance))"
+            expenciesPerDistanceUnit = String(format: "%.2f", calculatedAllExpencies / Double(car.distance))
         } else {
             expenciesPerDistanceUnit = "неизвестно"
         }
