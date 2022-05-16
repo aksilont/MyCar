@@ -106,18 +106,17 @@ extension GarageCollectionViewController: AddAutoViewControllerDelegate {
 
 extension GarageCollectionViewController: CheckMarkerDelegate {
     func setFlag(indexPath: IndexPath) {
-        carRepository.deleteAllCars()
         self.indexPath = indexPath
         for i in 0 ..< cars.count {
             if i == indexPath.row {
                 if cars[i].activFlag == false {
                     cars[i].activFlag = true
-                    carRepository.saveCar(carModel: cars[i])
+                    carRepository.upDateFlag(carModel: cars[i])
                 }
                 
             } else {
                 cars[i].activFlag = false
-                carRepository.saveCar(carModel: cars[i])
+                carRepository.upDateFlag(carModel: cars[i])
             }
             collectionView.reloadData()
         }
