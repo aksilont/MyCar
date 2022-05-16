@@ -8,6 +8,8 @@
 import UIKit
 
 class GarageCollectionViewCell: UICollectionViewCell {
+    var delegate: CheckMarkerDelegate?
+    var indexPath: IndexPath?
     
     let autoImageView: UIImageView = {
         let imageView = UIImageView()
@@ -95,6 +97,9 @@ class GarageCollectionViewCell: UICollectionViewCell {
     }
     @objc func changeState(){
         checkMarkView.checked.toggle()
+        self.delegate?.setFlag(indexPath: indexPath ?? [0,0])
+       
     }
+    
     
 }

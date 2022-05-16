@@ -73,9 +73,13 @@ class AddAutoViewController: UIViewController {
     
     @objc func touchReady(){
         if carModel.item != "" && carModel.number != "" {
+            let cars = carRepository.fetchCars()
+            if cars.isEmpty {
+                carModel.activFlag = true
+            }
             carRepository.saveCar(carModel: carModel)
             delegate?.appendAuto(carModel)
-            self.navigationController?.popToRootViewController(animated: true)
+            self.navigationController?.popViewController(animated: true)
         } else {
             print("no item and no number")
         }

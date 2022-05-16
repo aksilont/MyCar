@@ -7,13 +7,14 @@
 
 import UIKit
 
-protocol CellMarker {
-    func loadAuto()
+protocol CheckMarkerDelegate {
+    func setFlag(indexPath: IndexPath)
 }
 
 class GarageCollectionViewController: UICollectionViewController {
     var cars:[CarModel] = []
     let carRepository = CarRepository()
+    var indexPath: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,7 @@ class GarageCollectionViewController: UICollectionViewController {
         self.collectionView.collectionViewLayout = createLayout()
         collectionView.backgroundColor = .black
         setupNavigationAttributes()
+      //  carRepository.deleteAllCars()
         getCarsFromCoreData()
     }
     
@@ -70,6 +72,8 @@ class GarageCollectionViewController: UICollectionViewController {
         cell.itemAutoLabel.text = cars[indexPath.row].item
         cell.numberAutoLabel.text = cars[indexPath.row].number
         cell.checkMarkView.checked = cars[indexPath.row].activFlag
+        cell.delegate = self
+        cell.indexPath = indexPath
         return cell
     }
     
@@ -91,11 +95,31 @@ class GarageCollectionViewController: UICollectionViewController {
     }
 }
 
-extension GarageCollectionViewController: AddAutoViewControllerDelegate{
+extension GarageCollectionViewController: AddAutoViewControllerDelegate {
     func appendAuto(_ auto: CarModel) {
         let carsFromCoreData = carRepository.fetchCars()
         cars = carRepository.convertModel(coreDataModel: carsFromCoreData)
         collectionView.reloadData()
         
+    }
+}
+
+extension GarageCollectionViewController: CheckMarkerDelegate {
+    func setFlag(indexPath: IndexPath) {
+        carRepository.deleteAllCars()
+        self.indexPath = indexPath
+        for i in 0 ..< cars.count {
+            if i == indexPath.row {
+                if cars[i].activFlag == false {
+                    cars[i].activFlag = true
+                    carRepository.saveCar(carModel: cars[i])
+                }
+                
+            } else {
+                cars[i].activFlag = false
+                carRepository.saveCar(carModel: cars[i])
+            }
+            collectionView.reloadData()
+        }
     }
 }
