@@ -52,7 +52,6 @@
 		7A9C9358282425BF00FC40DE /* PinState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9C9357282425BF00FC40DE /* PinState.swift */; };
 		7A9C935A282426AD00FC40DE /* NumPud.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A9C9359282426AD00FC40DE /* NumPud.xib */; };
 		7AD4D97A28258AE80083A7A4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD4D97828258AE80083A7A4 /* HomeViewController.swift */; };
-		7AD4D97B28258AE80083A7A4 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AD4D97928258AE80083A7A4 /* HomeViewController.xib */; };
 		7AD4D97E28258D000083A7A4 /* StaticticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD4D97C28258D000083A7A4 /* StaticticsViewController.swift */; };
 		7AD4D97F28258D000083A7A4 /* StaticticsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AD4D97D28258D000083A7A4 /* StaticticsViewController.xib */; };
 		7AD4D98228258F0E0083A7A4 /* DocumentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD4D98028258F0E0083A7A4 /* DocumentsViewController.swift */; };
@@ -66,8 +65,17 @@
 		7AF31187281E6BFF0097BF5A /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AF31185281E6BFF0097BF5A /* LoginViewController.xib */; };
 		7AF3118A281E6C1B0097BF5A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF31188281E6C1B0097BF5A /* MainViewController.swift */; };
 		7AF3118D281E6D8E0097BF5A /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AF3118C281E6D8E0097BF5A /* StartViewController.xib */; };
+		9239034128307DC7007D4314 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9239034028307DC7007D4314 /* HomeViewController.xib */; };
+		92390343283085F6007D4314 /* HomeViewHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92390342283085F6007D4314 /* HomeViewHostingController.swift */; };
+		9239034728313F66007D4314 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239034628313F66007D4314 /* Color+Extension.swift */; };
 		92C611E82826D443009A930E /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C611E72826D443009A930E /* KeychainService.swift */; };
 		92C611EA2826D4CC009A930E /* KeychainServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C611E92826D4CC009A930E /* KeychainServiceTests.swift */; };
+		92C6123628305BDE009A930E /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C6123528305BDE009A930E /* PieChartView.swift */; };
+		92C6123828305BF6009A930E /* PieSliceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C6123728305BF5009A930E /* PieSliceView.swift */; };
+		92C6123A28305C41009A930E /* PieSliceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C6123928305C41009A930E /* PieSliceData.swift */; };
+		92C6123C28305C86009A930E /* PieChartRows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C6123B28305C86009A930E /* PieChartRows.swift */; };
+		92C6123E28306411009A930E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C6123D28306411009A930E /* HomeView.swift */; };
+		92C6124028306469009A930E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C6123F28306469009A930E /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,7 +145,6 @@
 		7A9C9357282425BF00FC40DE /* PinState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinState.swift; sourceTree = "<group>"; };
 		7A9C9359282426AD00FC40DE /* NumPud.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumPud.xib; sourceTree = "<group>"; };
 		7AD4D97828258AE80083A7A4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		7AD4D97928258AE80083A7A4 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		7AD4D97C28258D000083A7A4 /* StaticticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticticsViewController.swift; sourceTree = "<group>"; };
 		7AD4D97D28258D000083A7A4 /* StaticticsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StaticticsViewController.xib; sourceTree = "<group>"; };
 		7AD4D98028258F0E0083A7A4 /* DocumentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsViewController.swift; sourceTree = "<group>"; };
@@ -151,8 +158,17 @@
 		7AF31185281E6BFF0097BF5A /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		7AF31188281E6C1B0097BF5A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7AF3118C281E6D8E0097BF5A /* StartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
+		9239034028307DC7007D4314 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		92390342283085F6007D4314 /* HomeViewHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewHostingController.swift; sourceTree = "<group>"; };
+		9239034628313F66007D4314 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		92C611E72826D443009A930E /* KeychainService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		92C611E92826D4CC009A930E /* KeychainServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainServiceTests.swift; sourceTree = "<group>"; };
+		92C6123528305BDE009A930E /* PieChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
+		92C6123728305BF5009A930E /* PieSliceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSliceView.swift; sourceTree = "<group>"; };
+		92C6123928305C41009A930E /* PieSliceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSliceData.swift; sourceTree = "<group>"; };
+		92C6123B28305C86009A930E /* PieChartRows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartRows.swift; sourceTree = "<group>"; };
+		92C6123D28306411009A930E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		92C6123F28306469009A930E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,6 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				7A9C9353282424DD00FC40DE /* UIImage+Ext.swift */,
+				9239034628313F66007D4314 /* Color+Extension.swift */,
 				43C9C0F4282EF8A600F6CED9 /* CollectionView + Extension.swift */,
 				43C9C0F6282EFB5A00F6CED9 /* TableView + Extension.swift */,
 			);
@@ -357,7 +374,10 @@
 			isa = PBXGroup;
 			children = (
 				7AD4D97828258AE80083A7A4 /* HomeViewController.swift */,
-				7AD4D97928258AE80083A7A4 /* HomeViewController.xib */,
+				92C6123D28306411009A930E /* HomeView.swift */,
+				92C6123F28306469009A930E /* HomeViewModel.swift */,
+				9239034028307DC7007D4314 /* HomeViewController.xib */,
+				92390342283085F6007D4314 /* HomeViewHostingController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -447,6 +467,7 @@
 		7AE5A5D3281E686F00F008B0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				92C6123228305B8A009A930E /* PieChart */,
 				7A9C93552824251500FC40DE /* PinButton.swift */,
 				7A9C9351282423EE00FC40DE /* NumPad.swift */,
 				7A9C9359282426AD00FC40DE /* NumPud.xib */,
@@ -505,6 +526,17 @@
 				92C611E72826D443009A930E /* KeychainService.swift */,
 			);
 			path = KeychainService;
+			sourceTree = "<group>";
+		};
+		92C6123228305B8A009A930E /* PieChart */ = {
+			isa = PBXGroup;
+			children = (
+				92C6123528305BDE009A930E /* PieChartView.swift */,
+				92C6123728305BF5009A930E /* PieSliceView.swift */,
+				92C6123928305C41009A930E /* PieSliceData.swift */,
+				92C6123B28305C86009A930E /* PieChartRows.swift */,
+			);
+			path = PieChart;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -613,6 +645,7 @@
 			files = (
 				435A2EBA28255AD200BF10EA /* AddAutoViewController.xib in Resources */,
 				435A2EC2282592A000BF10EA /* GarageCollectionViewController.xib in Resources */,
+				9239034128307DC7007D4314 /* HomeViewController.xib in Resources */,
 				7A823635281A6DB7001C2AE3 /* LaunchScreen.storyboard in Resources */,
 				7AD4D98728258F1F0083A7A4 /* EventsViewController.xib in Resources */,
 				7AD4D98B28258F2C0083A7A4 /* SettingsViewController.xib in Resources */,
@@ -621,7 +654,6 @@
 				435A2ECE2825A29900BF10EA /* PopoverTableViewController.xib in Resources */,
 				7AD4D98D282597BC0083A7A4 /* MainViewController.xib in Resources */,
 				7A9C935A282426AD00FC40DE /* NumPud.xib in Resources */,
-				7AD4D97B28258AE80083A7A4 /* HomeViewController.xib in Resources */,
 				7AF3118D281E6D8E0097BF5A /* StartViewController.xib in Resources */,
 				7AD4D98328258F0E0083A7A4 /* DocumentsViewController.xib in Resources */,
 				7AD4D97F28258D000083A7A4 /* StaticticsViewController.xib in Resources */,
@@ -649,6 +681,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92C6123628305BDE009A930E /* PieChartView.swift in Sources */,
 				435A2F60282AFA1700BF10EA /* OtherExpenses+CoreDataClass.swift in Sources */,
 				435A2F68282AFA1700BF10EA /* FinanceExpenses+CoreDataClass.swift in Sources */,
 				7A82362A281A6DB6001C2AE3 /* StartViewController.swift in Sources */,
@@ -670,6 +703,7 @@
 				435A2EC52825938700BF10EA /* GarageCellModel.swift in Sources */,
 				435A2F65282AFA1700BF10EA /* FixExpenses+CoreDataProperties.swift in Sources */,
 				435A2EC1282592A000BF10EA /* GarageCollectionViewController.swift in Sources */,
+				92C6123E28306411009A930E /* HomeView.swift in Sources */,
 				7A823630281A6DB6001C2AE3 /* MyCar.xcdatamodeld in Sources */,
 				435A2F63282AFA1700BF10EA /* Car+CoreDataProperties.swift in Sources */,
 				43C9C0F5282EF8A600F6CED9 /* CollectionView + Extension.swift in Sources */,
@@ -678,16 +712,22 @@
 				435A2EC7282593F900BF10EA /* GarageCollectionViewCell.swift in Sources */,
 				92C611E82826D443009A930E /* KeychainService.swift in Sources */,
 				7AF31186281E6BFF0097BF5A /* LoginViewController.swift in Sources */,
+				9239034728313F66007D4314 /* Color+Extension.swift in Sources */,
 				7A823628281A6DB6001C2AE3 /* SceneDelegate.swift in Sources */,
+				92390343283085F6007D4314 /* HomeViewHostingController.swift in Sources */,
+				92C6123A28305C41009A930E /* PieSliceData.swift in Sources */,
 				435A2F5E282AFA1700BF10EA /* WashExpenses+CoreDataClass.swift in Sources */,
+				92C6123828305BF6009A930E /* PieSliceView.swift in Sources */,
 				7A9C9352282423EE00FC40DE /* NumPad.swift in Sources */,
 				435A2F66282AFA1700BF10EA /* FuelExpenses+CoreDataClass.swift in Sources */,
 				7AD4D98A28258F2C0083A7A4 /* SettingsViewController.swift in Sources */,
 				7AD4D97E28258D000083A7A4 /* StaticticsViewController.swift in Sources */,
 				7AD4D97A28258AE80083A7A4 /* HomeViewController.swift in Sources */,
+				92C6123C28305C86009A930E /* PieChartRows.swift in Sources */,
 				7A9C9358282425BF00FC40DE /* PinState.swift in Sources */,
 				7AD4D98628258F1F0083A7A4 /* EventsViewController.swift in Sources */,
 				7A9C93562824251500FC40DE /* PinButton.swift in Sources */,
+				92C6124028306469009A930E /* HomeViewModel.swift in Sources */,
 				7AF3118A281E6C1B0097BF5A /* MainViewController.swift in Sources */,
 				435A2F69282AFA1700BF10EA /* FinanceExpenses+CoreDataProperties.swift in Sources */,
 				435A2EBC28255B5900BF10EA /* AutoCell.swift in Sources */,
@@ -869,7 +909,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -898,7 +938,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
