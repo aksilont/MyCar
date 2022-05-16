@@ -15,7 +15,6 @@ class CarRepository {
     }
     // сохранение в CoreData:
     func saveCar(carModel: CarModel) {
-        var cars: [Car] = []
         guard let context = getContext(), let entity = NSEntityDescription.entity(forEntityName: "Car", in: context) else {return}
         let carObject = Car(entity: entity, insertInto: context)
         carObject.activFlag = carModel.activFlag
@@ -28,9 +27,8 @@ class CarRepository {
         carObject.item = carModel.item
         do {
             try context.save()
-            cars.append(carObject)
             DispatchQueue.main.async {
-                print("Save One Pass in CoreData")
+                print("Save One Car in CoreData")
             }
         } catch let error as NSError {
             print(error.localizedDescription)
@@ -41,12 +39,12 @@ class CarRepository {
     func fetchCars() -> [Car]{
         var cars: [Car] = []
 
-        guard let context = getContext() else {return cars}
+        guard let context = getContext() else { return cars }
         do {
             let request = Car.fetchRequest() as NSFetchRequest<Car>
             cars = try context.fetch(request)
             DispatchQueue.main.async {
-                print("Fetch Passes from CoreData")
+                print("Fetch Cars from CoreData")
             }
             
         } catch  let error as NSError {
@@ -54,6 +52,41 @@ class CarRepository {
             
         }
         return cars
+    }
+    
+    func fetchCarsUseNumber (carModel: CarModel) -> [Car] {
+        var cars: [Car] = []
+        let carNumber = carModel.number
+
+        guard let context = getContext() else { return cars }
+        do {
+            let request = Car.fetchRequest() as NSFetchRequest<Car>
+            let pred = NSPredicate(format: "number CONTAINS %@", carNumber)
+            request.predicate = pred
+            cars = try context.fetch(request)
+            DispatchQueue.main.async {
+                print("Fetch Cars from CoreData")
+            }
+            
+        } catch  let error as NSError {
+            print(error.localizedDescription)
+            
+        }
+        return cars
+        
+    }
+    
+    func upDateFlag(carModel: CarModel) {
+        guard let context = getContext() else {return}
+        let cars = fetchCarsUseNumber(carModel: carModel)
+        let car = cars.first
+            do {
+                car?.setValue(carModel.activFlag, forKey: "activFlag")
+                try context.save()
+            } catch  let error as NSError {
+                print(error.localizedDescription)
+            }
+       
     }
     
     func getActiveCar() -> Car? {
@@ -85,7 +118,7 @@ class CarRepository {
         do {
             try context.save()
             DispatchQueue.main.async {
-                print("Delete All Passes from Core Data")
+                print("Delete All Cars from Core Data")
             }
         } catch let error as NSError {
             print(error.localizedDescription)
