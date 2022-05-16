@@ -17,23 +17,17 @@ class PopoverTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(PopoverCell.self, forCellReuseIdentifier: PopoverCell.reuseID)
+        tableView.register(registerClass: PopoverCell.self)
     }
     
     // MARK: - Table view data source
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model.count
+        model.count
     }
-    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PopoverCell", for: indexPath) as? PopoverCell else {return UITableViewCell()}
-        
+        let cell: PopoverCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
         let param = model[indexPath.row]
         cell.textLabel?.text = param
         return cell
@@ -42,7 +36,6 @@ class PopoverTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.dismiss(animated: true)
         let param = model[indexPath.row]
-      
         delegate?.fuelDidSelect(param, index: self.index )
     }
     
