@@ -18,8 +18,7 @@ class HomeViewModel: ObservableObject {
     @Published var expenciesPerDistanceUnit: String = ""
     private var currencySign: String = "₽"
     private var distanceUnit: String = "км"
-    var garageButoonSubject = PassthroughSubject<Void, Never>()
-    var exitButtonSubject = PassthroughSubject<Void, Never>()
+    var garageButtonSubject = PassthroughSubject<Void, Never>()
     
     private var car: Car?
     
