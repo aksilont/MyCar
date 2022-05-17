@@ -8,12 +8,19 @@
 import UIKit
 
 class AddItemAndModelViewController: UIViewController {
-
+    
+    let carPicker: UIPickerView = {
+        let carPicker = UIPickerView()
+        carPicker.translatesAutoresizingMaskIntoConstraints = false
+        return carPicker
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationAttributes()
         setupElements()
         setupConstraints()
+        carPicker.dataSource = self
+        carPicker.delegate = self
         
     }
     func setupNavigationAttributes(){
@@ -21,10 +28,16 @@ class AddItemAndModelViewController: UIViewController {
         navigationItem.title = titleGarage
     }
     func setupElements() {
-        
+        view.addSubview(carPicker)
     }
     
     func setupConstraints() {
+        NSLayoutConstraint.activate([
+            carPicker.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            carPicker.heightAnchor.constraint(equalToConstant: view.frame.size.height / 2),
+            carPicker.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            carPicker.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
+        ])
         
     }
     /*
@@ -37,4 +50,21 @@ class AddItemAndModelViewController: UIViewController {
     }
     */
 
+}
+extension AddItemAndModelViewController: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 2
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 5
+    }
+    
+    
+}
+extension AddItemAndModelViewController: UIPickerViewDelegate {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "Com \(component) Row \(row)"
+    }
+    
 }

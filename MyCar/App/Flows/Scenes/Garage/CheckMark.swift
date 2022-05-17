@@ -103,7 +103,7 @@ class SSCheckMark: UIControl {
         bezierPath.addLine(to: CGPoint(x: group.minX + 0.41667 * group.width, y: group.minY + 0.68750 * group.height))
         bezierPath.addLine(to: CGPoint(x: group.minX + 0.75000 * group.width, y: group.minY + 0.35417 * group.height))
         bezierPath.lineCapStyle = CGLineCap.square
-        #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1).setStroke()
+        UIColor(red: 170/255, green: 170/255, blue: 170/255, alpha: 1).setStroke()
         bezierPath.lineWidth = 1.3
         bezierPath.stroke()
     }
