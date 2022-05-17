@@ -46,4 +46,8 @@ class HomeViewModel: ObservableObject {
         }
         expenciesPerDistanceUnit += " \(currencySign)/\(distanceUnit)"
     }
+    
+    func didTapGarageButton() {
+        garageButtonSubject.send()
+    }
 }

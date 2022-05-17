@@ -57,13 +57,12 @@ struct HomeView: View {
                     }
                 }
             }
-            .navigationBarItems(leading: Button(action: { viewModel.garageButtonSubject.send() }) {
+            .navigationBarItems(leading: Button(action: { viewModel.didTapGarageButton() }) {
                 Text("Гараж")
             })
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle("Мой автомобиль")
         }
-        //
     }
 }
 
