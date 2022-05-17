@@ -111,12 +111,12 @@ extension GarageCollectionViewController: CheckMarkerDelegate {
             if i == indexPath.row {
                 if cars[i].activFlag == false {
                     cars[i].activFlag = true
-                    carRepository.upDateFlag(carModel: cars[i])
+                    carRepository.updateFlag(carModel: cars[i])
                 }
                 
             } else {
                 cars[i].activFlag = false
-                carRepository.upDateFlag(carModel: cars[i])
+                carRepository.updateFlag(carModel: cars[i])
             }
             collectionView.reloadData()
         }
