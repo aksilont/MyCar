@@ -70,8 +70,6 @@
 		7AF31187281E6BFF0097BF5A /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AF31185281E6BFF0097BF5A /* LoginViewController.xib */; };
 		7AF3118A281E6C1B0097BF5A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF31188281E6C1B0097BF5A /* MainViewController.swift */; };
 		7AF3118D281E6D8E0097BF5A /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AF3118C281E6D8E0097BF5A /* StartViewController.xib */; };
-		9239034128307DC7007D4314 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9239034028307DC7007D4314 /* HomeViewController.xib */; };
-		92390343283085F6007D4314 /* HomeViewHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92390342283085F6007D4314 /* HomeViewHostingController.swift */; };
 		9239034728313F66007D4314 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239034628313F66007D4314 /* Color+Extension.swift */; };
 		92C611E82826D443009A930E /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C611E72826D443009A930E /* KeychainService.swift */; };
 		92C611EA2826D4CC009A930E /* KeychainServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C611E92826D4CC009A930E /* KeychainServiceTests.swift */; };
@@ -168,8 +166,6 @@
 		7AF31185281E6BFF0097BF5A /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		7AF31188281E6C1B0097BF5A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7AF3118C281E6D8E0097BF5A /* StartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
-		9239034028307DC7007D4314 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
-		92390342283085F6007D4314 /* HomeViewHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewHostingController.swift; sourceTree = "<group>"; };
 		9239034628313F66007D4314 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		92C611E72826D443009A930E /* KeychainService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		92C611E92826D4CC009A930E /* KeychainServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainServiceTests.swift; sourceTree = "<group>"; };
@@ -388,8 +384,6 @@
 				7AD4D97828258AE80083A7A4 /* HomeViewController.swift */,
 				92C6123D28306411009A930E /* HomeView.swift */,
 				92C6123F28306469009A930E /* HomeViewModel.swift */,
-				9239034028307DC7007D4314 /* HomeViewController.xib */,
-				92390342283085F6007D4314 /* HomeViewHostingController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -660,7 +654,6 @@
 			files = (
 				435A2EBA28255AD200BF10EA /* AddAutoViewController.xib in Resources */,
 				435A2EC2282592A000BF10EA /* GarageCollectionViewController.xib in Resources */,
-				9239034128307DC7007D4314 /* HomeViewController.xib in Resources */,
 				7A823635281A6DB7001C2AE3 /* LaunchScreen.storyboard in Resources */,
 				7AD4D98728258F1F0083A7A4 /* EventsViewController.xib in Resources */,
 				7A823632281A6DB7001C2AE3 /* Assets.xcassets in Resources */,
@@ -734,7 +727,6 @@
 				7AF31186281E6BFF0097BF5A /* LoginViewController.swift in Sources */,
 				9239034728313F66007D4314 /* Color+Extension.swift in Sources */,
 				7A823628281A6DB6001C2AE3 /* SceneDelegate.swift in Sources */,
-				92390343283085F6007D4314 /* HomeViewHostingController.swift in Sources */,
 				92C6123A28305C41009A930E /* PieSliceData.swift in Sources */,
 				435A2F5E282AFA1700BF10EA /* WashExpenses+CoreDataClass.swift in Sources */,
 				92C6123828305BF6009A930E /* PieSliceView.swift in Sources */,

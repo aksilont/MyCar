@@ -7,35 +7,36 @@
 
 import UIKit
 import SwiftUI
+import Combine
 
 class HomeViewController: UIViewController {
-
-    @IBOutlet weak var garageButton: UIButton!
     
-    var viewModel = HomeViewModel()
+    lazy var viewModel = HomeViewModel()
+    private var subscriptions = Set<AnyCancellable>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        setupSubscriptions()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel.loadCArData()
+        viewModel.loadCarData()
     }
     
-    @IBAction func exitDidTap(_ sender: UIButton) {
+    private func exitDidTap() {
         navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func garageDidTap(_ sender: UIButton) {
+    private func garageDidTap() {
         let garageVC = GarageCollectionViewController()
         navigationController?.isNavigationBarHidden = false
         navigationController?.pushViewController(garageVC, animated: true)
     }
 
     private func setupView() {
-        let child = HomeViewHostingController(shouldShowNavigationBar: false, rootView: HomeView(viewModel: viewModel))
+        let child = UIHostingViewControllerCustom(rootView: HomeView(viewModel: viewModel))
         addChild(child)
         view.addSubview(child.view)
         child.didMove(toParent: self)
@@ -44,8 +45,20 @@ class HomeViewController: UIViewController {
         NSLayoutConstraint.activate([
             child.view.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             child.view.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            child.view.topAnchor.constraint(equalTo:  self.garageButton.bottomAnchor),
+            child.view.topAnchor.constraint(equalTo:  self.view.safeAreaLayoutGuide.topAnchor),
             child.view.bottomAnchor.constraint(equalTo:self.view.safeAreaLayoutGuide.bottomAnchor),
         ])
+    }
+    
+    private func setupSubscriptions() {
+        viewModel.garageButoonSubject.sink {
+            self.garageDidTap()
+        }
+        .store(in: &subscriptions)
+        
+        viewModel.exitButtonSubject.sink {
+            self.exitDidTap()
+        }
+        .store(in: &subscriptions)
     }
 }

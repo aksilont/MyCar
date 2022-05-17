@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 class HomeViewModel: ObservableObject {
     @Published var segments: [Double] = []
@@ -17,14 +18,16 @@ class HomeViewModel: ObservableObject {
     @Published var expenciesPerDistanceUnit: String = ""
     private var currencySign: String = "₽"
     private var distanceUnit: String = "км"
+    var garageButoonSubject = PassthroughSubject<Void, Never>()
+    var exitButtonSubject = PassthroughSubject<Void, Never>()
     
     private var car: Car?
     
     init() {
-        loadCArData()
+        loadCarData()
     }
     
-    func loadCArData() {
+    func loadCarData() {
         let carRepository = CarRepository()
         car = carRepository.getActiveCar()
         
