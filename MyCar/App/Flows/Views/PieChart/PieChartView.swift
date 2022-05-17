@@ -48,8 +48,8 @@ struct PieChartView: View {
         GeometryReader { geometry in
             VStack{
                 ZStack{
-                    ForEach(0..<self.values.count){ i in
-                        PieSliceView(pieSliceData: self.slices[i])
+                    ForEach(0..<self.values.count, id: \.self){ index in
+                        PieSliceView(pieSliceData: self.slices[index])
                     }
                     .frame(width: geometry.size.width, height: geometry.size.width)
                     

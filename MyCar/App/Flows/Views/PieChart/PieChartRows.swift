@@ -15,16 +15,16 @@ struct PieChartRows: View {
     
     var body: some View {
         VStack{
-            ForEach(0..<self.values.count){ i in
+            ForEach(0..<self.values.count, id: \.self) { index in
                 HStack {
                     RoundedRectangle(cornerRadius: 5.0)
-                        .fill(self.colors[i])
+                        .fill(self.colors[index])
                         .frame(width: 20, height: 20)
-                    Text(self.names[i])
+                    Text(self.names[index])
                     Spacer()
                     VStack(alignment: .trailing) {
-                        Text(self.values[i])
-                        Text(self.percents[i])
+                        Text(self.values[index])
+                        Text(self.percents[index])
                             .foregroundColor(Color.gray)
                     }
                 }

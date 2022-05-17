@@ -17,7 +17,8 @@ class MainViewController: UITabBarController {
     }
     
     func setupUI() {
-        let homeVC = HomeViewController()
+        let homeViewModel = HomeViewModel()
+        let homeVC = HomeViewController(viewModel: homeViewModel)
         homeVC.tabBarItem = UITabBarItem(title: nil,
                                          image: UIImage(systemName: "house"),
                                          selectedImage: UIImage(systemName: "house.fill"))

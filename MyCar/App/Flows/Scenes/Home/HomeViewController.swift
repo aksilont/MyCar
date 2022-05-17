@@ -7,45 +7,44 @@
 
 import UIKit
 import SwiftUI
+import Combine
 
-class HomeViewController: UIViewController {
-
-    @IBOutlet weak var garageButton: UIButton!
+class HomeViewController: UIHostingController<HomeView> {
     
-    var viewModel = HomeViewModel()
+    var viewModel: HomeViewModel
+    private var subscriptions = Set<AnyCancellable>()
+    
+    init(viewModel: HomeViewModel) {
+        let homeView = HomeView(viewModel: viewModel)
+        self.viewModel = viewModel
+        super.init(rootView: homeView)
+    }
+    
+    @MainActor required dynamic init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
+        setupSubscriptions()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel.loadCArData()
+        navigationController?.isNavigationBarHidden = true
+        viewModel.loadCarData()
     }
     
-    @IBAction func exitDidTap(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
-    }
-    
-    @IBAction func garageDidTap(_ sender: UIButton) {
+    private func garageDidTap() {
         let garageVC = GarageCollectionViewController()
         navigationController?.isNavigationBarHidden = false
         navigationController?.pushViewController(garageVC, animated: true)
     }
-
-    private func setupView() {
-        let child = HomeViewHostingController(shouldShowNavigationBar: false, rootView: HomeView(viewModel: viewModel))
-        addChild(child)
-        view.addSubview(child.view)
-        child.didMove(toParent: self)
-        
-        child.view.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            child.view.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            child.view.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            child.view.topAnchor.constraint(equalTo:  self.garageButton.bottomAnchor),
-            child.view.bottomAnchor.constraint(equalTo:self.view.safeAreaLayoutGuide.bottomAnchor),
-        ])
+    
+    private func setupSubscriptions() {
+        viewModel.garageButtonSubject.sink {
+            self.garageDidTap()
+        }
+        .store(in: &subscriptions)
     }
 }
