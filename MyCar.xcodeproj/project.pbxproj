@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4301FA0528342CF4004F9342 /* cars.json in Resources */ = {isa = PBXBuildFile; fileRef = 4301FA0428342CF4004F9342 /* cars.json */; };
+		4301FA0728342F28004F9342 /* CarDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4301FA0628342F28004F9342 /* CarDecodable.swift */; };
 		435A2EB928255AD200BF10EA /* AddAutoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A2EB728255AD200BF10EA /* AddAutoViewController.swift */; };
 		435A2EBA28255AD200BF10EA /* AddAutoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 435A2EB828255AD200BF10EA /* AddAutoViewController.xib */; };
 		435A2EBC28255B5900BF10EA /* AutoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A2EBB28255B5900BF10EA /* AutoCell.swift */; };
@@ -103,6 +105,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4301FA0428342CF4004F9342 /* cars.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cars.json; sourceTree = "<group>"; };
+		4301FA0628342F28004F9342 /* CarDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDecodable.swift; sourceTree = "<group>"; };
 		435A2EB728255AD200BF10EA /* AddAutoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAutoViewController.swift; sourceTree = "<group>"; };
 		435A2EB828255AD200BF10EA /* AddAutoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddAutoViewController.xib; sourceTree = "<group>"; };
 		435A2EBB28255B5900BF10EA /* AutoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCell.swift; sourceTree = "<group>"; };
@@ -278,6 +282,7 @@
 			children = (
 				43C9C0F92832A17D00F6CED9 /* AddItemAndModelViewController.swift */,
 				43C9C0FA2832A17D00F6CED9 /* AddItemAndModelViewController.xib */,
+				4301FA0628342F28004F9342 /* CarDecodable.swift */,
 			);
 			path = AddItemAndModel;
 			sourceTree = "<group>";
@@ -460,6 +465,7 @@
 		7AE5A5CF281E674200F008B0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4301FA0428342CF4004F9342 /* cars.json */,
 				7A823631281A6DB7001C2AE3 /* Assets.xcassets */,
 				7A823633281A6DB7001C2AE3 /* LaunchScreen.storyboard */,
 			);
@@ -679,6 +685,7 @@
 				7AD4D98728258F1F0083A7A4 /* EventsViewController.xib in Resources */,
 				7A823632281A6DB7001C2AE3 /* Assets.xcassets in Resources */,
 				7AF31187281E6BFF0097BF5A /* LoginViewController.xib in Resources */,
+				4301FA0528342CF4004F9342 /* cars.json in Resources */,
 				43C9C0FC2832A17D00F6CED9 /* AddItemAndModelViewController.xib in Resources */,
 				435A2ECE2825A29900BF10EA /* PopoverTableViewController.xib in Resources */,
 				7AD4D98D282597BC0083A7A4 /* MainViewController.xib in Resources */,
@@ -711,6 +718,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92C6123628305BDE009A930E /* PieChartView.swift in Sources */,
+				4301FA0728342F28004F9342 /* CarDecodable.swift in Sources */,
 				7AF081F2282EF49300025CA4 /* LoginViewModel.swift in Sources */,
 				435A2F60282AFA1700BF10EA /* OtherExpenses+CoreDataClass.swift in Sources */,
 				435A2F68282AFA1700BF10EA /* FinanceExpenses+CoreDataClass.swift in Sources */,
