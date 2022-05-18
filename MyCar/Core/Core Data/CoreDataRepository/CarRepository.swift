@@ -39,7 +39,7 @@ class CarRepository {
                 print("Fetch Cars from CoreData")
             }
             
-        } catch  let error as NSError {
+        } catch let error as NSError {
             print(error.localizedDescription)
             
         }
@@ -58,7 +58,7 @@ class CarRepository {
             DispatchQueue.main.async {
                 print("Fetch Cars from CoreData")
             }
-        } catch  let error as NSError {
+        } catch let error as NSError {
             print(error.localizedDescription)
         }
         
