@@ -12,6 +12,8 @@ import XCTest
 
 class CoreDataTests: XCTestCase {
 
+    let expensesRepo = ExpensesRepository()
+    
     override func setUpWithError() throws {
     }
 
@@ -19,8 +21,21 @@ class CoreDataTests: XCTestCase {
     }
 
     func testSaveParking() {
-        let expensesRepo = ExpensesRepository()
         expensesRepo.saveParkingExpenses()
+    }
+    
+    func testFetchParking() {
+        expensesRepo.fetchExpenses(by: .parking, dayAgo: 5) { items in
+        }
+    }
+    
+    func testDeleteExpenses() {
+        expensesRepo.deleteExpenses()
+    }
+    
+    func testFetchLastExpenses() {
+        expensesRepo.fetchLast10Expenses(by: .parking) { items in
+        }
     }
     
 }

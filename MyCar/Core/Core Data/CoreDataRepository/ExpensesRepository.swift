@@ -13,10 +13,17 @@ typealias ManagedExpensesModel = NSManagedObject & ExpensesModel
 protocol ExpensesModel {
     var date: Date? { get set }
     var price: Float { get set }
-    var description: String? { get set }
+    var comment: String? { get set }
     var distance: Float { get set }
     var toCar: Car? { get set }
 }
+
+extension ParkingExpenses: ExpensesModel {}
+extension WashExpenses: ExpensesModel {}
+extension FixExpenses: ExpensesModel {}
+extension FuelExpenses: ExpensesModel {}
+extension FinanceExpenses: ExpensesModel {}
+extension OtherExpenses: ExpensesModel {}
 
 enum CategoryType {
     case parking
@@ -27,42 +34,29 @@ enum CategoryType {
     case other
 }
 
+enum Period {
+    case year
+    case month
+    case week
+    case day
+}
+
 final class ExpensesRepository {
     
     private let storage = CoreDataStack.shared
     
-    // TODO: - Сделать сохранение и получение расходов по категориям (перечисления)
+    // MARK: - Получение данных
     
-    func fetchParkingExpenses(completion: @escaping ([ParkingExpenses]) -> ()) {
-        fetch(categoryType: ParkingExpenses.self, predicate: nil, completion: completion)
-    }
-    
-    func fetchWashExpenses(completion: @escaping ([WashExpenses]) -> ()) {
-        fetch(categoryType: WashExpenses.self, predicate: nil, completion: completion)
-    }
-    
-    func fetchFixExpenses(completion: @escaping ([FixExpenses]) -> ()) {
-        fetch(categoryType: FixExpenses.self, predicate: nil, completion: completion)
-    }
-    
-    func fetchFuelExpenses(completion: @escaping ([FuelExpenses]) -> ()) {
-        fetch(categoryType: FuelExpenses.self, predicate: nil, completion: completion)
-    }
-    
-    func fetchFinanceExpenses(completion: @escaping ([FinanceExpenses]) -> ()) {
-        fetch(categoryType: FinanceExpenses.self, predicate: nil, completion: completion)
-    }
-    
-    func fetchOtherExpenses(completion: @escaping ([OtherExpenses]) -> ()) {
-        fetch(categoryType: OtherExpenses.self, predicate: nil, completion: completion)
-    }
-    
-    
-    func fetch<T: NSManagedObject>(categoryType: T.Type,
-                                   predicate: NSPredicate?,
-                                   completion: @escaping ([T]) -> ()) {
+    func fetch<T: ManagedExpensesModel>(modelType: T.Type,
+                                        predicate: NSPredicate?,
+                                        limit: Int = .max,
+                                        completion: @escaping ([ManagedExpensesModel]) -> ()) {
         let context = storage.mainContext
-        let fetchRequest = NSFetchRequest<T>(entityName: String(describing: categoryType))
+        let fetchRequest = NSFetchRequest<T>(entityName: String(describing: modelType))
+        fetchRequest.sortDescriptors = [
+            NSSortDescriptor(key: "date", ascending: false)
+        ]
+        fetchRequest.fetchLimit = limit
         fetchRequest.predicate = predicate
         
         do {
@@ -74,19 +68,63 @@ final class ExpensesRepository {
         }
     }
     
-    func saveParkingExpenses() -> ParkingExpenses {
-        let context = storage.mainContext
-        
-        let parking = ParkingExpenses(context: context)
-        parking.date = Date()
-        parking.discript = "test data"
-        parking.distance = 1000.32
-        parking.price = 123.123
-        
-        storage.saveContext()
-        
-        return parking
+    func fetch(by categoryType: CategoryType,
+               predicate: NSPredicate? = nil,
+               limit: Int = .max,
+               completion: @escaping (([ManagedExpensesModel]) -> ())) {
+        switch categoryType {
+        case .parking:
+            fetch(modelType: ParkingExpenses.self, predicate: predicate, limit: limit, completion: completion)
+        case .wash:
+            fetch(modelType: WashExpenses.self, predicate: predicate, limit: limit, completion: completion)
+        case .fix:
+            fetch(modelType: FixExpenses.self, predicate: predicate, limit: limit, completion: completion)
+        case .fuel:
+            fetch(modelType: FuelExpenses.self, predicate: predicate, limit: limit, completion: completion)
+        case .finance:
+            fetch(modelType: FinanceExpenses.self, predicate: predicate, limit: limit, completion: completion)
+        case .other:
+            fetch(modelType: OtherExpenses.self, predicate: predicate, limit: limit, completion: completion)
+        }
     }
     
+    func fetchLast10Expenses(by categoryType: CategoryType, completion: @escaping (([ManagedExpensesModel]) -> ())) {
+        fetch(by: categoryType, limit: 10, completion: completion)
+    }
+    
+    func fetchExpenses(by categoryType: CategoryType, dayAgo: Int, completion: @escaping (([ManagedExpensesModel]) -> ())) {
+        let tenDayAgo = Date().dayAgo(dayAgo)
+        let predicate = NSPredicate(format: "date >= %@", tenDayAgo as NSDate)
+        fetch(by: categoryType, predicate: predicate, completion: completion)
+    }
+    
+    // MARK: - Сохранение данных
+    
+    func saveParkingExpenses() {
+        let context = storage.mainContext
+        
+        for _ in (1...50) {
+            let parking = ParkingExpenses(context: context)
+            parking.date = Date() - Double(Int.random(in: 86400...1000000))
+            parking.comment = "\(parking.date ?? Date())"
+            parking.distance = Float(Int.random(in: 100...500000) / 100)
+            parking.price = Float(Int.random(in: 100...500000) / 100)
+        }
+        
+        storage.saveContext()
+    }
+    
+    // MARK: - Удаление данных
+    
+    func deleteExpenses() {
+        let context = storage.mainContext
+        fetch(by: .parking) { items in
+            items.forEach {
+                print("Delete \($0)")
+                context.delete($0)
+            }
+        }
+        storage.saveContext()
+    }
     
 }
