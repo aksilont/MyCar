@@ -157,4 +157,17 @@ final class ExpensesRepository {
         storage.saveContext()
     }
     
+    func deleteAllExpenses() {
+        let context = storage.mainContext
+        for expensesType in ExpensesType.allCases {
+            fetch(by: expensesType, limit: .max) { items in
+                items.forEach {
+                    print("Delete \($0)")
+                    context.delete($0)
+                }
+            }
+        }
+        storage.saveContext()
+    }
+    
 }

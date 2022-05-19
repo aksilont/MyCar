@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ExpensesType {
+enum ExpensesType: CaseIterable {
     case parking
     case wash
     case fix
