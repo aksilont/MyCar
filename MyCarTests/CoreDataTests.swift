@@ -21,30 +21,38 @@ class CoreDataTests: XCTestCase {
     }
 
     func testDeleteExpenses() {
-        expensesRepo.deleteExpenses()
+        let expensesType: ExpensesType = .parking
+        var someModels: ExpensesModel?
+        expensesRepo.fetchExpenses(by: expensesType, limit: 1) { [unowned self] items in
+            someModels = items.first
+            expensesRepo.deleteExpenses(model: someModels!)
+        }
+        
+        expensesRepo.fetchExpenses(use: someModels!) { items in
+            XCTAssertEqual(items.count, 0)
+        }
     }
     
     func testSaveExpenses() {
-        let categoryType: CategoryType = .parking
-        var items = [ManagedExpensesModel]()
+        let categoryType: ExpensesType = .parking
+        
         for _ in (1...50) {
             let date = Date() - Double(Int.random(in: 86400...1000000))
             let comment = "\(date)"
             let distance = Float(Int.random(in: 100...500000) / 100)
             let price = Float(Int.random(in: 100...500000) / 100)
-            let newObject = expensesRepo.saveExpenses(categoryType: categoryType,
-                                              date: date,
-                                              price: price,
-                                              distance: distance,
-                                              comment: comment)
-            guard let newObject = newObject else { return }
-            items.append(newObject)
+            let model = ExpensesModel(expensesType: categoryType,
+                                      date: date,
+                                      price: price,
+                                      distance: distance,
+                                      comment: comment)
+            expensesRepo.saveExpenses(model: model)
         }
     }
     
     func testFetchExpenses() {
-        let categoryType: CategoryType = .parking
-        expensesRepo.fetch(by: categoryType) { items in
+        let categoryType: ExpensesType = .parking
+        expensesRepo.fetchExpenses(by: categoryType) { items in
             XCTAssertEqual(items.count, 10)
         }
     }

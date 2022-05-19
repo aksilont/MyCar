@@ -32,7 +32,7 @@ class CoreDataStack {
     
     // MARK: - Core Data Saving support
 
-    func saveContext () {
+    func saveContext() {
         if mainContext.hasChanges {
             do {
                 try mainContext.save()

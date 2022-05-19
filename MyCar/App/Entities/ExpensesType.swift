@@ -1,5 +1,5 @@
 //
-//  CategoryType.swift
+//  ExpensesType.swift
 //  MyCar
 //
 //  Created by Aksilont on 19.05.2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum CategoryType {
+enum ExpensesType {
     case parking
     case wash
     case fix
