@@ -54,6 +54,8 @@
 		7A9C93562824251500FC40DE /* PinButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9C93552824251500FC40DE /* PinButton.swift */; };
 		7A9C9358282425BF00FC40DE /* PinState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9C9357282425BF00FC40DE /* PinState.swift */; };
 		7A9C935A282426AD00FC40DE /* NumPud.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A9C9359282426AD00FC40DE /* NumPud.xib */; };
+		7AD411FD283620F70091F1A8 /* CategoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD411FC283620F70091F1A8 /* CategoryType.swift */; };
+		7AD411FF283629130091F1A8 /* Period.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD411FE283629130091F1A8 /* Period.swift */; };
 		7AD4D97A28258AE80083A7A4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD4D97828258AE80083A7A4 /* HomeViewController.swift */; };
 		7AD4D97E28258D000083A7A4 /* StaticticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD4D97C28258D000083A7A4 /* StaticticsViewController.swift */; };
 		7AD4D97F28258D000083A7A4 /* StaticticsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AD4D97D28258D000083A7A4 /* StaticticsViewController.xib */; };
@@ -154,6 +156,8 @@
 		7A9C93552824251500FC40DE /* PinButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinButton.swift; sourceTree = "<group>"; };
 		7A9C9357282425BF00FC40DE /* PinState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinState.swift; sourceTree = "<group>"; };
 		7A9C9359282426AD00FC40DE /* NumPud.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumPud.xib; sourceTree = "<group>"; };
+		7AD411FC283620F70091F1A8 /* CategoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryType.swift; sourceTree = "<group>"; };
+		7AD411FE283629130091F1A8 /* Period.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Period.swift; sourceTree = "<group>"; };
 		7AD4D97828258AE80083A7A4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7AD4D97C28258D000083A7A4 /* StaticticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticticsViewController.swift; sourceTree = "<group>"; };
 		7AD4D97D28258D000083A7A4 /* StaticticsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StaticticsViewController.xib; sourceTree = "<group>"; };
@@ -268,7 +272,6 @@
 		435A2F6D282AFC8500BF10EA /* CoreDataRepository */ = {
 			isa = PBXGroup;
 			children = (
-				7A38D05D283421F200FB982F /* CoreDataStack.swift */,
 				435A2F6E282AFCDC00BF10EA /* CarRepository.swift */,
 				7A38D05B28341F3C00FB982F /* ExpensesRepository.swift */,
 			);
@@ -363,6 +366,7 @@
 		7A8AA56A281E74240071FDD4 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				7A38D05D283421F200FB982F /* CoreDataStack.swift */,
 				435A2F6D282AFC8500BF10EA /* CoreDataRepository */,
 				7A8AA56B281E74440071FDD4 /* Migrations Policy */,
 			);
@@ -480,6 +484,8 @@
 			isa = PBXGroup;
 			children = (
 				7A9C9357282425BF00FC40DE /* PinState.swift */,
+				7AD411FC283620F70091F1A8 /* CategoryType.swift */,
+				7AD411FE283629130091F1A8 /* Period.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -740,6 +746,7 @@
 				7AF31186281E6BFF0097BF5A /* LoginViewController.swift in Sources */,
 				9239034728313F66007D4314 /* Color+Extension.swift in Sources */,
 				7A823628281A6DB6001C2AE3 /* SceneDelegate.swift in Sources */,
+				7AD411FF283629130091F1A8 /* Period.swift in Sources */,
 				92C6123A28305C41009A930E /* PieSliceData.swift in Sources */,
 				435A2F5E282AFA1700BF10EA /* WashExpenses+CoreDataClass.swift in Sources */,
 				92C6123828305BF6009A930E /* PieSliceView.swift in Sources */,
@@ -753,6 +760,7 @@
 				7A9C9358282425BF00FC40DE /* PinState.swift in Sources */,
 				7AD4D98628258F1F0083A7A4 /* EventsViewController.swift in Sources */,
 				7A9C93562824251500FC40DE /* PinButton.swift in Sources */,
+				7AD411FD283620F70091F1A8 /* CategoryType.swift in Sources */,
 				92C6124028306469009A930E /* HomeViewModel.swift in Sources */,
 				7AF3118A281E6C1B0097BF5A /* MainViewController.swift in Sources */,
 				435A2F69282AFA1700BF10EA /* FinanceExpenses+CoreDataProperties.swift in Sources */,

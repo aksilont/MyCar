@@ -8,9 +8,9 @@
 import Foundation
 import CoreData
 
-typealias ManagedExpensesModel = NSManagedObject & ExpensesModel
+typealias ManagedExpensesModel = NSManagedObject & ExpensesModelProtocol
 
-protocol ExpensesModel {
+protocol ExpensesModelProtocol {
     var date: Date? { get set }
     var price: Float { get set }
     var comment: String? { get set }
@@ -18,46 +18,55 @@ protocol ExpensesModel {
     var toCar: Car? { get set }
 }
 
-extension ParkingExpenses: ExpensesModel {}
-extension WashExpenses: ExpensesModel {}
-extension FixExpenses: ExpensesModel {}
-extension FuelExpenses: ExpensesModel {}
-extension FinanceExpenses: ExpensesModel {}
-extension OtherExpenses: ExpensesModel {}
-
-enum CategoryType {
-    case parking
-    case wash
-    case fix
-    case fuel
-    case finance
-    case other
-}
-
-enum Period {
-    case year
-    case month
-    case week
-    case day
-}
+extension ParkingExpenses: ExpensesModelProtocol {}
+extension WashExpenses: ExpensesModelProtocol {}
+extension FixExpenses: ExpensesModelProtocol {}
+extension FuelExpenses: ExpensesModelProtocol {}
+extension FinanceExpenses: ExpensesModelProtocol {}
+extension OtherExpenses: ExpensesModelProtocol {}
 
 final class ExpensesRepository {
     
     private let storage = CoreDataStack.shared
     
+    // MARK: - Общие методы
+    
+    func getClass(by categoryType: CategoryType) -> ManagedExpensesModel.Type {
+        switch categoryType {
+        case .parking:
+            return ParkingExpenses.self
+        case .wash:
+            return WashExpenses.self
+        case .fix:
+            return FixExpenses.self
+        case .fuel:
+            return FuelExpenses.self
+        case .finance:
+            return FuelExpenses.self
+        case .other:
+            return OtherExpenses.self
+        }
+    }
+    
     // MARK: - Получение данных
     
-    func fetch<T: ManagedExpensesModel>(modelType: T.Type,
+    private func fetch<T: ManagedExpensesModel>(modelType: T.Type,
                                         predicate: NSPredicate?,
-                                        limit: Int = .max,
+                                        limit: Int,
                                         completion: @escaping ([ManagedExpensesModel]) -> ()) {
+        guard let currentCar = CarRepository().getActiveCar() else { return }
+        
         let context = storage.mainContext
         let fetchRequest = NSFetchRequest<T>(entityName: String(describing: modelType))
         fetchRequest.sortDescriptors = [
             NSSortDescriptor(key: "date", ascending: false)
         ]
         fetchRequest.fetchLimit = limit
-        fetchRequest.predicate = predicate
+        let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [
+            NSPredicate(format: "toCar == %@", currentCar),
+            predicate ?? NSPredicate(value: true)
+        ])
+        fetchRequest.predicate = compoundPredicate
         
         do {
             let results = try context.fetch(fetchRequest)
@@ -70,7 +79,7 @@ final class ExpensesRepository {
     
     func fetch(by categoryType: CategoryType,
                predicate: NSPredicate? = nil,
-               limit: Int = .max,
+               limit: Int = 10,
                completion: @escaping (([ManagedExpensesModel]) -> ())) {
         switch categoryType {
         case .parking:
@@ -88,37 +97,41 @@ final class ExpensesRepository {
         }
     }
     
-    func fetchLast10Expenses(by categoryType: CategoryType, completion: @escaping (([ManagedExpensesModel]) -> ())) {
-        fetch(by: categoryType, limit: 10, completion: completion)
-    }
-    
-    func fetchExpenses(by categoryType: CategoryType, dayAgo: Int, completion: @escaping (([ManagedExpensesModel]) -> ())) {
-        let tenDayAgo = Date().dayAgo(dayAgo)
-        let predicate = NSPredicate(format: "date >= %@", tenDayAgo as NSDate)
+    func fetch(by categoryType: CategoryType, daysAgo: Int, completion: @escaping (([ManagedExpensesModel]) -> ())) {
+        let daysAgo = Date().daysAgo(daysAgo)
+        let predicate = NSPredicate(format: "date >= %@", daysAgo as NSDate)
         fetch(by: categoryType, predicate: predicate, completion: completion)
     }
     
     // MARK: - Сохранение данных
     
-    func saveParkingExpenses() {
+    func saveExpenses(categoryType: CategoryType,
+                      date: Date,
+                      price: Float,
+                      distance: Float,
+                      comment: String) -> ManagedExpensesModel? {
+        guard let currentCar = CarRepository().getActiveCar() else { return nil }
+        
         let context = storage.mainContext
         
-        for _ in (1...50) {
-            let parking = ParkingExpenses(context: context)
-            parking.date = Date() - Double(Int.random(in: 86400...1000000))
-            parking.comment = "\(parking.date ?? Date())"
-            parking.distance = Float(Int.random(in: 100...500000) / 100)
-            parking.price = Float(Int.random(in: 100...500000) / 100)
-        }
+        let entityName = String(describing: getClass(by: categoryType))
+        guard var newOjbect = NSEntityDescription.insertNewObject(forEntityName: entityName, into: context) as? ManagedExpensesModel
+        else { return nil }
+        newOjbect.toCar = currentCar
+        newOjbect.date = date
+        newOjbect.price = price
+        newOjbect.distance = distance
+        newOjbect.comment = comment
         
         storage.saveContext()
+        return newOjbect
     }
     
     // MARK: - Удаление данных
     
-    func deleteExpenses() {
+    func deleteExpenses(categoryType: CategoryType) {
         let context = storage.mainContext
-        fetch(by: .parking) { items in
+        fetch(by: categoryType, limit: .max) { items in
             items.forEach {
                 print("Delete \($0)")
                 context.delete($0)

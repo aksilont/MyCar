@@ -25,7 +25,7 @@ extension Date {
         return newDate - 1
     }
     
-    func dayAgo(_ numberDaysAgo: Int, using calendar: Calendar = .gregorian) -> Date {
+    func daysAgo(_ numberDaysAgo: Int, using calendar: Calendar = .gregorian) -> Date {
         guard let newDate = calendar.date(byAdding: .day, value: -numberDaysAgo, to: startOfDay())
         else { return self }
         return newDate
