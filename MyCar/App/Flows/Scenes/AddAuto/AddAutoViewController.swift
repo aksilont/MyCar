@@ -100,11 +100,19 @@ extension AddAutoViewController: UITableViewDelegate, UITableViewDataSource {
         let autoModel = AutoModel(rawValue: indexCase)
         switch autoModel {
             
-        case .item, .model, .number, .year, .distance, .fuelType, .vin:
+        case .item, .model, .year, .fuelType:
             let cell: AutoCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
             cellContent(cell: cell, autoModel: autoModel ?? AutoModel.item )
             cell.configure(with: autoModel, carModel: carModel)
             cell.infoTextField.delegate = self
+            cell.infoTextField.isUserInteractionEnabled = false
+            return cell
+        case .number, .distance, .vin:
+            let cell: AutoCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+            cellContent(cell: cell, autoModel: autoModel ?? AutoModel.item )
+            cell.configure(with: autoModel, carModel: carModel)
+            cell.infoTextField.delegate = self
+            cell.infoTextField.isUserInteractionEnabled = true
             return cell
         case .none:
             break
@@ -217,10 +225,17 @@ extension AddAutoViewController: UITextFieldDelegate {
     }
 }
 
-extension AddAutoViewController {
+extension AddAutoViewController: AddItemAndModelDelegate {
+    func itemAndModelDidSelect(item: String, model: String) {
+        carModel.item = item
+        carModel.model = model
+        tableView.reloadData()
+    }
+    
     func gotoAddItemAndModel() {
         let vc = AddItemAndModelViewController(nibName: "AddItemAndModelViewController", bundle: nil)
         self.navigationController?.pushViewController(vc, animated: true)
+        vc.delegate = self
     }
 }
 
