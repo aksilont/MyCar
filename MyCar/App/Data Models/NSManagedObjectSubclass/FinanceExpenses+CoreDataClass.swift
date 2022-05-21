@@ -32,4 +32,8 @@ public final class FinanceExpenses: NSManagedObject {
         currentCar.addToToFinance(self)
     }
     
+    func removeFromCar(in context: NSManagedObjectContext) {
+        toCar?.removeFromToFinance(self)
+    }
+    
 }

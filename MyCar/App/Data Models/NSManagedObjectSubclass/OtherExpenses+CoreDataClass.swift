@@ -32,4 +32,8 @@ public final class OtherExpenses: NSManagedObject {
         currentCar.addToToOther(self)
     }
     
+    func removeFromCar(in context: NSManagedObjectContext) {
+        toCar?.removeFromToOther(self)
+    }
+    
 }

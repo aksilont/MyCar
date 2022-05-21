@@ -32,4 +32,8 @@ public final class FixExpenses: NSManagedObject {
         currentCar.addToToFix(self)
     }
     
+    func removeFromCar(in context: NSManagedObjectContext) {
+        toCar?.removeFromToFix(self)
+    }
+    
 }

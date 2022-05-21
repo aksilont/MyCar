@@ -20,9 +20,14 @@ class CoreDataTests: XCTestCase {
     override func tearDownWithError() throws {
     }
 
-    func testSaveExpenses() {
+    func testExpensesReository() {
         let expensesType: ExpensesType = .parking
         
+        // Удаление всех записей по категории расходов парковка
+        expensesRepo.deleteAllExpenses()
+        
+        
+        // Создание 50 случайных записей
         for _ in (1...50) {
             let date = Date() - Double(Int.random(in: 86400...1000000))
             let comment = "\(date)"
@@ -35,9 +40,15 @@ class CoreDataTests: XCTestCase {
                                       comment: comment)
             expensesRepo.saveExpenses(model: model)
         }
+        
+        // Проверка на получение
+        expensesRepo.fetchExpenses(by: expensesType, limit: .max) { items in
+            XCTAssertEqual(items.count, 50)
+        }
     }
     
-    func testDeleteExpenses() {
+    func testDelete1Expenses() {
+        // Проверка на удаление конкретной записи
         let expensesType: ExpensesType = .parking
         var someModels: ExpensesModel?
         expensesRepo.fetchExpenses(by: expensesType, limit: 1) { [unowned self] items in
@@ -49,23 +60,6 @@ class CoreDataTests: XCTestCase {
         
         if someModels != nil {
             expensesRepo.fetchExpenses(use: someModels!) { items in
-                XCTAssertEqual(items.count, 0)
-            }
-        }
-    }
-    
-    func testFetchExpenses() {
-        let expensesType: ExpensesType = .parking
-        expensesRepo.fetchExpenses(by: expensesType) { items in
-            XCTAssertEqual(items.count, 10)
-        }
-    }
-    
-    func testDeleteAllExpenses() {
-        expensesRepo.deleteAllExpenses()
-        
-        for expensesType in ExpensesType.allCases {
-            expensesRepo.fetchExpenses(by: expensesType) { items in
                 XCTAssertEqual(items.count, 0)
             }
         }

@@ -32,4 +32,8 @@ public final class FuelExpenses: NSManagedObject {
         currentCar.addToToFuel(self)
     }
     
+    func removeFromCar(in context: NSManagedObjectContext) {
+        toCar?.removeFromToFuel(self)
+    }
+    
 }

@@ -32,4 +32,8 @@ public final class ParkingExpenses: NSManagedObject {
         currentCar.addToToParking(self)
     }
     
+    func removeFromCar(in context: NSManagedObjectContext) {
+        toCar?.removeFromToParking(self)
+    }
+    
 }

@@ -32,4 +32,8 @@ public final class WashExpenses: NSManagedObject {
         currentCar.addToToWash(self)
     }
     
+    func removeFromCar(in context: NSManagedObjectContext) {
+        toCar?.removeFromToWash(self)
+    }
+    
 }

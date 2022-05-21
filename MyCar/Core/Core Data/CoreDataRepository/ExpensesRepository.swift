@@ -16,6 +16,7 @@ protocol ExpensesObjectProtocol {
     var distance: Float { get set }
     var toCar: Car? { get set }
     static func makeNewObject(from model: ExpensesModel, in context: NSManagedObjectContext) -> Self?
+    func removeFromCar(in context: NSManagedObjectContext)
 }
 
 extension ParkingExpenses: ExpensesObjectProtocol {}
@@ -169,7 +170,7 @@ final class ExpensesRepository {
         ])
         fetch(by: model.expensesType, predicate: predicate, limit: .max) { items in
             items.forEach {
-                print("Delete \($0)")
+                $0.removeFromCar(in: context)
                 context.delete($0)
             }
         }
@@ -181,7 +182,7 @@ final class ExpensesRepository {
         for expensesType in ExpensesType.allCases {
             fetch(by: expensesType, limit: .max) { items in
                 items.forEach {
-                    print("Delete \($0)")
+                    $0.removeFromCar(in: context)
                     context.delete($0)
                 }
             }
