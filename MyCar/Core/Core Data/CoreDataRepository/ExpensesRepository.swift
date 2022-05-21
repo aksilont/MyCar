@@ -109,16 +109,6 @@ final class ExpensesRepository {
         }
     }
     
-    func fetchExpenses(by expensesType: ExpensesType,
-                       predicate: NSPredicate? = nil,
-                       limit: Int = 10,
-                       completion: @escaping (([ExpensesModel]) -> ())) {
-        fetch(by: expensesType, predicate: predicate, limit: limit) { [unowned self] items in
-            let models = items.compactMap { buildExpensesModel($0) }
-            completion(models)
-        }
-    }
-    
     func fetchExpenses(use model: ExpensesModel,
                        completion: @escaping (([ManagedExpensesObject]) -> ())) {
         let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [
@@ -129,6 +119,35 @@ final class ExpensesRepository {
         ])
         fetch(by: model.expensesType, predicate: predicate, completion: completion)
     }
+    
+    func fetchExpenses(by expensesType: ExpensesType,
+                       predicate: NSPredicate? = nil,
+                       limit: Int = 10,
+                       completion: @escaping (([ExpensesModel]) -> ())) {
+        fetch(by: expensesType, predicate: predicate, limit: limit) { [unowned self] items in
+            let models = items.compactMap { buildExpensesModel($0) }
+            completion(models)
+        }
+    }
+    
+    func fetchExpenses(by expensesType: ExpensesType,
+                       period: Period,
+                       completion: @escaping (([ExpensesModel]) -> ())) {
+        let periodOfDates = period.getPeriod()
+        let startOfDate = periodOfDates.start
+        let endOfDate = periodOfDates.end
+        
+        let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [
+            NSPredicate(format: "date >= %@", startOfDate as NSDate),
+            NSPredicate(format: "date <= %@", endOfDate as NSDate),
+        ])
+        
+        fetch(by: expensesType, predicate: predicate, limit: .max) { [unowned self] items in
+            let models = items.compactMap { buildExpensesModel($0) }
+            completion(models)
+        }
+    }
+    
     
     // MARK: - Сохранение данных
     
