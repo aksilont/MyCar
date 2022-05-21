@@ -3,7 +3,7 @@
  "name": "Легковой",
  "group": "cars",
  "list": {
-  "AC": [
+  "Ac": [
    "378 GT Zagato",
    "Ace",
    "Aceca",
@@ -102,10 +102,10 @@
    "A610",
    "GTA"
   ],
-  "AM General": [
+  "Am General": [
    "HMMWV (Humvee)"
   ],
-  "AMC": [
+  "Amc": [
    "Eagle",
    "Hornet",
    "Rambler Ambassador",
@@ -155,11 +155,7 @@
   ],
   "Audi": [
    "100",
-   "200",
-   "50",
    "80",
-   "90",
-   "920",
    "A1",
    "A2",
    "A3",
@@ -173,33 +169,15 @@
    "Cabriolet",
    "Coupe",
    "e-tron",
-   "e-tron GT",
-   "e-tron S",
-   "e-tron S Sportback",
-   "e-tron Sportback",
-   "NSU RO 80",
    "Q2",
    "Q3",
-   "Q3 Sportback",
    "Q4 e-tron",
-   "Q4 Sportback e-tron",
    "Q5",
-   "Q5 Sportback",
    "Q7",
    "Q8",
    "Quattro",
    "R8",
-   "R8 LMP",
-   "RS 2",
-   "RS 3",
-   "RS 4",
-   "RS 5",
-   "RS 6",
-   "RS 7",
    "RS e-tron GT",
-   "RS Q3",
-   "RS Q3 Sportback",
-   "RS Q8",
    "S1",
    "S2",
    "S3",
@@ -210,7 +188,6 @@
    "S8",
    "SQ2",
    "SQ5",
-   "SQ5 Sportback",
    "SQ7",
    "SQ8",
    "TT",
@@ -242,7 +219,7 @@
   "Autobianchi": [
    "A 112"
   ],
-  "BAIC": [
+  "Baic": [
    "A1",
    "BJ2020",
    "BJ2021",
@@ -297,32 +274,14 @@
   "Blaval": [
    "FH-EQ"
   ],
-  "BMW": [
-   "02 (E10)",
+  "Bmw": [
    "1 серии",
-   "1M",
    "2 серии",
-   "2 серии Active Tourer",
-   "2 серии Gran Tourer",
-   "2000 C/CS",
    "3 серии",
-   "3/15",
-   "315",
-   "3200",
-   "321",
-   "326",
-   "327",
-   "340",
    "4 серии",
    "5 серии",
-   "501",
-   "502",
-   "503",
-   "507",
    "6 серии",
-   "600",
    "7 серии",
-   "700",
    "8 серии",
    "E3",
    "E9",
@@ -338,23 +297,16 @@
    "M5",
    "M6",
    "M8",
-   "New Class",
    "X1",
    "X2",
    "X3",
-   "X3 M",
    "X4",
-   "X4 M",
    "X5",
-   "X5 M",
    "X6",
-   "X6 M",
    "X7",
    "Z1",
    "Z3",
-   "Z3 M",
    "Z4",
-   "Z4 M",
    "Z8"
   ],
   "Borgward": [
@@ -424,7 +376,7 @@
    "Verano",
    "Wildcat"
   ],
-  "BYD": [
+  "Byd": [
    "e2",
    "E6",
    "F0",
@@ -704,16 +656,11 @@
    "C1",
    "C2",
    "C3",
-   "C3 Aircross",
    "C3 Picasso",
    "C4",
-   "C4 Aircross",
-   "C4 Cactus",
    "C4 Picasso",
    "C4 SpaceTourer",
    "C5",
-   "C5 Aircross",
-   "C5 X",
    "C6",
    "C8",
    "CX",
@@ -721,15 +668,6 @@
    "DS3",
    "DS4",
    "DS5",
-   "Dyane",
-   "E-Mehari",
-   "Evasion",
-   "GS",
-   "Jumpy",
-   "LN",
-   "Nemo",
-   "Saxo",
-   "SM",
    "SpaceTourer",
    "Traction Avant",
    "Visa",
@@ -923,7 +861,7 @@
    "Firedome",
    "Fireflite"
   ],
-  "DKW": [
+  "Dkw": [
    "3=6"
   ],
   "Dodge": [
@@ -993,7 +931,7 @@
    "D8 GTO",
    "D8 Zetec"
   ],
-  "DS": [
+  "Ds": [
    "3",
    "3 Crossback",
    "4",
@@ -1001,12 +939,9 @@
    "7 Crossback",
    "9"
   ],
-  "DW Hower": [
+  "Dw Hower": [
    "H3",
    "H5"
-  ],
-  "E-Car": [
-   "GD04B"
   ],
   "Eagle": [
    "Premier",
@@ -1025,15 +960,10 @@
    "Series IV",
    "Series V"
   ],
-  "EXEED": [
-   "LX",
-   "TXL",
-   "VX"
-  ],
   "Facel Vega": [
    "FV"
   ],
-  "FAW": [
+  "Faw": [
    "Bestune T55",
    "Bestune T77",
    "Bestune T99",
@@ -1153,32 +1083,24 @@
   ],
   "Ford": [
    "Aerostar",
-   "Aspire",
    "B-MAX",
    "Bronco",
-   "Bronco Sport",
-   "Bronco-II",
    "C-MAX",
    "Capri",
    "Consul",
    "Contour",
    "Cortina",
    "Cougar",
-   "Country Squire",
-   "Crown Victoria",
-   "Custom",
    "Econoline",
    "Econovan",
    "EcoSport",
    "Edge",
    "Escape",
    "Escort",
-   "Escort (North America)",
    "Everest",
    "Excursion",
    "Expedition",
    "Explorer",
-   "Explorer Sport Trac",
    "F-150",
    "F-2",
    "Fairlane",
@@ -1186,57 +1108,27 @@
    "Falcon",
    "Festiva",
    "Fiesta",
-   "Fiesta ST",
    "Five Hundred",
-   "Flex",
    "Focus",
-   "Focus RS",
-   "Focus ST",
-   "Freda",
-   "Freestar",
-   "Freestyle",
    "Fusion",
-   "Fusion (North America)",
-   "Galaxie",
    "Galaxy",
    "GPA",
-   "Granada",
-   "Granada (North America)",
-   "GT",
-   "GT40",
-   "Ikon",
-   "Ixion",
    "KA",
    "Kuga",
-   "Laser",
-   "LTD Country Squire",
-   "LTD Crown Victoria",
-   "M151",
-   "Mainline",
    "Maverick",
    "Model A",
    "Model T",
    "Mondeo",
-   "Mondeo ST",
    "Mustang",
-   "Mustang Mach-E",
-   "Orion",
    "Probe",
    "Puma",
-   "Puma ST",
    "Ranchero",
    "Ranger",
-   "Ranger (North America)",
    "S-MAX",
    "Scorpio",
    "Sierra",
    "Spectron",
    "Taunus",
-   "Taurus",
-   "Taurus X",
-   "Telstar",
-   "Tempo",
-   "Territory",
    "Thunderbird",
    "Torino",
    "Tourneo Connect",
@@ -1252,22 +1144,8 @@
    "Sauvana",
    "Tunland"
   ],
-  "FSO": [
-   "125p",
-   "126p",
-   "127p",
-   "132p",
-   "Lanos",
-   "Polonez",
-   "Warszawa"
-  ],
   "Fuqi": [
    "6500 (Land King)"
-  ],
-  "GAC": [
-   "GN8",
-   "GS5",
-   "GS8"
   ],
   "Geely": [
    "Atlas",
@@ -1311,7 +1189,7 @@
    "Storm",
    "Tracker"
   ],
-  "GMC": [
+  "Gmc": [
    "100",
    "Acadia",
    "Canyon",
@@ -1338,9 +1216,6 @@
   ],
   "Gordon": [
    "Roadster"
-  ],
-  "GP": [
-   "Madison"
   ],
   "Great Wall": [
    "Coolbear",
@@ -1440,85 +1315,22 @@
   "Honda": [
    "145",
    "Accord",
-   "Acty",
-   "Airwave",
-   "Ascot",
-   "Ascot Innova",
-   "Avancier",
-   "Ballade",
-   "Beat",
-   "Brio",
-   "Capa",
-   "City",
    "Civic",
-   "Civic Ferio",
-   "Civic Type R",
-   "Clarity",
-   "Concerto",
    "CR-V",
    "CR-X",
    "CR-Z",
    "Crossroad",
    "Crosstour",
-   "Domani",
-   "e",
-   "Edix",
-   "Element",
-   "Elysion",
-   "Fit",
-   "Fit Aria",
-   "Fit Shuttle",
    "FR-V",
-   "Freed",
-   "Grace",
-   "Horizon",
    "HR-V",
-   "Insight",
-   "Inspire",
-   "Integra",
-   "Integra SJ",
-   "Jade",
    "Jazz",
-   "Lagreat",
-   "Legend",
-   "Life",
-   "Logo",
-   "MDX",
-   "Mobilio",
-   "Mobilio Spike",
-   "N-BOX",
-   "N-BOX Slash",
-   "N-One",
-   "N-WGN",
-   "N360",
-   "NSX",
    "Odyssey",
-   "Odyssey (North America)",
-   "Orthia",
-   "Partner",
-   "Passport",
    "Pilot",
    "Prelude",
-   "Quint",
-   "Rafaga",
-   "Ridgeline",
-   "S-MX",
-   "S2000",
-   "S500",
-   "S600",
-   "S660",
    "Saber",
    "Shuttle",
    "Stepwgn",
-   "Stream",
-   "Street",
-   "That'S",
-   "Today",
    "Torneo",
-   "Vamos",
-   "Vezel",
-   "Vigor",
-   "Z",
    "Zest"
   ],
   "Hongqi": [
@@ -1530,9 +1342,6 @@
   ],
   "Hozon": [
    "Neta U"
-  ],
-  "HSV": [
-   "Maloo"
   ],
   "HuangHai": [
    "Antelope",
@@ -1550,69 +1359,31 @@
   ],
   "Hyundai": [
    "Accent",
-   "Aslan",
    "Atos",
    "Avante",
-   "Azera",
-   "Bayon",
-   "Centennial",
-   "Click",
-   "Coupe",
    "Creta",
-   "Dynasty",
    "Elantra",
-   "Elantra N",
-   "Encino",
-   "Entourage",
-   "EON",
-   "Equus",
-   "Excel",
    "Galloper",
    "Genesis",
-   "Genesis Coupe",
    "Getz",
-   "Grace",
-   "Grand Starex",
-   "Grandeur",
    "H-1",
    "H200",
    "i10",
    "i20",
-   "i20 N",
    "i30",
-   "i30 N",
    "i40",
    "IONIQ",
-   "IONIQ 5",
    "ix20",
    "ix35",
    "ix55",
    "Kona",
-   "Lantra",
-   "Lavita",
-   "Marcia",
    "Matrix",
-   "Maxcruz",
-   "Palisade",
-   "Pony",
-   "Santa Cruz",
    "Santa Fe",
-   "Santamo",
-   "Scoupe",
    "Solaris",
    "Sonata",
    "Starex",
-   "Staria",
-   "Stellar",
    "Terracan",
-   "Tiburon",
-   "Trajet",
    "Tucson",
-   "Tuscani",
-   "Veloster",
-   "Venue",
-   "Veracruz",
-   "Verna",
    "XG"
   ],
   "Infiniti": [
@@ -1695,25 +1466,6 @@
   "IVECO": [
    "Massif"
   ],
-  "JAC": [
-   "iEV7L",
-   "iEV7S",
-   "iEVS4",
-   "J2 (Yueyue)",
-   "J3 (Tongyue,Tojoy)",
-   "J4 (Heyue A30)",
-   "J5 (Heyue)",
-   "J6 (Heyue RS)",
-   "J7",
-   "J7 (Binyue)",
-   "M1 (Refine)",
-   "M5",
-   "S1 (Rein)",
-   "S3",
-   "S5 (Eagle)",
-   "S7",
-   "T6"
-  ],
   "Jaguar": [
    "E-Pace",
    "E-type",
@@ -1755,67 +1507,28 @@
   "Jinbei": [
    "Haise"
   ],
-  "JMC": [
-   "Baodian"
-  ],
   "Kia": [
-   "Avella",
-   "Borrego",
-   "Cadenza",
-   "Capital",
-   "Carens",
    "Carnival",
-   "Carstar",
    "Ceed",
-   "Ceed GT",
    "Cerato",
-   "Clarus",
-   "Concord",
-   "Elan",
-   "Enterprise",
-   "EV6",
-   "Forte",
-   "Joice",
    "K3",
    "K5",
    "K7",
    "K8",
    "K9",
-   "K900",
-   "Lotze",
    "Magentis",
-   "Mentor",
    "Mohave",
    "Morning",
-   "Niro",
-   "Opirus",
    "Optima",
    "Picanto",
-   "Potentia",
-   "Pregio",
-   "Pride",
-   "Proceed",
-   "Quanlima",
-   "Quoris",
-   "Ray",
-   "Retona",
    "Rio",
-   "Sedona",
-   "Seltos",
-   "Sephia",
    "Shuma",
    "Sorento",
    "Soul",
-   "Soul EV",
    "Spectra",
    "Sportage",
    "Stinger",
-   "Stonic",
-   "Telluride",
-   "Towner",
    "Venga",
-   "Visto",
-   "X-Trek",
    "XCeed"
   ],
   "Koenigsegg": [
@@ -1827,10 +1540,7 @@
    "One:1",
    "Regera"
   ],
-  "KTM AG": [
-   "X-Bow"
-  ],
-  "LADA (ВАЗ)": [
+  "Lada (ВАЗ)": [
    "1111 Ока",
    "2101",
    "2102",
@@ -1855,12 +1565,10 @@
    "2131 (4x4)",
    "2328",
    "2329",
-   "EL Lada",
    "Granta",
    "Kalina",
    "Largus",
    "Niva",
-   "Niva Legend",
    "Priora",
    "Revolution",
    "Vesta",
@@ -2028,12 +1736,6 @@
    "Excel",
    "Exige"
   ],
-  "LTI": [
-   "TX"
-  ],
-  "Lucid": [
-   "Air"
-  ],
   "Luxgen": [
    "Luxgen5",
    "Luxgen7 MPV",
@@ -2196,21 +1898,6 @@
    "Xedos 6",
    "Xedos 9"
   ],
-  "McLaren": [
-   "540C",
-   "570GT",
-   "570S",
-   "600LT",
-   "650S",
-   "675LT",
-   "720S",
-   "Artura",
-   "F1",
-   "GT",
-   "MP4-12C",
-   "P1",
-   "Senna"
-  ],
   "Mega": [
    "Club",
    "Monte Carlo",
@@ -2340,29 +2027,6 @@
    "Metrocab I",
    "Metrocab II (TTT)"
   ],
-  "MG": [
-   "3",
-   "350",
-   "5",
-   "550",
-   "6",
-   "750",
-   "F",
-   "GS",
-   "Maestro",
-   "Metro",
-   "MGA",
-   "MGB",
-   "Midget",
-   "Montego",
-   "RV8",
-   "TD Midget",
-   "TF",
-   "Xpower SV",
-   "ZR",
-   "ZS",
-   "ZT"
-  ],
   "Microcar": [
    "F8C",
    "M.Go",
@@ -2373,7 +2037,7 @@
   "Minelli": [
    "TF 1800"
   ],
-  "MINI": [
+  "Mini": [
    "Cabrio",
    "Clubman",
    "Countryman",
@@ -2781,17 +2445,6 @@
    "Rifter",
    "Traveller"
   ],
-  "PGO": [
-   "Cevennes",
-   "Hemera",
-   "Speedster II"
-  ],
-  "Piaggio": [
-   "Porter"
-  ],
-  "Pierce-Arrow": [
-   "Twelve"
-  ],
   "Plymouth": [
    "Acclaim",
    "Barracuda",
@@ -2889,22 +2542,7 @@
    "Waja",
    "Wira (400 Series)"
   ],
-  "PUCH": [
-   "G-modell",
-   "Pinzgauer"
-  ],
-  "Puma": [
-   "GTB",
-   "GTE"
-  ],
-  "Qoros": [
-   "3",
-   "5"
-  ],
-  "Qvale": [
-   "Mangusta"
-  ],
-  "RAM": [
+  "Ram": [
    "1500",
    "ProMaster City"
   ],
@@ -2987,14 +2625,6 @@
    "Vivastella",
    "Wind",
    "ZOE"
-  ],
-  "Renault Samsung": [
-   "QM3",
-   "QM5",
-   "QM6",
-   "SM3",
-   "SM5",
-   "SM7"
   ],
   "Rezvani": [
    "Beast",
@@ -3106,7 +2736,7 @@
   "Sears": [
    "Model J"
   ],
-  "SEAT": [
+  "Seat": [
    "133",
    "Alhambra",
    "Altea",
@@ -3313,19 +2943,6 @@
    "Samba",
    "Solara",
    "Tagora"
-  ],
-  "TATA": [
-   "Aria",
-   "Estate",
-   "Indica",
-   "Indigo",
-   "Nano",
-   "Safari",
-   "Sierra",
-   "Sumo",
-   "Sumo Grande",
-   "Telcoline",
-   "Xenon"
   ],
   "Tatra": [
    "57",
@@ -3554,28 +3171,6 @@
    "TR7",
    "TR8"
   ],
-  "TVR": [
-   "280",
-   "350",
-   "390",
-   "400",
-   "420",
-   "450",
-   "Cerbera",
-   "Chimaera",
-   "Griffith",
-   "S-Series",
-   "Sagaris",
-   "Taimar",
-   "Tamora",
-   "Tasmin",
-   "Tuscan"
-  ],
-  "Ultima": [
-   "Can-Am",
-   "GTR",
-   "RS"
-  ],
   "Vauxhall": [
    "Adam",
    "Ampera",
@@ -3741,13 +3336,6 @@
   "Voyah": [
    "Free"
   ],
-  "VUHL": [
-   "05"
-  ],
-  "W Motors": [
-   "Fenyr Supersport",
-   "Lykan Hypersport"
-  ],
   "Wanderer": [
    "W23",
    "W50"
@@ -3811,17 +3399,12 @@
    "Z100",
    "Z300"
   ],
-  "ZX": [
-   "Admiral",
-   "Grand Tiger",
-   "Landmark"
-  ],
   "Автокам": [
    "2160",
    "2163",
    "3101"
   ],
-  "ГАЗ": [
+  "Gaz": [
    "12 ЗИМ",
    "13 «Чайка»",
    "14 «Чайка»",
@@ -3851,7 +3434,7 @@
    "М-72",
    "М1"
   ],
-  "ЗАЗ": [
+  "Zaz": [
    "1102 «Таврия»",
    "1103 «Славута»",
    "1105 «Дана»",
@@ -3864,17 +3447,13 @@
    "Sens",
    "Vida"
   ],
-  "ЗИЛ": [
+  "Zil": [
    "111",
    "114",
    "117",
    "4104"
   ],
-  "ЗиС": [
-   "101",
-   "110"
-  ],
-  "ИЖ": [
+  "Ij": [
    "2125 «Комби»",
    "2126 «Ода»",
    "21261 «Фабула»",
@@ -3883,18 +3462,12 @@
    "27175",
    "Москвич-412"
   ],
-  "Канонир": [
-   "2317"
-  ],
-  "Комбат": [
-   "Т98"
-  ],
-  "ЛуАЗ": [
+  "Luaz": [
    "1302 Волынь",
    "967",
    "969"
   ],
-  "Москвич": [
+  "Moskvich": [
    "2136",
    "2137",
    "2138",
@@ -3922,25 +3495,7 @@
    "Святогор",
    "Юрий Долгорукий"
   ],
-  "СМЗ": [
-   "С-1Л",
-   "С-3А",
-   "С-3Д",
-   "С-3Л"
-  ],
-  "Спортивные авто и Реплики": [
-   "GT & Touring",
-   "Offroad",
-   "Shortcut",
-   "Багги Type 1",
-   "Драгстер",
-   "Дрифт-кар",
-   "Самоделки",
-   "Спортпрототип",
-   "Формула",
-   "Хот-род и Кастом"
-  ],
-  "ТагАЗ": [
+  "Tagaz": [
    "Aquila",
    "C-30",
    "C10",
@@ -3949,7 +3504,7 @@
    "Tager",
    "Vega"
   ],
-  "УАЗ": [
+  "Uaz": [
    "3151",
    "3153",
    "3159",
@@ -3960,9 +3515,6 @@
    "Patriot",
    "Pickup",
    "Астеро"
-  ],
-  "Ё-мобиль": [
-   "Ё-Кроссовер"
   ]
  }
 }
