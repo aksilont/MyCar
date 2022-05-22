@@ -30,7 +30,7 @@ class AddAutoViewController: UIViewController {
     let readyButton: UIButton = {
         let button = UIButton()
         button.sizeToFit()
-        button.backgroundColor = #colorLiteral(red: 0.2172074616, green: 0.6069719195, blue: 0.6331881881, alpha: 1)
+        button.backgroundColor = .buttonColor
         button.layer.cornerRadius = 5
         button.setTitleColor(.white, for: .highlighted)
         button.setTitle("Готово", for: .normal)
@@ -100,17 +100,26 @@ extension AddAutoViewController: UITableViewDelegate, UITableViewDataSource {
         let autoModel = AutoModel(rawValue: indexCase)
         switch autoModel {
             
-        case .item, .model, .number, .year, .distance, .fuelType, .vin:
+        case .item, .year, .fuelType:
             let cell: AutoCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
             cellContent(cell: cell, autoModel: autoModel ?? AutoModel.item )
             cell.configure(with: autoModel, carModel: carModel)
             cell.infoTextField.delegate = self
+            cell.infoTextField.isUserInteractionEnabled = false
+            return cell
+        case .model, .number, .distance, .vin:
+            let cell: AutoCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+            cellContent(cell: cell, autoModel: autoModel ?? AutoModel.item )
+            cell.configure(with: autoModel, carModel: carModel)
+            cell.infoTextField.delegate = self
+            cell.infoTextField.isUserInteractionEnabled = true
             return cell
         case .none:
             break
         }
         return UITableViewCell()
     }
+    
     func cellContent(cell: AutoCell, autoModel: AutoModel){
         cell.iconImageView.image = autoModel.image
         cell.autoLabel.text = autoModel.description
@@ -120,12 +129,14 @@ extension AddAutoViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let cell = tableView.cellForRow(at: indexPath) as! AutoCell
+        guard let cell = tableView.cellForRow(at: indexPath) as? AutoCell else { return }
         let indexCase = indexPath.section
         let autoModel = AutoModel(rawValue: indexCase)
         switch autoModel {
             
-        case .item, .model, .number, .distance, .vin:
+        case .item:
+            gotoAddItemAndModel()
+        case .model, .number, .distance, .vin:
             cell.infoTextField.becomeFirstResponder()
         case .year:
             gotoPopover(cell: cell, model: carParametrsModel.year(), index: indexPath)
@@ -164,15 +175,24 @@ extension AddAutoViewController: UIPopoverPresentationControllerDelegate{
 }
 extension AddAutoViewController: PopoverTableViewControllerDelegate{
     func fuelDidSelect(_ param: String, index: IndexPath) {
-        if index.section == 5 {
-            self.carModel.fuelType = param
-        }else if index.section == 3 {
+        let indexCase = index.section
+        let autoModel = AutoModel(rawValue: indexCase)
+        switch autoModel {
+        case .item:
+            break
+        case .model, .number, .distance, .vin:
+           break
+        case .year:
             self.carModel.year = param
+        case .fuelType:
+            self.carModel.fuelType = param
+        case .none:
+            break
         }
         tableView.reloadData()
     }
-    
 }
+
 extension AddAutoViewController: UITextFieldDelegate {
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
@@ -181,8 +201,8 @@ extension AddAutoViewController: UITextFieldDelegate {
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
         let center: CGPoint = textField.center
-        let rootViewPoint: CGPoint = textField.superview!.convert(center, to: tableView)
-        let indexPath: IndexPath = tableView.indexPathForRow(at: rootViewPoint)! as IndexPath
+        guard let rootViewPoint: CGPoint = textField.superview?.convert(center, to: tableView),
+              let indexPath: IndexPath = tableView.indexPathForRow(at: rootViewPoint) else { return }
         let autoModel = AutoModel(rawValue: indexPath.section)
         switch autoModel {
         case .item:
@@ -202,6 +222,22 @@ extension AddAutoViewController: UITextFieldDelegate {
         case .none:
             break
         }
+    }
+}
+
+extension AddAutoViewController: AddItemAndModelDelegate {
+    func itemAndModelDidSelect(item: String, model: String) {
+        carModel.item = item
+        carModel.model = model
+        tableView.reloadData()
+    }
+    
+    func gotoAddItemAndModel() {
+        let vc = AddItemAndModelViewController(nibName: "AddItemAndModelViewController", bundle: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
+        vc.delegate = self
+        carModel.item = vc.marka
+        
     }
 }
 

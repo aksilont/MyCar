@@ -46,10 +46,18 @@ class GarageCollectionViewCell: UICollectionViewCell {
     
     let checkMarkView: SSCheckMark = {
         let checkMark = SSCheckMark()
-        // checkMark.backgroundColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
-        checkMark.backgroundColor = UIColor(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+        checkMark.backgroundColor = .checkMarkGray
         checkMark.translatesAutoresizingMaskIntoConstraints = false
         return checkMark
+    }()
+    
+    let deleteButton: UIButton = {
+       let buttonView = UIButton()
+        buttonView.translatesAutoresizingMaskIntoConstraints = false
+        buttonView.backgroundImage(for: .normal)
+        buttonView.backgroundColor = .clear
+        buttonView.setImage(UIImage(named: "basket"), for: .normal)
+        return buttonView
     }()
     
     override init(frame: CGRect) {
@@ -75,8 +83,9 @@ class GarageCollectionViewCell: UICollectionViewCell {
         addSubview(itemAutoLabel)
         addSubview(numberAutoLabel)
         addSubview(checkMarkView)
+        addSubview(deleteButton)
         checkMarkView.addTarget(self, action: #selector(changeState), for: .touchUpInside)
-       
+        deleteButton.addTarget(self, action: #selector(deleteCell), for: .touchDown)
     }
     
     private func setupConstraints() {
@@ -92,8 +101,11 @@ class GarageCollectionViewCell: UICollectionViewCell {
             checkMarkView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
             checkMarkView.topAnchor.constraint(equalTo: topAnchor, constant: 0),
             checkMarkView.widthAnchor.constraint(equalToConstant: 30),
-            checkMarkView.heightAnchor.constraint(equalToConstant: 30)
-        ])
+            checkMarkView.heightAnchor.constraint(equalToConstant: 30),
+            deleteButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
+            deleteButton.centerYAnchor.constraint(equalTo: checkMarkView.centerYAnchor),
+            deleteButton.widthAnchor.constraint(equalToConstant: 30),
+            deleteButton.heightAnchor.constraint(equalToConstant: 30) ])
     }
     @objc func changeState(){
         checkMarkView.checked.toggle()
@@ -101,5 +113,9 @@ class GarageCollectionViewCell: UICollectionViewCell {
        
     }
     
-    
+    @objc func deleteCell(){
+        self.delegate?.showAlert(self)
+        self.delegate?.showDeleteIndex(indexPath: indexPath ?? [0, 0])
+       
+    }
 }
