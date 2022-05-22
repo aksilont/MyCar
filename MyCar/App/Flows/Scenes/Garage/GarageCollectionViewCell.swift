@@ -46,7 +46,7 @@ class GarageCollectionViewCell: UICollectionViewCell {
     
     let checkMarkView: SSCheckMark = {
         let checkMark = SSCheckMark()
-        checkMark.backgroundColor = UIColor(red: 170/255, green: 170/255, blue: 170/255, alpha: 1)
+        checkMark.backgroundColor = .checkMarkGray
         checkMark.translatesAutoresizingMaskIntoConstraints = false
         return checkMark
     }()

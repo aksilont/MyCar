@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4301FA0528342CF4004F9342 /* cars.json in Resources */ = {isa = PBXBuildFile; fileRef = 4301FA0428342CF4004F9342 /* cars.json */; };
 		4301FA0728342F28004F9342 /* CarDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4301FA0628342F28004F9342 /* CarDecodable.swift */; };
+		431B08A12839686100CF781C /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431B08A02839686100CF781C /* UIColor + Extension.swift */; };
 		435A2EB928255AD200BF10EA /* AddAutoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A2EB728255AD200BF10EA /* AddAutoViewController.swift */; };
 		435A2EBA28255AD200BF10EA /* AddAutoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 435A2EB828255AD200BF10EA /* AddAutoViewController.xib */; };
 		435A2EBC28255B5900BF10EA /* AutoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A2EBB28255B5900BF10EA /* AutoCell.swift */; };
@@ -107,6 +108,7 @@
 /* Begin PBXFileReference section */
 		4301FA0428342CF4004F9342 /* cars.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cars.json; sourceTree = "<group>"; };
 		4301FA0628342F28004F9342 /* CarDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDecodable.swift; sourceTree = "<group>"; };
+		431B08A02839686100CF781C /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
 		435A2EB728255AD200BF10EA /* AddAutoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAutoViewController.swift; sourceTree = "<group>"; };
 		435A2EB828255AD200BF10EA /* AddAutoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddAutoViewController.xib; sourceTree = "<group>"; };
 		435A2EBB28255B5900BF10EA /* AutoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCell.swift; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 				43C9C0F6282EFB5A00F6CED9 /* TableView + Extension.swift */,
 				7AF081ED282EF3A800025CA4 /* UIApplication+Ext.swift */,
 				7AF081EF282EF43300025CA4 /* UIHostingControllerCustom.swift */,
+				431B08A02839686100CF781C /* UIColor + Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -726,6 +729,7 @@
 				435A2F5F282AFA1700BF10EA /* WashExpenses+CoreDataProperties.swift in Sources */,
 				435A2F62282AFA1700BF10EA /* Car+CoreDataClass.swift in Sources */,
 				7AF081F6283150D400025CA4 /* CheckBoxView.swift in Sources */,
+				431B08A12839686100CF781C /* UIColor + Extension.swift in Sources */,
 				435A2F6B282AFA1700BF10EA /* ParkingExpenses+CoreDataProperties.swift in Sources */,
 				7AD4D98228258F0E0083A7A4 /* DocumentsViewController.swift in Sources */,
 				7A9C9354282424DD00FC40DE /* UIImage+Ext.swift in Sources */,

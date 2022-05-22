@@ -52,7 +52,7 @@ class SSCheckMark: UIControl {
     
     func drawRectChecked(rect: CGRect) {
         let context = UIGraphicsGetCurrentContext()
-        let checkmarkBlueSecond = UIColor(red: 0.078, green: 0.435, blue: 0.875, alpha: 1)
+        let checkmarkBlueSecond = UIColor.checkMarkBlue
         let shadowSecond = UIColor.black
         let shadowSecondOffset = CGSize(width: 0.1, height: -0.1)
         let shadowSecondBlurRadius = 2.5
@@ -81,7 +81,7 @@ class SSCheckMark: UIControl {
     
     func drawRectGrayedOut(rect: CGRect) {
         let context = UIGraphicsGetCurrentContext()
-        let grayTranslucent = UIColor(red: 1, green: 1, blue: 1, alpha: 0.6)
+        let grayTranslucent = UIColor.checkMarkClear
         let shadowSecond = UIColor.black
         let shadowSecondOffset = CGSize(width: 0.1, height: -0.1)
         let shadowSecondBlurRadius = 2.5
@@ -103,7 +103,7 @@ class SSCheckMark: UIControl {
         bezierPath.addLine(to: CGPoint(x: group.minX + 0.41667 * group.width, y: group.minY + 0.68750 * group.height))
         bezierPath.addLine(to: CGPoint(x: group.minX + 0.75000 * group.width, y: group.minY + 0.35417 * group.height))
         bezierPath.lineCapStyle = CGLineCap.square
-        UIColor(red: 170/255, green: 170/255, blue: 170/255, alpha: 1).setStroke()
+        UIColor.checkMarkGray.setStroke()
         bezierPath.lineWidth = 1.3
         bezierPath.stroke()
     }

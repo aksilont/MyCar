@@ -30,7 +30,7 @@ class AddAutoViewController: UIViewController {
     let readyButton: UIButton = {
         let button = UIButton()
         button.sizeToFit()
-        button.backgroundColor = UIColor(red: 54/255, green: 155/255, blue: 161/255, alpha: 1)
+        button.backgroundColor = .buttonColor
         button.layer.cornerRadius = 5
         button.setTitleColor(.white, for: .highlighted)
         button.setTitle("Готово", for: .normal)
@@ -100,14 +100,14 @@ extension AddAutoViewController: UITableViewDelegate, UITableViewDataSource {
         let autoModel = AutoModel(rawValue: indexCase)
         switch autoModel {
             
-        case .item, .model, .year, .fuelType:
+        case .item, .year, .fuelType:
             let cell: AutoCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
             cellContent(cell: cell, autoModel: autoModel ?? AutoModel.item )
             cell.configure(with: autoModel, carModel: carModel)
             cell.infoTextField.delegate = self
             cell.infoTextField.isUserInteractionEnabled = false
             return cell
-        case .number, .distance, .vin:
+        case .model, .number, .distance, .vin:
             let cell: AutoCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
             cellContent(cell: cell, autoModel: autoModel ?? AutoModel.item )
             cell.configure(with: autoModel, carModel: carModel)
@@ -236,6 +236,8 @@ extension AddAutoViewController: AddItemAndModelDelegate {
         let vc = AddItemAndModelViewController(nibName: "AddItemAndModelViewController", bundle: nil)
         self.navigationController?.pushViewController(vc, animated: true)
         vc.delegate = self
+        carModel.item = vc.marka
+        
     }
 }
 

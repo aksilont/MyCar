@@ -97,7 +97,7 @@ class CarRepository {
             let request = Car.fetchRequest() as NSFetchRequest<Car>
             cars = try context.fetch(request)
             DispatchQueue.main.async {
-                print("Fetch Passes from CoreData")
+                print("Fetch active Car from CoreData")
             }
             
         } catch  let error as NSError {
@@ -138,7 +138,7 @@ class CarRepository {
         do {
             try context.save()
             DispatchQueue.main.async {
-            print("Delete One Pass from CoreData")
+            print("Delete Car from CoreData")
             }
         } catch let error as NSError {
             print(error.localizedDescription)

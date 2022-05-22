@@ -24,6 +24,12 @@ class AddItemAndModelViewController: UIViewController {
     var itemArray = [String]()
     var fullArray = [String]()
     
+    // insets :
+    let tenInset = CGFloat(10)
+    let twentyInset = CGFloat(20)
+    let topInset = CGFloat(80)
+    let heightInset = CGFloat(40)
+    
     let carPicker: UIPickerView = {
         let carPicker = UIPickerView()
         carPicker.translatesAutoresizingMaskIntoConstraints = false
@@ -34,7 +40,7 @@ class AddItemAndModelViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = ""
-        label.font = UIFont.systemFont(ofSize: 20)
+        label.font = UIFont.systemFont(ofSize: 22)
         label.textColor = .white
         label.textAlignment = .center
         return label
@@ -48,7 +54,7 @@ class AddItemAndModelViewController: UIViewController {
         textField.becomeFirstResponder()
         textField.placeholder = "начните ввод марки авто"
         textField.backgroundColor = .black
-        textField.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+        textField.font = UIFont.systemFont(ofSize: 17, weight: .light)
         textField.returnKeyType = UIReturnKeyType.done
         textField.clearsOnBeginEditing = true
         return textField
@@ -88,18 +94,18 @@ class AddItemAndModelViewController: UIViewController {
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            infoTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 80),
-            infoTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            infoTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            infoTextField.heightAnchor.constraint(equalToConstant: 40),
+            infoTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: topInset),
+            infoTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: twentyInset),
+            infoTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -twentyInset),
+            infoTextField.heightAnchor.constraint(equalToConstant: heightInset),
             lineView.topAnchor.constraint(equalTo: infoTextField.bottomAnchor),
-            lineView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            lineView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            lineView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: twentyInset),
+            lineView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -twentyInset),
             lineView.heightAnchor.constraint(equalToConstant: 2),
-            autoLabel.topAnchor.constraint(equalTo: infoTextField.bottomAnchor, constant: 10),
-            autoLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            autoLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            carPicker.topAnchor.constraint(equalTo: infoTextField.bottomAnchor, constant: 10),
+            autoLabel.topAnchor.constraint(equalTo: infoTextField.bottomAnchor, constant: tenInset),
+            autoLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: twentyInset),
+            autoLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -twentyInset),
+            carPicker.topAnchor.constraint(equalTo: infoTextField.bottomAnchor, constant: tenInset),
             carPicker.heightAnchor.constraint(equalToConstant: view.frame.size.height / 2),
             carPicker.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             carPicker.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
@@ -131,6 +137,7 @@ extension AddItemAndModelViewController: UIPickerViewDelegate {
             let nameItem = itemArray[row]
             self.marka = item ?? ""
             autoLabel.text = "\(self.marka) \(self.model)"
+            delegate?.itemAndModelDidSelect(item: self.marka, model: self.model)
             return nameItem
         } else {
             var models = [""]
@@ -138,6 +145,7 @@ extension AddItemAndModelViewController: UIPickerViewDelegate {
             let nameModel = models[row]
             self.model = models.first ?? ""
             autoLabel.text = "\(self.marka) \(self.model)"
+            delegate?.itemAndModelDidSelect(item: self.marka, model: self.model)
             return nameModel
         }
     }
