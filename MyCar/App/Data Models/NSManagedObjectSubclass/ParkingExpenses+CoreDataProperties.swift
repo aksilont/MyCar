@@ -2,7 +2,7 @@
 //  ParkingExpenses+CoreDataProperties.swift
 //  MyCar
 //
-//  Created by Alex Larin on 10.05.2022.
+//  Created by Aksilont on 18.05.2022.
 //
 //
 
@@ -17,9 +17,9 @@ extension ParkingExpenses {
     }
 
     @NSManaged public var date: Date?
-    @NSManaged public var price: Float
-    @NSManaged public var discript: String?
+    @NSManaged public var comment: String?
     @NSManaged public var distance: Float
+    @NSManaged public var price: Float
     @NSManaged public var toCar: Car?
 
 }
