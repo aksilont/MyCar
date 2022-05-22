@@ -1,17 +1,17 @@
 //
-//  ExpensesType.swift
+//  ExpenseType.swift
 //  MyCar
 //
-//  Created by Aksilont on 19.05.2022.
+//  Created by Denis Kuzmin on 18.05.2022.
 //
 
 import Foundation
 
-enum ExpensesType: String, CaseIterable {
+enum ExpenseType: String, CaseIterable {
     case parking = "Парковка"
     case wash = "Мойка"
     case fix = "Ремонт"
     case fuel = "Топливо"
     case finance = "Финансы"
-    case other = "Другое"
+    case other = "Прочее"
 }
