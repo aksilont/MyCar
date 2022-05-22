@@ -88,7 +88,7 @@ class CarRepository {
         return cars.first { $0.activFlag }
     }
     
-    func  deleteAllCars() {
+    func deleteAllCars() {
         let context = storage.mainContext
         let fetchRequest: NSFetchRequest<Car> = Car.fetchRequest()
         if let passes = try? context.fetch(fetchRequest) {
@@ -99,8 +99,8 @@ class CarRepository {
         storage.saveContext()
     }
     
-    func  deleteCar(number: String) {
-        guard let context = getContext() else {return}
+    func deleteCar(number: String) {
+        let context = storage.mainContext
         let fetchRequest: NSFetchRequest<Car> = Car.fetchRequest()
         if let cars = try? context.fetch(fetchRequest) {
             for car in cars {
@@ -112,7 +112,7 @@ class CarRepository {
         do {
             try context.save()
             DispatchQueue.main.async {
-            print("Delete Car from CoreData")
+                print("Delete Car from CoreData")
             }
         } catch let error as NSError {
             print(error.localizedDescription)
