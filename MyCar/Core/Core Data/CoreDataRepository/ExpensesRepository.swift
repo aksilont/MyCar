@@ -67,7 +67,10 @@ final class ExpensesRepository {
                                                  predicate: NSPredicate?,
                                                  limit: Int,
                                                  completion: @escaping ([T]) -> ()) {
-        guard let currentCar = carRepository.getActiveCar() else { return }
+        guard let currentCar = carRepository.getActiveCar() else {
+            completion([])
+            return
+        }
         
         let context = storage.mainContext
         let fetchRequest = NSFetchRequest<T>(entityName: String(describing: modelType))

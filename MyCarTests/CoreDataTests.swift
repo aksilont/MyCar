@@ -20,12 +20,15 @@ class CoreDataTests: XCTestCase {
     override func tearDownWithError() throws {
     }
 
-    func testExpensesReository() {
+    func testExpensesRepository() {
         let expensesType: ExpensesType = .parking
         
         // Удаление всех записей по категории расходов парковка
         expensesRepo.deleteAllExpenses()
         
+        expensesRepo.fetchExpenses(by: expensesType) { items in
+            XCTAssertEqual(items.count, 0)
+        }
         
         // Создание 50 случайных записей
         for _ in (1...50) {
