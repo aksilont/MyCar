@@ -12,8 +12,16 @@ struct ExpenseCategoryView: View {
     var rows = ["Дата", "Сумма", "Пробег", "Описание"]
     @FocusState private var textFieldsFocused: Bool
     @Binding var homeNeedsToUpdate: Bool
-    
     @ObservedObject var viewModel: ExpenseViewModel
+    private let numberFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.locale = Locale.current
+        formatter.numberStyle = .decimal
+        formatter.minimumFractionDigits = 2
+        formatter.maximumFractionDigits = 2
+        formatter.zeroSymbol = ""
+        return formatter
+    }()
     
     var body: some View {
         GeometryReader { geometry in
@@ -28,15 +36,17 @@ struct ExpenseCategoryView: View {
                     }
                     HStack {
                         Text(rows[1])
-                        TextField("", value: $viewModel.summ, formatter: NumberFormatter())
-                            .multilineTextAlignment(.trailing)
+                        TextField("", value: $viewModel.summ, formatter: numberFormatter)
                             .focused($textFieldsFocused)
+                            .keyboardType(.decimalPad)
+                            .disableAutocorrection(true)
                     }
                     HStack {
                         Text(rows[2])
-                        TextField("", value: $viewModel.mileage, formatter: NumberFormatter())
-                            .multilineTextAlignment(.trailing)
+                        TextField("", value: $viewModel.mileage, formatter: numberFormatter)
                             .focused($textFieldsFocused)
+                            .keyboardType(.decimalPad)
+                            .disableAutocorrection(true)
                     }
                     HStack {
                         Text(rows[3])
