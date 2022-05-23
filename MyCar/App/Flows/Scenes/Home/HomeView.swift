@@ -36,8 +36,10 @@ struct HomeView: View {
                                     Text(viewModel.total)
                                         .foregroundColor(Color.white)
                                         .font(Font.title2)
-                                    Text(viewModel.expenciesPerDistanceUnit)
-                                        .foregroundColor(viewModel.colors[2])
+                                    if viewModel.shouldShowAverage {
+                                        Text(viewModel.expenciesPerDistanceUnit)
+                                            .foregroundColor(viewModel.colors[2])
+                                    }
                                 }
                                 Spacer()
                                 VStack(spacing: geometry.size.width / 16) {
@@ -46,10 +48,9 @@ struct HomeView: View {
                                             ForEach(0...2, id: \.self) { col in
                                                 let index = row * 3 + col
                                                 let tag = String(index)
-                                                let destinationViewModel = ExpenseViewModel(type: viewModel.expensesTypes[index])
                                                 NavigationLink(destination:
                                                                 LazyView(
-                                                                    ExpenseCategoryView(homeNeedsToUpdate: $viewModel.homeNeedsToUpdate, viewModel: destinationViewModel)),
+                                                                    ExpenseCategoryView(homeNeedsToUpdate: $viewModel.homeNeedsToUpdate, viewModel: ExpenseViewModel(type: viewModel.expensesTypes[index]))),
                                                                tag: tag,
                                                                selection: $selection) {
                                                     Button(action: { selection = tag }) {

@@ -24,6 +24,7 @@ class HomeViewModel: ObservableObject {
             calculateExpenses()
         }
     }
+    @Published var shouldShowAverage: Bool = false
     private var currencySign: String = "₽"
     private var distanceUnit: String = "км"
     var garageButtonSubject = PassthroughSubject<Void, Never>()
@@ -49,7 +50,6 @@ class HomeViewModel: ObservableObject {
     
     func calculateExpenses() {
         var allExpenses: [ExpensesType: Double] = [:]
-        
         expensesTypes.forEach { type in
             expensesRepository.fetchExpenses(by: type, limit: .max) { expenses in
                 let summ = expenses.map {$0.price}.reduce(0, +)
@@ -62,8 +62,9 @@ class HomeViewModel: ObservableObject {
         total = "Всего \(String(format: "%.2f", calculatedTotal)) \(currencySign)"
         if let car = car, car.distance > 0 {
             expenciesPerDistanceUnit = String(format: "%.2f", calculatedTotal / Double(car.distance))
+            shouldShowAverage = true
         } else {
-            expenciesPerDistanceUnit = "0"
+            shouldShowAverage = false
         }
         expenciesPerDistanceUnit += " \(currencySign)/\(distanceUnit)"
     }

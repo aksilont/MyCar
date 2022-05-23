@@ -32,7 +32,6 @@ class HomeViewController: UIHostingController<HomeView> {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
-        viewModel.loadCarData()
     }
     
     private func garageDidTap() {
