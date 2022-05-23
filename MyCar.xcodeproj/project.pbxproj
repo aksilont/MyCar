@@ -86,7 +86,6 @@
 		92280306283AC58000885342 /* ExpensesByDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92280303283AC58000885342 /* ExpensesByDate.swift */; };
 		92280307283AC58000885342 /* ExpenseCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92280304283AC58000885342 /* ExpenseCategoryView.swift */; };
 		92280308283AC58000885342 /* ExpenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92280305283AC58000885342 /* ExpenseViewModel.swift */; };
-		9228030A283AC5A700885342 /* ExpenseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92280309283AC5A700885342 /* ExpenseType.swift */; };
 		9239034728313F66007D4314 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239034628313F66007D4314 /* Color+Extension.swift */; };
 		92C611E82826D443009A930E /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C611E72826D443009A930E /* KeychainService.swift */; };
 		92C611EA2826D4CC009A930E /* KeychainServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C611E92826D4CC009A930E /* KeychainServiceTests.swift */; };
@@ -199,7 +198,6 @@
 		92280303283AC58000885342 /* ExpensesByDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpensesByDate.swift; sourceTree = "<group>"; };
 		92280304283AC58000885342 /* ExpenseCategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseCategoryView.swift; sourceTree = "<group>"; };
 		92280305283AC58000885342 /* ExpenseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseViewModel.swift; sourceTree = "<group>"; };
-		92280309283AC5A700885342 /* ExpenseType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseType.swift; sourceTree = "<group>"; };
 		9239034628313F66007D4314 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		92C611E72826D443009A930E /* KeychainService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		92C611E92826D4CC009A930E /* KeychainServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainServiceTests.swift; sourceTree = "<group>"; };
@@ -434,7 +432,6 @@
 				7AD4D97828258AE80083A7A4 /* HomeViewController.swift */,
 				92C6123D28306411009A930E /* HomeView.swift */,
 				92C6123F28306469009A930E /* HomeViewModel.swift */,
-				92280309283AC5A700885342 /* ExpenseType.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -811,7 +808,6 @@
 				7AF0681228356DD8003FDA52 /* Date+Extension.swift in Sources */,
 				7A9C9352282423EE00FC40DE /* NumPad.swift in Sources */,
 				7AF081EE282EF3A800025CA4 /* UIApplication+Ext.swift in Sources */,
-				9228030A283AC5A700885342 /* ExpenseType.swift in Sources */,
 				435A2F66282AFA1700BF10EA /* FuelExpenses+CoreDataClass.swift in Sources */,
 				7AD4D97E28258D000083A7A4 /* StaticticsViewController.swift in Sources */,
 				7AD4D97A28258AE80083A7A4 /* HomeViewController.swift in Sources */,
@@ -997,7 +993,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = H8D2UQ584W;
+				DEVELOPMENT_TEAM = PA4RR5KXXR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyCar/Environments/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1012,7 +1008,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = alexLarin.MyCar;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.net.dnk.MyCar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1027,7 +1023,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = H8D2UQ584W;
+				DEVELOPMENT_TEAM = PA4RR5KXXR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyCar/Environments/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1042,7 +1038,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = alexLarin.MyCar;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.net.dnk.MyCar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 
 class HomeViewModel: ObservableObject {
-    let expensesRepository = ExpensesRepository()
+    private let expensesRepository = ExpensesRepository()
     @Published var segments: [Double] = []
     var expensesTypes = ExpensesType.allCases
     var names: [String] = ExpensesType.allCases.map { $0.rawValue }
@@ -19,6 +19,11 @@ class HomeViewModel: ObservableObject {
     @Published var total: String = ""
     @Published var expenciesPerDistanceUnit: String = ""
     @Published var isActiveCar: Bool = false
+    @Published var homeNeedsToUpdate: Bool = false {
+        didSet {
+            calculateExpenses()
+        }
+    }
     private var currencySign: String = "₽"
     private var distanceUnit: String = "км"
     var garageButtonSubject = PassthroughSubject<Void, Never>()

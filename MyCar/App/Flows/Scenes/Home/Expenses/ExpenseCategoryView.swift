@@ -11,6 +11,7 @@ struct ExpenseCategoryView: View {
     
     var rows = ["Дата", "Сумма", "Пробег", "Описание"]
     @FocusState private var textFieldsFocused: Bool
+    @Binding var homeNeedsToUpdate: Bool
     
     @ObservedObject var viewModel: ExpenseViewModel
     
@@ -59,6 +60,7 @@ struct ExpenseCategoryView: View {
                     ForEach(0 ..< viewModel.previousExpenses.count, id: \.self) { index in
                         HStack {
                             Text(viewModel.previousExpenses[index].dateString)
+                            Spacer()
                             Text(viewModel.previousExpenses[index].summString)
                         }
                     }
@@ -68,7 +70,6 @@ struct ExpenseCategoryView: View {
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle(viewModel.title)
-        }
-        }
-        
+        }.onDisappear(perform: { homeNeedsToUpdate = true})
+    }
 }

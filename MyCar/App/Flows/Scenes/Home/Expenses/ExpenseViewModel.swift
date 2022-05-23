@@ -8,7 +8,7 @@
 import Foundation
 
 class ExpenseViewModel: ObservableObject {
-    let expensesRepository = ExpensesRepository()
+    private let expensesRepository = ExpensesRepository()
     private var type: ExpensesType
     @Published var title: String
     @Published var date = Date()

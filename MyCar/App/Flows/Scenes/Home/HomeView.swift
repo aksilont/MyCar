@@ -46,9 +46,10 @@ struct HomeView: View {
                                             ForEach(0...2, id: \.self) { col in
                                                 let index = row * 3 + col
                                                 let tag = String(index)
+                                                let destinationViewModel = ExpenseViewModel(type: viewModel.expensesTypes[index])
                                                 NavigationLink(destination:
                                                                 LazyView(
-                                                                    ExpenseCategoryView(viewModel: ExpenseViewModel(type: viewModel.expensesTypes[index]))),
+                                                                    ExpenseCategoryView(homeNeedsToUpdate: $viewModel.homeNeedsToUpdate, viewModel: destinationViewModel)),
                                                                tag: tag,
                                                                selection: $selection) {
                                                     Button(action: { selection = tag }) {
@@ -82,6 +83,7 @@ struct HomeView: View {
             .navigationTitle("Мой автомобиль")
         }
         .onAppear(perform: { viewModel.calculateExpenses() })
+        
     }
 }
 
