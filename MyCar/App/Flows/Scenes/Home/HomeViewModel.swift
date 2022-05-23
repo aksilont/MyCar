@@ -49,7 +49,6 @@ class HomeViewModel: ObservableObject {
     
     func calculateExpenses() {
         var allExpenses: [ExpensesType: Double] = [:]
-        
         expensesTypes.forEach { type in
             expensesRepository.fetchExpenses(by: type, limit: .max) { expenses in
                 let summ = expenses.map {$0.price}.reduce(0, +)
