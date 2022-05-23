@@ -40,11 +40,11 @@
 		435A2F6F282AFCDC00BF10EA /* CarRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435A2F6E282AFCDC00BF10EA /* CarRepository.swift */; };
 		43C9C0F5282EF8A600F6CED9 /* CollectionView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C9C0F4282EF8A600F6CED9 /* CollectionView + Extension.swift */; };
 		43C9C0F7282EFB5A00F6CED9 /* TableView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C9C0F6282EFB5A00F6CED9 /* TableView + Extension.swift */; };
+		43C9C0FB2832A17D00F6CED9 /* AddItemAndModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C9C0F92832A17D00F6CED9 /* AddItemAndModelViewController.swift */; };
+		43C9C0FC2832A17D00F6CED9 /* AddItemAndModelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43C9C0FA2832A17D00F6CED9 /* AddItemAndModelViewController.xib */; };
 		7A38D05C28341F3C00FB982F /* ExpensesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A38D05B28341F3C00FB982F /* ExpensesRepository.swift */; };
 		7A38D05E283421F200FB982F /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A38D05D283421F200FB982F /* CoreDataStack.swift */; };
 		7A38D0602834F8A500FB982F /* CoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A38D05F2834F8A500FB982F /* CoreDataTests.swift */; };
-		43C9C0FB2832A17D00F6CED9 /* AddItemAndModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C9C0F92832A17D00F6CED9 /* AddItemAndModelViewController.swift */; };
-		43C9C0FC2832A17D00F6CED9 /* AddItemAndModelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43C9C0FA2832A17D00F6CED9 /* AddItemAndModelViewController.xib */; };
 		7A823626281A6DB6001C2AE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A823625281A6DB6001C2AE3 /* AppDelegate.swift */; };
 		7A823628281A6DB6001C2AE3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A823627281A6DB6001C2AE3 /* SceneDelegate.swift */; };
 		7A82362A281A6DB6001C2AE3 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A823629281A6DB6001C2AE3 /* StartViewController.swift */; };
@@ -82,6 +82,10 @@
 		7AF31187281E6BFF0097BF5A /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AF31185281E6BFF0097BF5A /* LoginViewController.xib */; };
 		7AF3118A281E6C1B0097BF5A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF31188281E6C1B0097BF5A /* MainViewController.swift */; };
 		7AF3118D281E6D8E0097BF5A /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AF3118C281E6D8E0097BF5A /* StartViewController.xib */; };
+		92280301283AC54800885342 /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92280300283AC54800885342 /* LazyView.swift */; };
+		92280306283AC58000885342 /* ExpensesByDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92280303283AC58000885342 /* ExpensesByDate.swift */; };
+		92280307283AC58000885342 /* ExpenseCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92280304283AC58000885342 /* ExpenseCategoryView.swift */; };
+		92280308283AC58000885342 /* ExpenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92280305283AC58000885342 /* ExpenseViewModel.swift */; };
 		9239034728313F66007D4314 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239034628313F66007D4314 /* Color+Extension.swift */; };
 		92C611E82826D443009A930E /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C611E72826D443009A930E /* KeychainService.swift */; };
 		92C611EA2826D4CC009A930E /* KeychainServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C611E92826D4CC009A930E /* KeychainServiceTests.swift */; };
@@ -144,11 +148,11 @@
 		435A2F6E282AFCDC00BF10EA /* CarRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CarRepository.swift; path = "MyCar/Core/Core Data/CoreDataRepository/CarRepository.swift"; sourceTree = SOURCE_ROOT; };
 		43C9C0F4282EF8A600F6CED9 /* CollectionView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionView + Extension.swift"; sourceTree = "<group>"; };
 		43C9C0F6282EFB5A00F6CED9 /* TableView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableView + Extension.swift"; sourceTree = "<group>"; };
+		43C9C0F92832A17D00F6CED9 /* AddItemAndModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemAndModelViewController.swift; sourceTree = "<group>"; };
+		43C9C0FA2832A17D00F6CED9 /* AddItemAndModelViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddItemAndModelViewController.xib; sourceTree = "<group>"; };
 		7A38D05B28341F3C00FB982F /* ExpensesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesRepository.swift; sourceTree = "<group>"; };
 		7A38D05D283421F200FB982F /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		7A38D05F2834F8A500FB982F /* CoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTests.swift; sourceTree = "<group>"; };
-		43C9C0F92832A17D00F6CED9 /* AddItemAndModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemAndModelViewController.swift; sourceTree = "<group>"; };
-		43C9C0FA2832A17D00F6CED9 /* AddItemAndModelViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddItemAndModelViewController.xib; sourceTree = "<group>"; };
 		7A823622281A6DB6001C2AE3 /* MyCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A823625281A6DB6001C2AE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A823627281A6DB6001C2AE3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -190,6 +194,10 @@
 		7AF31185281E6BFF0097BF5A /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		7AF31188281E6C1B0097BF5A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7AF3118C281E6D8E0097BF5A /* StartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
+		92280300283AC54800885342 /* LazyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
+		92280303283AC58000885342 /* ExpensesByDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpensesByDate.swift; sourceTree = "<group>"; };
+		92280304283AC58000885342 /* ExpenseCategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseCategoryView.swift; sourceTree = "<group>"; };
+		92280305283AC58000885342 /* ExpenseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseViewModel.swift; sourceTree = "<group>"; };
 		9239034628313F66007D4314 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		92C611E72826D443009A930E /* KeychainService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		92C611E92826D4CC009A930E /* KeychainServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainServiceTests.swift; sourceTree = "<group>"; };
@@ -420,6 +428,7 @@
 		7A8AA56E281E75E70071FDD4 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				92280302283AC58000885342 /* Expenses */,
 				7AD4D97828258AE80083A7A4 /* HomeViewController.swift */,
 				92C6123D28306411009A930E /* HomeView.swift */,
 				92C6123F28306469009A930E /* HomeViewModel.swift */,
@@ -522,6 +531,7 @@
 				7A9C93552824251500FC40DE /* PinButton.swift */,
 				7A9C9351282423EE00FC40DE /* NumPad.swift */,
 				7A9C9359282426AD00FC40DE /* NumPud.xib */,
+				92280300283AC54800885342 /* LazyView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -571,6 +581,16 @@
 				7AD4D98C282597BC0083A7A4 /* MainViewController.xib */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		92280302283AC58000885342 /* Expenses */ = {
+			isa = PBXGroup;
+			children = (
+				92280303283AC58000885342 /* ExpensesByDate.swift */,
+				92280304283AC58000885342 /* ExpenseCategoryView.swift */,
+				92280305283AC58000885342 /* ExpenseViewModel.swift */,
+			);
+			path = Expenses;
 			sourceTree = "<group>";
 		};
 		92C611E62826D3FC009A930E /* KeychainService */ = {
@@ -746,13 +766,16 @@
 				431B08A12839686100CF781C /* UIColor + Extension.swift in Sources */,
 				435A2F6B282AFA1700BF10EA /* ParkingExpenses+CoreDataProperties.swift in Sources */,
 				7AD4D98228258F0E0083A7A4 /* DocumentsViewController.swift in Sources */,
+				92280306283AC58000885342 /* ExpensesByDate.swift in Sources */,
 				7A9C9354282424DD00FC40DE /* UIImage+Ext.swift in Sources */,
 				435A2F6A282AFA1700BF10EA /* ParkingExpenses+CoreDataClass.swift in Sources */,
 				435A2EC92825943E00BF10EA /* CheckMark.swift in Sources */,
 				435A2ED22825A32300BF10EA /* FuelModel.swift in Sources */,
 				7A823626281A6DB6001C2AE3 /* AppDelegate.swift in Sources */,
 				435A2ED02825A2E900BF10EA /* PopoverCell.swift in Sources */,
+				92280301283AC54800885342 /* LazyView.swift in Sources */,
 				7AF081F0282EF43300025CA4 /* UIHostingControllerCustom.swift in Sources */,
+				92280307283AC58000885342 /* ExpenseCategoryView.swift in Sources */,
 				435A2ECD2825A29900BF10EA /* PopoverTableViewController.swift in Sources */,
 				435A2F67282AFA1700BF10EA /* FuelExpenses+CoreDataProperties.swift in Sources */,
 				7AF081EC282EF39C00025CA4 /* SettingsViewModel.swift in Sources */,
@@ -780,6 +803,7 @@
 				92C6123A28305C41009A930E /* PieSliceData.swift in Sources */,
 				435A2F5E282AFA1700BF10EA /* WashExpenses+CoreDataClass.swift in Sources */,
 				92C6123828305BF6009A930E /* PieSliceView.swift in Sources */,
+				92280308283AC58000885342 /* ExpenseViewModel.swift in Sources */,
 				7AD412012836CD140091F1A8 /* ExpensesModel.swift in Sources */,
 				7AF0681228356DD8003FDA52 /* Date+Extension.swift in Sources */,
 				7A9C9352282423EE00FC40DE /* NumPad.swift in Sources */,
@@ -969,7 +993,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = H8D2UQ584W;
+				DEVELOPMENT_TEAM = PA4RR5KXXR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyCar/Environments/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -984,7 +1008,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = alexLarin.MyCar;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.net.dnk.MyCar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -999,7 +1023,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = H8D2UQ584W;
+				DEVELOPMENT_TEAM = PA4RR5KXXR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyCar/Environments/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1014,7 +1038,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = alexLarin.MyCar;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.net.dnk.MyCar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

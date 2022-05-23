@@ -9,13 +9,21 @@ import SwiftUI
 import Combine
 
 class HomeViewModel: ObservableObject {
+    private let expensesRepository = ExpensesRepository()
     @Published var segments: [Double] = []
-    @Published var names: [String] = ["Парковка", "Мойка", "Ремонт", "Топливо", "Финансы", "Прочее"]
-    @Published var colors: [Color] = [Color.park, Color.wash, Color.repair, Color.fuel, Color.finance, Color.other]
+    var expensesTypes = ExpensesType.allCases
+    var names: [String] = ExpensesType.allCases.map { $0.rawValue }
+    var colors: [Color] = ExpensesType.allCases.map { Color.expenseColor($0) }
     @Published var carName: String = ""
     @Published var carNumber: String = ""
-    @Published var allExpencies: String = ""
+    @Published var total: String = ""
     @Published var expenciesPerDistanceUnit: String = ""
+    @Published var isActiveCar: Bool = false
+    @Published var homeNeedsToUpdate: Bool = false {
+        didSet {
+            calculateExpenses()
+        }
+    }
     private var currencySign: String = "₽"
     private var distanceUnit: String = "км"
     var garageButtonSubject = PassthroughSubject<Void, Never>()
@@ -30,19 +38,32 @@ class HomeViewModel: ObservableObject {
         let carRepository = CarRepository()
         car = carRepository.getActiveCar()
         
-        carName = car?.item ?? "Мой автомобиль"
-        carNumber = car?.number ?? ""
-        calculateExpencies()
+        guard let car = car else {
+            isActiveCar = false
+            return
+        }
+        isActiveCar = true
+        carName = car.item ?? "Мой автомобиль"
+        carNumber = car.number ?? ""
     }
     
-    private func calculateExpencies() {
-        let calculatedAllExpencies = 1_000_000.0
-        segments = [100000, 200000, 50000, 150000, 275000, 225000]
-        allExpencies = "Всего \(String(format: "%.2f", calculatedAllExpencies)) \(currencySign)"
+    func calculateExpenses() {
+        var allExpenses: [ExpensesType: Double] = [:]
+        
+        expensesTypes.forEach { type in
+            expensesRepository.fetchExpenses(by: type, limit: .max) { expenses in
+                let summ = expenses.map {$0.price}.reduce(0, +)
+                allExpenses[type] = Double(summ)
+            }
+        }
+
+        segments = expensesTypes.map { allExpenses[$0] ?? 0 }
+        let calculatedTotal = segments.reduce(0, +)
+        total = "Всего \(String(format: "%.2f", calculatedTotal)) \(currencySign)"
         if let car = car, car.distance > 0 {
-            expenciesPerDistanceUnit = String(format: "%.2f", calculatedAllExpencies / Double(car.distance))
+            expenciesPerDistanceUnit = String(format: "%.2f", calculatedTotal / Double(car.distance))
         } else {
-            expenciesPerDistanceUnit = "неизвестно"
+            expenciesPerDistanceUnit = "0"
         }
         expenciesPerDistanceUnit += " \(currencySign)/\(distanceUnit)"
     }

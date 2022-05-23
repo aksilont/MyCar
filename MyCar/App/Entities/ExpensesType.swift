@@ -7,11 +7,11 @@
 
 import Foundation
 
-enum ExpensesType: CaseIterable {
-    case parking
-    case wash
-    case fix
-    case fuel
-    case finance
-    case other
+enum ExpensesType: String, CaseIterable {
+    case parking = "Парковка"
+    case wash = "Мойка"
+    case fix = "Ремонт"
+    case fuel = "Топливо"
+    case finance = "Финансы"
+    case other = "Другое"
 }

@@ -46,7 +46,7 @@ final class ExpensesRepository {
         case .fuel:
             return FuelExpenses.self
         case .finance:
-            return FuelExpenses.self
+            return FinanceExpenses.self
         case .other:
             return OtherExpenses.self
         }
