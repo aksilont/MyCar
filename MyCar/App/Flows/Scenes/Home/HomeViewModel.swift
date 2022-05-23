@@ -24,6 +24,7 @@ class HomeViewModel: ObservableObject {
             calculateExpenses()
         }
     }
+    @Published var shouldShowAverage: Bool = false
     private var currencySign: String = "₽"
     private var distanceUnit: String = "км"
     var garageButtonSubject = PassthroughSubject<Void, Never>()
@@ -61,8 +62,9 @@ class HomeViewModel: ObservableObject {
         total = "Всего \(String(format: "%.2f", calculatedTotal)) \(currencySign)"
         if let car = car, car.distance > 0 {
             expenciesPerDistanceUnit = String(format: "%.2f", calculatedTotal / Double(car.distance))
+            shouldShowAverage = true
         } else {
-            expenciesPerDistanceUnit = "0"
+            shouldShowAverage = false
         }
         expenciesPerDistanceUnit += " \(currencySign)/\(distanceUnit)"
     }

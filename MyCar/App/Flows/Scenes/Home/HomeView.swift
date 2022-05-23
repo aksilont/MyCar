@@ -36,8 +36,10 @@ struct HomeView: View {
                                     Text(viewModel.total)
                                         .foregroundColor(Color.white)
                                         .font(Font.title2)
-                                    Text(viewModel.expenciesPerDistanceUnit)
-                                        .foregroundColor(viewModel.colors[2])
+                                    if viewModel.shouldShowAverage {
+                                        Text(viewModel.expenciesPerDistanceUnit)
+                                            .foregroundColor(viewModel.colors[2])
+                                    }
                                 }
                                 Spacer()
                                 VStack(spacing: geometry.size.width / 16) {
