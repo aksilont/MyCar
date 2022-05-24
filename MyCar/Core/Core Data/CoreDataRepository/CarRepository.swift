@@ -5,7 +5,6 @@
 //  Created by Alex Larin on 10.05.2022.
 //
 
-import UIKit
 import CoreData
 
 class CarRepository {

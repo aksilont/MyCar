@@ -8,7 +8,6 @@
 import UIKit
 
 struct GarageCellModel {
-    
     var itemAutoLabel: String
     var modelAutoLabel: String
     var numberAutoLabel: String
@@ -24,6 +23,7 @@ struct GarageCellModel {
         return [firstItem]
     }
 }
+
 struct CarParametrsModel{
     let typeFuel = ["АИ-92","АИ-95","АИ-98","Дизель","Электро"]
     

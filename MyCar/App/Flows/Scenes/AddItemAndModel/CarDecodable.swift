@@ -41,7 +41,6 @@ class CarDecodable {
     }
     
     func convertForPicker() {
-        
         let carsDecodable = self.load().list
         for car in carsDecodable {
             var item = carsForPicker.item

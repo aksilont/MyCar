@@ -1,5 +1,5 @@
 //
-//  Color+Extension.swift
+//  Color+Additions.swift
 //  MyCar
 //
 //  Created by Denis Kuzmin on 15.05.2022.

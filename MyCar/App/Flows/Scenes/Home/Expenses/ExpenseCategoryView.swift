@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ExpenseCategoryView: View {
     
-    var rows = ["Дата", "Сумма", "Пробег", "Описание"]
+    private let rows = ["Дата", "Сумма", "Пробег", "Описание"]
+    
     @FocusState private var textFieldsFocused: Bool
     @Binding var homeNeedsToUpdate: Bool
     @ObservedObject var viewModel: ExpenseViewModel

@@ -1,5 +1,5 @@
 //
-//  CollectionView + Extension.swift
+//  UICollectionView+Additions.swift
 //  MyCar
 //
 //  Created by Alex Larin on 13.05.2022.

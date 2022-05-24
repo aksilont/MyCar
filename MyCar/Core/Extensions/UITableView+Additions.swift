@@ -1,5 +1,5 @@
 //
-//  TableView + Extension.swift
+//  UITableView+Additions.swift
 //  MyCar
 //
 //  Created by Alex Larin on 13.05.2022.

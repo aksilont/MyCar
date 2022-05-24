@@ -5,10 +5,9 @@
 //  Created by Alex Larin on 06.05.2022.
 //
 
-
 import UIKit
+
 enum FuelModel: Int, CustomStringConvertible, CaseIterable {
-    
     case ai92
     case ai95
     case ai98
@@ -24,5 +23,4 @@ enum FuelModel: Int, CustomStringConvertible, CaseIterable {
         case .electro: return "Электро"
         }
     }
-    
 }

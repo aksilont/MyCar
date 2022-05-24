@@ -8,12 +8,10 @@
 import UIKit
 
 class PinButton: UIButton {
-
     var pinState: PinState = .undefined
     
     convenience init(pinState: PinState) {
         self.init(type: .custom)
         self.pinState = pinState
     }
-
 }
