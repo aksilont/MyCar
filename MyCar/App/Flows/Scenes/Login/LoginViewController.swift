@@ -28,13 +28,12 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupUI()
     }
 
     private func setupUI() {
         if !viewModel.hasPinCode() {
-            let mainVC = MainViewController()
+            let mainVC = MainTabController()
             navigationController?.pushViewController(mainVC, animated: true)
         }
         
@@ -103,8 +102,7 @@ class LoginViewController: UIViewController {
     private func checkPin() {
         resetAllDots()
         currentPin = ""
-        
-        navigationController?.pushViewController(MainViewController(), animated: true)
+        navigationController?.pushViewController(MainTabController(), animated: true)
     }
     
 }

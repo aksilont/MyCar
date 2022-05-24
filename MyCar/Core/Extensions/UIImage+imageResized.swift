@@ -1,5 +1,5 @@
 //
-//  UIImage+Ext.swift
+//  UIImage+imageResized.swift
 //  MyCar
 //
 //  Created by Aksilont on 05.05.2022.

@@ -1,5 +1,5 @@
 //
-//  Date+Extension.swift
+//  Date+Additions.swift
 //  MyCar
 //
 //  Created by Aksilont on 18.05.2022.

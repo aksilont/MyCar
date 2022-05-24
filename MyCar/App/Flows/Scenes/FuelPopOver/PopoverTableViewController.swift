@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 protocol PopoverTableViewControllerDelegate: AnyObject {
     func fuelDidSelect(_ param: String, index: IndexPath)
 }
@@ -38,6 +39,5 @@ class PopoverTableViewController: UITableViewController {
         let param = model[indexPath.row]
         delegate?.fuelDidSelect(param, index: self.index )
     }
-    
     
 }

@@ -1,18 +1,16 @@
 //
-//  MainViewController.swift
+//  MainTabController.swift
 //  MyCar
 //
 //  Created by Aksilont on 01.05.2022.
 //
 
-import UIKit
 import SwiftUI
 
-class MainViewController: UITabBarController {
+class MainTabController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupUI()
     }
     
@@ -28,16 +26,6 @@ class MainViewController: UITabBarController {
                                          image: UIImage(systemName: "waveform.path.ecg.rectangle"),
                                          selectedImage: UIImage(systemName: "waveform.path.ecg.rectangle.fill"))
         
-        let documentsVC = DocumentsViewController()
-        documentsVC.tabBarItem = UITabBarItem(title: nil,
-                                         image: UIImage(systemName: "doc.on.doc"),
-                                         selectedImage: UIImage(systemName: "doc.on.doc.fill"))
-        
-        let eventsVC = EventsViewController()
-        eventsVC.tabBarItem = UITabBarItem(title: nil,
-                                         image: UIImage(systemName: "calendar"),
-                                         selectedImage: UIImage(systemName: "calendar"))
-        
         let settingsView = SettingsView()
         let settingsVC = UIHostingViewControllerCustom(rootView: settingsView)
         settingsVC.tabBarItem = UITabBarItem(title: nil,
@@ -46,6 +34,6 @@ class MainViewController: UITabBarController {
         
         tabBar.tintColor = UIColor.systemTeal
         tabBar.unselectedItemTintColor = UIColor.white
-        viewControllers = [homeVC, statisticsVC, documentsVC, eventsVC, settingsVC]
+        viewControllers = [homeVC, statisticsVC, settingsVC]
     }
 }

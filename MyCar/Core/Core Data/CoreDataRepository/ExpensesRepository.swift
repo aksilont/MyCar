@@ -5,7 +5,6 @@
 //  Created by Aksilont on 17.05.2022.
 //
 
-import Foundation
 import CoreData
 
 protocol ExpensesObjectProtocol {

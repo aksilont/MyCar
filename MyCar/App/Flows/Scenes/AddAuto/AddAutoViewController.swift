@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 protocol AddAutoViewControllerDelegate: AnyObject {
     func appendAuto(_ auto: CarModel)
 }
@@ -66,6 +67,7 @@ class AddAutoViewController: UIViewController {
             readyButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
+    
     func setupNavigationAttributes(){
         self.title = "Добавить авто"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
@@ -91,6 +93,7 @@ extension AddAutoViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return AutoModel.allCases.count
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -147,6 +150,7 @@ extension AddAutoViewController: UITableViewDelegate, UITableViewDataSource {
             
         }
     }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return false
@@ -157,6 +161,7 @@ extension AddAutoViewController: UIPopoverPresentationControllerDelegate{
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
     }
+    
     func gotoPopover(cell: AutoCell, model: [String], index: IndexPath){
         let popVC = PopoverTableViewController()
         popVC.modalPresentationStyle = .popover
@@ -194,7 +199,6 @@ extension AddAutoViewController: PopoverTableViewControllerDelegate{
 }
 
 extension AddAutoViewController: UITextFieldDelegate {
-    
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         return true
     }

@@ -16,6 +16,4 @@ class StartViewController: UIViewController {
         navigationController?.pushViewController(loginViewController, animated: false)
     }
 
-
 }
-
