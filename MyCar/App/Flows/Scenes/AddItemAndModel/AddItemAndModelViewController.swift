@@ -63,16 +63,26 @@ class AddItemAndModelViewController: UIViewController {
         return lineView
     }()
     
+    let readyButton: UIButton = {
+        let button = UIButton()
+        button.sizeToFit()
+        button.backgroundColor = .buttonColor
+        button.layer.cornerRadius = 5
+        button.setTitleColor(.white, for: .highlighted)
+        button.setTitle("Сохранить", for: .normal)
+        button.isHidden = true
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationAttributes()
         setupElements()
         setupConstraints()
-        
         carPicker.dataSource = self
         carPicker.delegate = self
         infoTextField.delegate = self
-        
         itemArray = carsDecodable.itemArray
         fullArray = carsDecodable.itemArray
        
@@ -80,6 +90,7 @@ class AddItemAndModelViewController: UIViewController {
     
     func setupNavigationAttributes(){
         navigationItem.title = "Марка и модель Авто"
+        
     }
     
     func setupElements() {
@@ -87,6 +98,9 @@ class AddItemAndModelViewController: UIViewController {
         view.addSubview(carPicker)
         view.addSubview(infoTextField)
         view.addSubview(lineView)
+        view.addSubview(readyButton)
+        readyButton.addTarget(self, action: #selector(touchReady), for: .touchUpInside)
+        
     }
     
     func setupConstraints() {
@@ -108,8 +122,17 @@ class AddItemAndModelViewController: UIViewController {
             carPicker.topAnchor.constraint(equalTo: autoLabel.bottomAnchor, constant: tenInset),
             carPicker.heightAnchor.constraint(equalToConstant: view.frame.size.height / 2),
             carPicker.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            carPicker.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
+            carPicker.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            
+            readyButton.topAnchor.constraint(equalTo: carPicker.bottomAnchor, constant: tenInset),
+            readyButton.heightAnchor.constraint(equalToConstant: heightInset),
+            readyButton.widthAnchor.constraint(equalToConstant: view.frame.size.width / 1.5),
+            readyButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
+    }
+    
+    @objc func touchReady() {
+        self.navigationController?.popViewController(animated: true)
     }
 }
 
@@ -183,8 +206,11 @@ extension AddItemAndModelViewController: UITextFieldDelegate {
         self.carPicker.reloadComponent(1)
         self.marka = selectText
     }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        self.readyButton.isHidden = false
         return true
     }
+    
 }

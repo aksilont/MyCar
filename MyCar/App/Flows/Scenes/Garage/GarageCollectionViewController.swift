@@ -24,7 +24,6 @@ class GarageCollectionViewController: UICollectionViewController {
         self.collectionView.collectionViewLayout = createLayout()
         collectionView.backgroundColor = .black
         setupNavigationAttributes()
-      //  carRepository.deleteAllCars()
         getCarsFromCoreData()
     }
     
@@ -139,10 +138,8 @@ extension GarageCollectionViewController: CheckMarkerDelegate {
         let alertController = UIAlertController(title: "", message: "Вы уверены, что хотите удалить этот авто?", preferredStyle: .actionSheet)
        
         let okButton = UIAlertAction(title: "Удалить", style: .default, handler: { (action) -> Void in
-            print("Ok button tapped")
             let number = self.cars[self.indexPath?.row ?? 0].number
             self.carRepository.deleteCar(number: number)
-
             let cars = self.carRepository.fetchCars()
             self.cars = self.carRepository.convertModel(coreDataModel:cars)
             self.collectionView.reloadData()
@@ -158,6 +155,7 @@ extension GarageCollectionViewController: CheckMarkerDelegate {
         self.present(alertController, animated: true, completion: nil)
     }
 }
+
 extension GarageCollectionViewController {
     func gotoCarInfo(index: IndexPath) {
     let vc = AddAutoViewController(nibName: "AddAutoViewController", bundle: nil)

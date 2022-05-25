@@ -68,6 +68,7 @@ class AddAutoViewController: UIViewController {
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             tableView.heightAnchor.constraint(equalToConstant: view.frame.size.height - 50 ),
+            
             readyButton.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 0),
             readyButton.heightAnchor.constraint(equalToConstant: 40),
             readyButton.widthAnchor.constraint(equalToConstant: view.frame.size.width / 1.5),
