@@ -6,6 +6,12 @@
 //
 
 import UIKit
+import SwiftUI
+
+enum Status {
+    case add
+    case correct
+}
 
 protocol AddAutoViewControllerDelegate: AnyObject {
     func appendAuto(_ auto: CarModel)
@@ -16,6 +22,7 @@ class AddAutoViewController: UIViewController {
     var carModel = CarModel(item: "", model: "", number: "", year: "", distance: 0, vin: "", activFlag: false, fuelType: "")
     let carRepository = CarRepository()
     let carParametrsModel = CarParametrsModel()
+    var status: Status = .add
     
     private var tableView: UITableView = {
         let tableView = UITableView()
@@ -34,7 +41,7 @@ class AddAutoViewController: UIViewController {
         button.backgroundColor = .buttonColor
         button.layer.cornerRadius = 5
         button.setTitleColor(.white, for: .highlighted)
-        button.setTitle("Готово", for: .normal)
+        button.setTitle("Сохранить", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -69,22 +76,42 @@ class AddAutoViewController: UIViewController {
     }
     
     func setupNavigationAttributes(){
-        self.title = "Добавить авто"
+        switch status {
+        case .add:
+            print("add")
+            self.title = "Добавить авто"
+        case .correct:
+            print("correct")
+            self.title = "Ваш авто"
+        }
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
     
     @objc func touchReady(){
         if carModel.item != "" && carModel.number != "" {
-            let cars = carRepository.fetchCars()
-            if cars.isEmpty {
-                carModel.activFlag = true
+            switch status {
+            case .add:
+                let cars = carRepository.fetchCars()
+                if cars.isEmpty {
+                    carModel.activFlag = true
+                }
+                let repeatCar = carRepository.fetchCarsUseNumber(carModel: carModel)
+                if repeatCar.isEmpty {
+                    carRepository.saveCar(carModel: carModel)
+                    delegate?.appendAuto(carModel)
+                    self.navigationController?.popViewController(animated: true)
+                }
+                showAction(message: "Авто с таким номером уже существует")
+            case .correct:
+                carRepository.updateCar(carModel: carModel)
+                delegate?.appendAuto(carModel)
+                self.navigationController?.popViewController(animated: true)
             }
-            carRepository.saveCar(carModel: carModel)
-            delegate?.appendAuto(carModel)
-            self.navigationController?.popViewController(animated: true)
+            
         } else {
-            print("no item and no number")
+            showAction(message: "Не заполнены поля Марка или Гос.номер")
         }
+        
     }
 }
 
@@ -110,12 +137,24 @@ extension AddAutoViewController: UITableViewDelegate, UITableViewDataSource {
             cell.infoTextField.delegate = self
             cell.infoTextField.isUserInteractionEnabled = false
             return cell
-        case .model, .number, .distance, .vin:
+        case .model,.vin:
             let cell: AutoCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
             cellContent(cell: cell, autoModel: autoModel ?? AutoModel.item )
             cell.configure(with: autoModel, carModel: carModel)
             cell.infoTextField.delegate = self
             cell.infoTextField.isUserInteractionEnabled = true
+            return cell
+        case .number, .distance:
+            let cell: AutoCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+            cellContent(cell: cell, autoModel: autoModel ?? AutoModel.item )
+            cell.configure(with: autoModel, carModel: carModel)
+            cell.infoTextField.delegate = self
+            switch status {
+            case .add:
+                cell.infoTextField.isUserInteractionEnabled = true
+            case .correct:
+                cell.infoTextField.isUserInteractionEnabled = false
+            }
             return cell
         case .none:
             break
@@ -136,7 +175,6 @@ extension AddAutoViewController: UITableViewDelegate, UITableViewDataSource {
         let indexCase = indexPath.section
         let autoModel = AutoModel(rawValue: indexCase)
         switch autoModel {
-            
         case .item:
             gotoAddItemAndModel()
         case .model, .number, .distance, .vin:
@@ -147,7 +185,6 @@ extension AddAutoViewController: UITableViewDelegate, UITableViewDataSource {
             gotoPopover(cell: cell, model: carParametrsModel.typeFuel, index: indexPath)
         case .none:
             break
-            
         }
     }
     
@@ -174,10 +211,9 @@ extension AddAutoViewController: UIPopoverPresentationControllerDelegate{
         popOverVC?.sourceRect = CGRect(x: cell.bounds.width, y: cell.bounds.minY, width: 0, height: 0)
         popVC.preferredContentSize = CGSize(width: 250, height: 250)
         self.present(popVC, animated: true)
-        
     }
-    
 }
+
 extension AddAutoViewController: PopoverTableViewControllerDelegate{
     func fuelDidSelect(_ param: String, index: IndexPath) {
         let indexCase = index.section
@@ -186,7 +222,7 @@ extension AddAutoViewController: PopoverTableViewControllerDelegate{
         case .item:
             break
         case .model, .number, .distance, .vin:
-           break
+            break
         case .year:
             self.carModel.year = param
         case .fuelType:
@@ -241,7 +277,16 @@ extension AddAutoViewController: AddItemAndModelDelegate {
         self.navigationController?.pushViewController(vc, animated: true)
         vc.delegate = self
         carModel.item = vc.marka
-        
+    }
+}
+
+extension AddAutoViewController {
+    func showAction(message: String) {
+        let alertController = UIAlertController(title: "", message: message, preferredStyle: .actionSheet)
+        let deleteButton = UIAlertAction(title: "Назад", style: .destructive, handler: { (action) -> Void in
+        })
+        alertController.addAction(deleteButton)
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 

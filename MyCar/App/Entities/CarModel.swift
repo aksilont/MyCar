@@ -17,7 +17,7 @@ struct CarModel {
     var activFlag: Bool
     var fuelType: String
     
-    static func fetchPass() -> [CarModel] {
+ /*   static func fetchPass() -> [CarModel] {
         let firstItem = CarModel(item: "",
                                  model: "",
                                  number: "",
@@ -27,5 +27,5 @@ struct CarModel {
                                  activFlag: false,
                                  fuelType: "")
         return [firstItem]
-    }
+    }*/
 }

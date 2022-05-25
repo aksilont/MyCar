@@ -13,8 +13,6 @@ protocol CheckMarkerDelegate {
     func showDeleteIndex(indexPath: IndexPath)
 }
 
-
-
 class GarageCollectionViewController: UICollectionViewController {
     var cars:[CarModel] = []
     let carRepository = CarRepository()
@@ -83,6 +81,8 @@ class GarageCollectionViewController: UICollectionViewController {
     
     // MARK: UICollectionViewDelegate
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath)
+        gotoCarInfo(index: indexPath)
         
     }
     
@@ -109,6 +109,7 @@ extension GarageCollectionViewController: AddAutoViewControllerDelegate {
 }
 
 extension GarageCollectionViewController: CheckMarkerDelegate {
+    
     func setFlag(indexPath: IndexPath) {
         self.indexPath = indexPath
         for index in 0 ..< cars.count {
@@ -125,6 +126,7 @@ extension GarageCollectionViewController: CheckMarkerDelegate {
             collectionView.reloadData()
         }
     }
+    
     func showDeleteIndex(indexPath: IndexPath) {
         self.indexPath = indexPath
     }
@@ -134,7 +136,7 @@ extension GarageCollectionViewController: CheckMarkerDelegate {
     }
     
     func showAction() {
-        let alertController = UIAlertController(title: "", message: "вы уверены что хотите удалить этот авто", preferredStyle: .actionSheet)
+        let alertController = UIAlertController(title: "", message: "Вы уверены, что хотите удалить этот авто?", preferredStyle: .actionSheet)
        
         let okButton = UIAlertAction(title: "Удалить", style: .default, handler: { (action) -> Void in
             print("Ok button tapped")
@@ -154,5 +156,14 @@ extension GarageCollectionViewController: CheckMarkerDelegate {
         alertController.addAction(deleteButton)
 
         self.present(alertController, animated: true, completion: nil)
+    }
+}
+extension GarageCollectionViewController {
+    func gotoCarInfo(index: IndexPath) {
+    let vc = AddAutoViewController(nibName: "AddAutoViewController", bundle: nil)
+        vc.delegate = self
+        vc.carModel = cars[index.row]
+        vc.status = .correct
+    self.navigationController?.pushViewController(vc, animated: true)
     }
 }
