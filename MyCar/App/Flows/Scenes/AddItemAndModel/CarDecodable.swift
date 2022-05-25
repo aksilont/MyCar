@@ -46,8 +46,7 @@ class CarDecodable {
             var item = carsForPicker.item
             item = car.key
             itemArray.append(item)
-            itemArray.sort{$0 < $1}
-            
+            itemArray.sort{ $0 < $1 }
         }
     }
     

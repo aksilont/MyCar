@@ -9,7 +9,6 @@ import UIKit
 
 protocol AddItemAndModelDelegate: AnyObject {
     func itemAndModelDidSelect(item: String, model: String)
-    
 }
 
 class AddItemAndModelViewController: UIViewController {
@@ -19,12 +18,9 @@ class AddItemAndModelViewController: UIViewController {
     var modelByMark:[String] = []
     var marka = ""
     var model = ""
-    
     var selectText: String = ""
     var itemArray = [String]()
     var fullArray = [String]()
-    
-    // insets :
     let tenInset = CGFloat(10)
     let twentyInset = CGFloat(20)
     let topInset = CGFloat(80)
@@ -81,10 +77,11 @@ class AddItemAndModelViewController: UIViewController {
         fullArray = carsDecodable.itemArray
        
     }
+    
     func setupNavigationAttributes(){
-        let titleGarage = "Марка и модель Авто"
-        navigationItem.title = titleGarage
+        navigationItem.title = "Марка и модель Авто"
     }
+    
     func setupElements() {
         view.addSubview(autoLabel)
         view.addSubview(carPicker)
@@ -98,20 +95,24 @@ class AddItemAndModelViewController: UIViewController {
             infoTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: twentyInset),
             infoTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -twentyInset),
             infoTextField.heightAnchor.constraint(equalToConstant: heightInset),
+            
             lineView.topAnchor.constraint(equalTo: infoTextField.bottomAnchor),
             lineView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: twentyInset),
             lineView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -twentyInset),
             lineView.heightAnchor.constraint(equalToConstant: 2),
-            autoLabel.topAnchor.constraint(equalTo: infoTextField.bottomAnchor, constant: tenInset),
+            
+            autoLabel.topAnchor.constraint(equalTo: lineView.bottomAnchor, constant: tenInset),
             autoLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: twentyInset),
             autoLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -twentyInset),
-            carPicker.topAnchor.constraint(equalTo: infoTextField.bottomAnchor, constant: tenInset),
+            
+            carPicker.topAnchor.constraint(equalTo: autoLabel.bottomAnchor, constant: tenInset),
             carPicker.heightAnchor.constraint(equalToConstant: view.frame.size.height / 2),
             carPicker.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             carPicker.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
         ])
     }
 }
+
 extension AddItemAndModelViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 2
@@ -136,16 +137,14 @@ extension AddItemAndModelViewController: UIPickerViewDelegate {
             modelByMark = carsDecodable.getModel(item: item ?? "")
             let nameItem = itemArray[row]
             self.marka = item ?? ""
-            autoLabel.text = "\(self.marka) \(self.model)"
-            delegate?.itemAndModelDidSelect(item: self.marka, model: self.model)
+            sendAutoLabel(marka: self.marka, modal: self.model)
             return nameItem
         } else {
             var models = [""]
             models = modelByMark
             let nameModel = models[row]
             self.model = models.first ?? ""
-            autoLabel.text = "\(self.marka) \(self.model)"
-            delegate?.itemAndModelDidSelect(item: self.marka, model: self.model)
+            sendAutoLabel(marka: self.marka, modal: self.model)
             return nameModel
         }
     }
@@ -157,21 +156,26 @@ extension AddItemAndModelViewController: UIPickerViewDelegate {
             self.marka = marka
             modelByMark = carsDecodable.getModel(item: marka)
             self.model = modelByMark[0]
-            autoLabel.text = "\(self.marka) \(self.model)"
-            delegate?.itemAndModelDidSelect(item: self.marka, model: self.model)
+            sendAutoLabel(marka: self.marka, modal: self.model)
             pickerView.reloadComponent(1)
             pickerView.selectRow(0, inComponent: 1, animated: true)
         } else {
             let model = modelByMark[row]
             self.model = model
-            autoLabel.text = "\(self.marka) \(self.model)"
-            delegate?.itemAndModelDidSelect(item: self.marka, model: self.model)
+            sendAutoLabel(marka: self.marka, modal: self.model)
         }
     }
+    
+    func sendAutoLabel(marka: String, modal: String) {
+        autoLabel.text = "\(self.marka) \(self.model)"
+        delegate?.itemAndModelDidSelect(item: self.marka, model: self.model)
+    }
+    
 }
+
 extension AddItemAndModelViewController: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        selectText = textField.text ?? ""
+        selectText = textField.text?.capitalized ?? ""
         self.itemArray = fullArray.filter { $0.hasPrefix(selectText) }
         self.carPicker.reloadComponent(0)
         let item = itemArray.first
