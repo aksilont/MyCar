@@ -73,8 +73,8 @@ class SettingsViewModel: ObservableObject {
         for _ in (1...numberOfExpenses) {
             let date = Date() - Double(Int.random(in: day...day * 365))
             let comment = "\(date)"
-            let distance = Float(Int.random(in: 100...500000) / 100)
-            let price = Float(Int.random(in: 100...500000) / 100)
+            let distance = Float(Int.random(in: 50...500))
+            let price = Float(Int.random(in: 50...500))
             let model = ExpensesModel(expensesType: expensesType,
                                       date: date,
                                       price: price,

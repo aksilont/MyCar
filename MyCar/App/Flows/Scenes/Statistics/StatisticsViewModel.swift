@@ -32,8 +32,8 @@ final class StatisticsViewModel: ObservableObject {
     }
     
     func getExpenses(period: Period) {
-        expensesRepository.fetchExpenses(by: .parking, period: period, ascendingDate: true) { items in
-            self.data = items.map { Double($0.price)}
+        expensesRepository.fetchAllExpenses(period: period, ascendingDate: true) { items in
+            self.data = items.map { Double($0.price) }
         }
     }
     
