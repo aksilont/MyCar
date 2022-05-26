@@ -13,6 +13,8 @@ class SettingsViewModel: ObservableObject {
     private let keyChain = KeychainService.standart
     private let pinCodeKey = "PinCode"
     
+    private let expensesRepository = ExpensesRepository()
+    
     let lenghtPinCode = 4
     
     @Published var usePinCode = false {
@@ -58,4 +60,32 @@ class SettingsViewModel: ObservableObject {
     func hasPinCode() -> Bool {
         !getPinCode().isEmpty
     }
+    
+    func createTestingExpenses() {
+        for expensesType in ExpensesType.allCases {
+            createTestingExpenses(by: expensesType)
+        }
+    }
+    
+    func createTestingExpenses(by expensesType: ExpensesType) {
+        let day = 86400
+        // Создание 50 случайных записей
+        for _ in (1...50) {
+            let date = Date() - Double(Int.random(in: day...day * 365))
+            let comment = "\(date)"
+            let distance = Float(Int.random(in: 100...500000) / 100)
+            let price = Float(Int.random(in: 100...500000) / 100)
+            let model = ExpensesModel(expensesType: expensesType,
+                                      date: date,
+                                      price: price,
+                                      distance: distance,
+                                      comment: comment)
+            expensesRepository.saveExpenses(model: model)
+        }
+    }
+    
+    func deleteAllExpenses() {
+        expensesRepository.deleteAllExpenses()
+    }
+    
 }

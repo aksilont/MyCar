@@ -20,9 +20,9 @@ struct StatisticsView: View {
                          legend: "руб.",
                          frameRect: geometry.frame(in: .local))
                 
-                Picker("Period", selection: $viewModel.periodChoioce) {
+                Picker("Period", selection: $viewModel.periodChoice) {
                     ForEach(0 ..< settings.count, id: \.self) { index in
-                        Text(self.settings[index])
+                        Text(settings[index])
                             .tag(index)
                     }
 
@@ -30,6 +30,9 @@ struct StatisticsView: View {
                 .pickerStyle(SegmentedPickerStyle())
                 Spacer()
             }
+        }
+        .onAppear {
+            viewModel.getExpenses(period: viewModel.period)
         }
     }
 }

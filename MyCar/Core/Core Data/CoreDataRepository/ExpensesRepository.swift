@@ -186,6 +186,18 @@ final class ExpensesRepository {
         }
     }
     
+    func fetchAllExpenses(period: Period,
+                          ascendingDate: Bool = false,
+                          completion: @escaping (([ExpensesModel]) -> ())) {
+        var result: [ExpensesModel] = []
+        for expensesType in ExpensesType.allCases {
+            fetchExpenses(by: expensesType, period: period, ascendingDate: ascendingDate) { models in
+                result += models
+            }
+        }
+        completion(result)
+    }
+    
     
     // MARK: - Сохранение данных
     

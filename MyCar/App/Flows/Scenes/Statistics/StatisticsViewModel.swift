@@ -11,20 +11,24 @@ final class StatisticsViewModel: ObservableObject {
     private let expensesRepository = ExpensesRepository()
     
     @Published var data: [Double] = []
-    @Published var periodChoioce = 0 {
+    @Published var periodChoice = 0 {
         didSet {
-            switch periodChoioce {
-            case 0: getExpenses(period: .last30Days)
-            case 1: getExpenses(period: .last90Days)
-            case 2: getExpenses(period: .last6Months)
-            case 3: getExpenses(period: .last1Year)
-            default: getExpenses(period: .last30Days)
-            }
+            getExpenses(period: period)
+        }
+    }
+    
+    var period: Period {
+        switch periodChoice {
+        case 0: return .last30Days
+        case 1: return .last90Days
+        case 2: return .last6Months
+        case 3: return .last1Year
+        default: return .last30Days
         }
     }
     
     init() {
-        getExpenses(period: .last30Days)
+        getExpenses(period: period)
     }
     
     func getExpenses(period: Period) {

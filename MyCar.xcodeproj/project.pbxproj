@@ -64,6 +64,7 @@
 		7A96BF61283E9AE0005E5FEB /* Path+QuadCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A96BF59283E9AE0005E5FEB /* Path+QuadCurve.swift */; };
 		7A96BF63283E9AE0005E5FEB /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A96BF5B283E9AE0005E5FEB /* Line.swift */; };
 		7A96BF65283EA814005E5FEB /* StatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A96BF64283EA814005E5FEB /* StatisticsViewModel.swift */; };
+		7A9BF8C8283F91DA003FF8C3 /* CGPoint+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9BF8C7283F91DA003FF8C3 /* CGPoint+Additions.swift */; };
 		7A9C9352282423EE00FC40DE /* NumPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9C9351282423EE00FC40DE /* NumPad.swift */; };
 		7A9C9354282424DD00FC40DE /* UIImage+imageResized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9C9353282424DD00FC40DE /* UIImage+imageResized.swift */; };
 		7A9C93562824251500FC40DE /* PinButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9C93552824251500FC40DE /* PinButton.swift */; };
@@ -183,6 +184,7 @@
 		7A96BF59283E9AE0005E5FEB /* Path+QuadCurve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Path+QuadCurve.swift"; sourceTree = "<group>"; };
 		7A96BF5B283E9AE0005E5FEB /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		7A96BF64283EA814005E5FEB /* StatisticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewModel.swift; sourceTree = "<group>"; };
+		7A9BF8C7283F91DA003FF8C3 /* CGPoint+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Additions.swift"; sourceTree = "<group>"; };
 		7A9C9351282423EE00FC40DE /* NumPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumPad.swift; sourceTree = "<group>"; };
 		7A9C9353282424DD00FC40DE /* UIImage+imageResized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+imageResized.swift"; sourceTree = "<group>"; };
 		7A9C93552824251500FC40DE /* PinButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinButton.swift; sourceTree = "<group>"; };
@@ -468,10 +470,8 @@
 		7A8AA56F281E75EB0071FDD4 /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
-				7A96BF53283E9AE0005E5FEB /* LineChart */,
 				7A96BF64283EA814005E5FEB /* StatisticsViewModel.swift */,
 				7A96BF4F283E9A59005E5FEB /* StatisticsView.swift */,
-				7A96BF51283E9AA1005E5FEB /* Helpers.swift */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";
@@ -503,17 +503,27 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		7A96BF53283E9AE0005E5FEB /* LineChart */ = {
+		7A96BF53283E9AE0005E5FEB /* LineChartView */ = {
 			isa = PBXGroup;
 			children = (
 				7A96BF54283E9AE0005E5FEB /* IndicatorPoint.swift */,
 				7A96BF58283E9AE0005E5FEB /* MagnifierRect.swift */,
 				7A96BF56283E9AE0005E5FEB /* Legend.swift */,
-				7A96BF59283E9AE0005E5FEB /* Path+QuadCurve.swift */,
 				7A96BF5B283E9AE0005E5FEB /* Line.swift */,
 				7A96BF55283E9AE0005E5FEB /* LineView.swift */,
+				7A9BF8C9283F921D003FF8C3 /* Helpers */,
 			);
-			path = LineChart;
+			path = LineChartView;
+			sourceTree = "<group>";
+		};
+		7A9BF8C9283F921D003FF8C3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7A96BF51283E9AA1005E5FEB /* Helpers.swift */,
+				7A96BF59283E9AE0005E5FEB /* Path+QuadCurve.swift */,
+				7A9BF8C7283F91DA003FF8C3 /* CGPoint+Additions.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		7AE5A5CE281E66BF00F008B0 /* App */ = {
@@ -573,6 +583,7 @@
 		7AE5A5D3281E686F00F008B0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7A96BF53283E9AE0005E5FEB /* LineChartView */,
 				92C6123228305B8A009A930E /* PieChart */,
 				7A0FE32F283CB32800B51E99 /* NumPad */,
 				7A9C93552824251500FC40DE /* PinButton.swift */,
@@ -807,6 +818,7 @@
 				435A2F62282AFA1700BF10EA /* Car+CoreDataClass.swift in Sources */,
 				7A96BF5D283E9AE0005E5FEB /* LineView.swift in Sources */,
 				7AF081F6283150D400025CA4 /* CheckBoxView.swift in Sources */,
+				7A9BF8C8283F91DA003FF8C3 /* CGPoint+Additions.swift in Sources */,
 				431B08A12839686100CF781C /* UIColor+Additions.swift in Sources */,
 				435A2F6B282AFA1700BF10EA /* ParkingExpenses+CoreDataProperties.swift in Sources */,
 				7AD4D98228258F0E0083A7A4 /* DocumentsViewController.swift in Sources */,

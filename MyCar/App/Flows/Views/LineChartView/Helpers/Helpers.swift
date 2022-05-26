@@ -201,11 +201,3 @@ extension Color {
         self.init(red: Double(r) / 255, green: Double(g) / 255, blue: Double(b) / 255)
     }
 }
-
-
-class HapticFeedback {
-    let selectionFeedbackGenerator = UISelectionFeedbackGenerator()
-    static func playSelection() -> Void {
-        UISelectionFeedbackGenerator().selectionChanged()
-    }
-}
