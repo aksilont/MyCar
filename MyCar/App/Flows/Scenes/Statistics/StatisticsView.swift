@@ -28,7 +28,6 @@ struct StatisticsView: View {
 
                 }
                 .pickerStyle(SegmentedPickerStyle())
-                .offset(y: 70)
                 Spacer()
             }
         }

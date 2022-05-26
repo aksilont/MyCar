@@ -31,6 +31,5 @@ struct MagnifierRect: View {
                     .blendMode(.multiply)
             }
         }
-//        .offset(x: 0, y: -15)
     }
 }
