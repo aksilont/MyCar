@@ -84,6 +84,16 @@ struct ExpenseCategoryView: View {
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle(viewModel.title)
-        }.onDisappear(perform: { homeNeedsToUpdate = true})
+        }
+        .onDisappear(perform: { homeNeedsToUpdate = true})
+        .alert(isPresented: $viewModel.alert) {
+            Alert(
+                title: Text("Неправильное значение пробега"),
+                message: Text("Значение пробега меньше значений за предыдущие даты"),
+                dismissButton: .default(
+                    Text("Закрыть")
+                )
+            )
+        }
     }
 }
