@@ -55,6 +55,15 @@
 		7A823640281A6DB7001C2AE3 /* MyCarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A82363F281A6DB7001C2AE3 /* MyCarTests.swift */; };
 		7A82364A281A6DB7001C2AE3 /* MyCarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A823649281A6DB7001C2AE3 /* MyCarUITests.swift */; };
 		7A82364C281A6DB7001C2AE3 /* MyCarUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A82364B281A6DB7001C2AE3 /* MyCarUITestsLaunchTests.swift */; };
+		7A96BF50283E9A59005E5FEB /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A96BF4F283E9A59005E5FEB /* StatisticsView.swift */; };
+		7A96BF52283E9AA1005E5FEB /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A96BF51283E9AA1005E5FEB /* Helpers.swift */; };
+		7A96BF5C283E9AE0005E5FEB /* IndicatorPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A96BF54283E9AE0005E5FEB /* IndicatorPoint.swift */; };
+		7A96BF5D283E9AE0005E5FEB /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A96BF55283E9AE0005E5FEB /* LineView.swift */; };
+		7A96BF5E283E9AE0005E5FEB /* Legend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A96BF56283E9AE0005E5FEB /* Legend.swift */; };
+		7A96BF60283E9AE0005E5FEB /* MagnifierRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A96BF58283E9AE0005E5FEB /* MagnifierRect.swift */; };
+		7A96BF61283E9AE0005E5FEB /* Path+QuadCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A96BF59283E9AE0005E5FEB /* Path+QuadCurve.swift */; };
+		7A96BF63283E9AE0005E5FEB /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A96BF5B283E9AE0005E5FEB /* Line.swift */; };
+		7A96BF65283EA814005E5FEB /* StatisticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A96BF64283EA814005E5FEB /* StatisticsViewModel.swift */; };
 		7A9C9352282423EE00FC40DE /* NumPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9C9351282423EE00FC40DE /* NumPad.swift */; };
 		7A9C9354282424DD00FC40DE /* UIImage+imageResized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9C9353282424DD00FC40DE /* UIImage+imageResized.swift */; };
 		7A9C93562824251500FC40DE /* PinButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9C93552824251500FC40DE /* PinButton.swift */; };
@@ -64,8 +73,6 @@
 		7AD411FF283629130091F1A8 /* Period.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD411FE283629130091F1A8 /* Period.swift */; };
 		7AD412012836CD140091F1A8 /* ExpensesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD412002836CD140091F1A8 /* ExpensesModel.swift */; };
 		7AD4D97A28258AE80083A7A4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD4D97828258AE80083A7A4 /* HomeViewController.swift */; };
-		7AD4D97E28258D000083A7A4 /* StaticticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD4D97C28258D000083A7A4 /* StaticticsViewController.swift */; };
-		7AD4D97F28258D000083A7A4 /* StaticticsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AD4D97D28258D000083A7A4 /* StaticticsViewController.xib */; };
 		7AD4D98228258F0E0083A7A4 /* DocumentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD4D98028258F0E0083A7A4 /* DocumentsViewController.swift */; };
 		7AD4D98328258F0E0083A7A4 /* DocumentsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AD4D98128258F0E0083A7A4 /* DocumentsViewController.xib */; };
 		7AD4D98628258F1F0083A7A4 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD4D98428258F1F0083A7A4 /* EventsViewController.swift */; };
@@ -167,6 +174,15 @@
 		7A823645281A6DB7001C2AE3 /* MyCarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyCarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A823649281A6DB7001C2AE3 /* MyCarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCarUITests.swift; sourceTree = "<group>"; };
 		7A82364B281A6DB7001C2AE3 /* MyCarUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCarUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7A96BF4F283E9A59005E5FEB /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
+		7A96BF51283E9AA1005E5FEB /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		7A96BF54283E9AE0005E5FEB /* IndicatorPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicatorPoint.swift; sourceTree = "<group>"; };
+		7A96BF55283E9AE0005E5FEB /* LineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
+		7A96BF56283E9AE0005E5FEB /* Legend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Legend.swift; sourceTree = "<group>"; };
+		7A96BF58283E9AE0005E5FEB /* MagnifierRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnifierRect.swift; sourceTree = "<group>"; };
+		7A96BF59283E9AE0005E5FEB /* Path+QuadCurve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Path+QuadCurve.swift"; sourceTree = "<group>"; };
+		7A96BF5B283E9AE0005E5FEB /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		7A96BF64283EA814005E5FEB /* StatisticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewModel.swift; sourceTree = "<group>"; };
 		7A9C9351282423EE00FC40DE /* NumPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumPad.swift; sourceTree = "<group>"; };
 		7A9C9353282424DD00FC40DE /* UIImage+imageResized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+imageResized.swift"; sourceTree = "<group>"; };
 		7A9C93552824251500FC40DE /* PinButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinButton.swift; sourceTree = "<group>"; };
@@ -176,8 +192,6 @@
 		7AD411FE283629130091F1A8 /* Period.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Period.swift; sourceTree = "<group>"; };
 		7AD412002836CD140091F1A8 /* ExpensesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesModel.swift; sourceTree = "<group>"; };
 		7AD4D97828258AE80083A7A4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		7AD4D97C28258D000083A7A4 /* StaticticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticticsViewController.swift; sourceTree = "<group>"; };
-		7AD4D97D28258D000083A7A4 /* StaticticsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StaticticsViewController.xib; sourceTree = "<group>"; };
 		7AD4D98028258F0E0083A7A4 /* DocumentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsViewController.swift; sourceTree = "<group>"; };
 		7AD4D98128258F0E0083A7A4 /* DocumentsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DocumentsViewController.xib; sourceTree = "<group>"; };
 		7AD4D98428258F1F0083A7A4 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
@@ -454,8 +468,10 @@
 		7A8AA56F281E75EB0071FDD4 /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
-				7AD4D97C28258D000083A7A4 /* StaticticsViewController.swift */,
-				7AD4D97D28258D000083A7A4 /* StaticticsViewController.xib */,
+				7A96BF53283E9AE0005E5FEB /* LineChart */,
+				7A96BF64283EA814005E5FEB /* StatisticsViewModel.swift */,
+				7A96BF4F283E9A59005E5FEB /* StatisticsView.swift */,
+				7A96BF51283E9AA1005E5FEB /* Helpers.swift */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";
@@ -485,6 +501,19 @@
 				7AF081E9282EF37B00025CA4 /* SettingsView.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		7A96BF53283E9AE0005E5FEB /* LineChart */ = {
+			isa = PBXGroup;
+			children = (
+				7A96BF54283E9AE0005E5FEB /* IndicatorPoint.swift */,
+				7A96BF58283E9AE0005E5FEB /* MagnifierRect.swift */,
+				7A96BF56283E9AE0005E5FEB /* Legend.swift */,
+				7A96BF59283E9AE0005E5FEB /* Path+QuadCurve.swift */,
+				7A96BF5B283E9AE0005E5FEB /* Line.swift */,
+				7A96BF55283E9AE0005E5FEB /* LineView.swift */,
+			);
+			path = LineChart;
 			sourceTree = "<group>";
 		};
 		7AE5A5CE281E66BF00F008B0 /* App */ = {
@@ -744,7 +773,6 @@
 				7A9C935A282426AD00FC40DE /* NumPud.xib in Resources */,
 				7AF3118D281E6D8E0097BF5A /* StartViewController.xib in Resources */,
 				7AD4D98328258F0E0083A7A4 /* DocumentsViewController.xib in Resources */,
-				7AD4D97F28258D000083A7A4 /* StaticticsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -777,12 +805,14 @@
 				7A82362A281A6DB6001C2AE3 /* StartViewController.swift in Sources */,
 				435A2F5F282AFA1700BF10EA /* WashExpenses+CoreDataProperties.swift in Sources */,
 				435A2F62282AFA1700BF10EA /* Car+CoreDataClass.swift in Sources */,
+				7A96BF5D283E9AE0005E5FEB /* LineView.swift in Sources */,
 				7AF081F6283150D400025CA4 /* CheckBoxView.swift in Sources */,
 				431B08A12839686100CF781C /* UIColor+Additions.swift in Sources */,
 				435A2F6B282AFA1700BF10EA /* ParkingExpenses+CoreDataProperties.swift in Sources */,
 				7AD4D98228258F0E0083A7A4 /* DocumentsViewController.swift in Sources */,
 				92280306283AC58000885342 /* ExpensesByDate.swift in Sources */,
 				7A9C9354282424DD00FC40DE /* UIImage+imageResized.swift in Sources */,
+				7A96BF61283E9AE0005E5FEB /* Path+QuadCurve.swift in Sources */,
 				435A2F6A282AFA1700BF10EA /* ParkingExpenses+CoreDataClass.swift in Sources */,
 				435A2EC92825943E00BF10EA /* CheckMark.swift in Sources */,
 				435A2ED22825A32300BF10EA /* FuelModel.swift in Sources */,
@@ -795,14 +825,17 @@
 				435A2F67282AFA1700BF10EA /* FuelExpenses+CoreDataProperties.swift in Sources */,
 				7AF081EC282EF39C00025CA4 /* SettingsViewModel.swift in Sources */,
 				435A2F61282AFA1700BF10EA /* OtherExpenses+CoreDataProperties.swift in Sources */,
+				7A96BF63283E9AE0005E5FEB /* Line.swift in Sources */,
 				43C9C0F7282EFB5A00F6CED9 /* UITableView+Additions.swift in Sources */,
 				435A2F6F282AFCDC00BF10EA /* CarRepository.swift in Sources */,
 				435A2EC52825938700BF10EA /* GarageCellModel.swift in Sources */,
 				435A2F65282AFA1700BF10EA /* FixExpenses+CoreDataProperties.swift in Sources */,
+				7A96BF5E283E9AE0005E5FEB /* Legend.swift in Sources */,
 				7AF081F4282FA08700025CA4 /* TextFieldLimitModifier.swift in Sources */,
 				435A2EC1282592A000BF10EA /* GarageCollectionViewController.swift in Sources */,
 				92C6123E28306411009A930E /* HomeView.swift in Sources */,
 				7A823630281A6DB6001C2AE3 /* MyCar.xcdatamodeld in Sources */,
+				7A96BF50283E9A59005E5FEB /* StatisticsView.swift in Sources */,
 				7AF081EA282EF37B00025CA4 /* SettingsView.swift in Sources */,
 				435A2F63282AFA1700BF10EA /* Car+CoreDataProperties.swift in Sources */,
 				7A0FE32D283CB0E100B51E99 /* CarModel.swift in Sources */,
@@ -811,6 +844,7 @@
 				435A2F64282AFA1700BF10EA /* FixExpenses+CoreDataClass.swift in Sources */,
 				435A2EBE28255BD400BF10EA /* AutoModel.swift in Sources */,
 				435A2EC7282593F900BF10EA /* GarageCollectionViewCell.swift in Sources */,
+				7A96BF65283EA814005E5FEB /* StatisticsViewModel.swift in Sources */,
 				92C611E82826D443009A930E /* KeychainService.swift in Sources */,
 				7AF31186281E6BFF0097BF5A /* LoginViewController.swift in Sources */,
 				9239034728313F66007D4314 /* Color+Additions.swift in Sources */,
@@ -825,7 +859,6 @@
 				7A9C9352282423EE00FC40DE /* NumPad.swift in Sources */,
 				7AF081EE282EF3A800025CA4 /* UIApplication+endEditing.swift in Sources */,
 				435A2F66282AFA1700BF10EA /* FuelExpenses+CoreDataClass.swift in Sources */,
-				7AD4D97E28258D000083A7A4 /* StaticticsViewController.swift in Sources */,
 				7AD4D97A28258AE80083A7A4 /* HomeViewController.swift in Sources */,
 				92C6123C28305C86009A930E /* PieChartRows.swift in Sources */,
 				7A9C9358282425BF00FC40DE /* PinState.swift in Sources */,
@@ -835,6 +868,9 @@
 				92C6124028306469009A930E /* HomeViewModel.swift in Sources */,
 				7AF3118A281E6C1B0097BF5A /* MainTabController.swift in Sources */,
 				435A2F69282AFA1700BF10EA /* FinanceExpenses+CoreDataProperties.swift in Sources */,
+				7A96BF52283E9AA1005E5FEB /* Helpers.swift in Sources */,
+				7A96BF5C283E9AE0005E5FEB /* IndicatorPoint.swift in Sources */,
+				7A96BF60283E9AE0005E5FEB /* MagnifierRect.swift in Sources */,
 				43C9C0FB2832A17D00F6CED9 /* AddItemAndModelViewController.swift in Sources */,
 				435A2EBC28255B5900BF10EA /* AutoCell.swift in Sources */,
 				435A2EB928255AD200BF10EA /* AddAutoViewController.swift in Sources */,
