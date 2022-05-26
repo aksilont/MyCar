@@ -71,6 +71,18 @@ class CarRepository {
         storage.saveContext()
     }
     
+    func updateCar(carModel: CarModel) {
+        let cars = fetchCarsUseNumber(carModel: carModel)
+        guard let car = cars.first else { return }
+        car.setValue(carModel.item, forKey: "item")
+        car.setValue(carModel.model, forKey: "model")
+        car.setValue(carModel.year, forKey: "year")
+        car.setValue(carModel.fuelType, forKey: "fuelType")
+        car.setValue(carModel.vin, forKey: "vin")
+        storage.saveContext()
+    }
+    
+    
     func getActiveCar() -> Car? {
         let context = storage.mainContext
         var cars: [Car] = []
