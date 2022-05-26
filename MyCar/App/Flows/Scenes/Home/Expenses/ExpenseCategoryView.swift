@@ -41,18 +41,21 @@ struct ExpenseCategoryView: View {
                             .focused($textFieldsFocused)
                             .keyboardType(.decimalPad)
                             .disableAutocorrection(true)
+                            .multilineTextAlignment(.center)
                     }
                     HStack {
                         Text(rows[2])
+                        Spacer()
                         TextField("", value: $viewModel.mileage, formatter: numberFormatter)
                             .focused($textFieldsFocused)
                             .keyboardType(.decimalPad)
                             .disableAutocorrection(true)
+                            .multilineTextAlignment(.center)
                     }
                     HStack {
                         Text(rows[3])
-                        TextField("", text: $viewModel.description)
-                            .multilineTextAlignment(.trailing)
+                        TextEditor(text: $viewModel.description)
+                            .multilineTextAlignment(.center)
                     }
                     Button(action: {
                         textFieldsFocused = false
@@ -81,6 +84,16 @@ struct ExpenseCategoryView: View {
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle(viewModel.title)
-        }.onDisappear(perform: { homeNeedsToUpdate = true})
+        }
+        .onDisappear(perform: { homeNeedsToUpdate = true})
+        .alert(isPresented: $viewModel.alert) {
+            Alert(
+                title: Text("Неправильное значение пробега"),
+                message: Text("Значение пробега не согласуется с ранее введенными значениями"),
+                dismissButton: .default(
+                    Text("Закрыть")
+                )
+            )
+        }
     }
 }
