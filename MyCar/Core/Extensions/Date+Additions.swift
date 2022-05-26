@@ -107,6 +107,12 @@ extension Date {
         startOfNextMonth().endOfMonth()
     }
     
+    func monthsAgo(_ numberMonthsAgo: Int, using calendar: Calendar = .gregorian) -> Date {
+        guard let newDate = calendar.date(byAdding: .month, value: -numberMonthsAgo, to: startOfDay())
+        else { return self }
+        return newDate
+    }
+    
     // Years
     
     func startOfYear(using calendar: Calendar = .gregorian) -> Date {

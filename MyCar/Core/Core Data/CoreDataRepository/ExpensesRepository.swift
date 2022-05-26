@@ -65,6 +65,7 @@ final class ExpensesRepository {
     private func fetch<T: ManagedExpensesObject>(modelType: T.Type,
                                                  predicate: NSPredicate?,
                                                  limit: Int,
+                                                 ascendingDate: Bool = false,
                                                  completion: @escaping ([T]) -> ()) {
         guard let currentCar = carRepository.getActiveCar() else {
             completion([])
@@ -74,7 +75,7 @@ final class ExpensesRepository {
         let context = storage.mainContext
         let fetchRequest = NSFetchRequest<T>(entityName: String(describing: modelType))
         fetchRequest.sortDescriptors = [
-            NSSortDescriptor(key: "date", ascending: false)
+            NSSortDescriptor(key: "date", ascending: ascendingDate)
         ]
         fetchRequest.fetchLimit = limit
         let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [
@@ -93,26 +94,52 @@ final class ExpensesRepository {
     }
     
     private func fetch(by expensesType: ExpensesType,
-               predicate: NSPredicate? = nil,
-               limit: Int = 10,
-               completion: @escaping (([ManagedExpensesObject]) -> ())) {
+                       predicate: NSPredicate? = nil,
+                       limit: Int = 10,
+                       ascendingDate: Bool = false,
+                       completion: @escaping (([ManagedExpensesObject]) -> ())) {
         switch expensesType {
         case .parking:
-            fetch(modelType: ParkingExpenses.self, predicate: predicate, limit: limit, completion: completion)
+            fetch(modelType: ParkingExpenses.self,
+                  predicate: predicate,
+                  limit: limit,
+                  ascendingDate: ascendingDate,
+                  completion: completion)
         case .wash:
-            fetch(modelType: WashExpenses.self, predicate: predicate, limit: limit, completion: completion)
+            fetch(modelType: WashExpenses.self,
+                  predicate: predicate,
+                  limit: limit,
+                  ascendingDate: ascendingDate,
+                  completion: completion)
         case .fix:
-            fetch(modelType: FixExpenses.self, predicate: predicate, limit: limit, completion: completion)
+            fetch(modelType: FixExpenses.self,
+                  predicate: predicate,
+                  limit: limit,
+                  ascendingDate: ascendingDate,
+                  completion: completion)
         case .fuel:
-            fetch(modelType: FuelExpenses.self, predicate: predicate, limit: limit, completion: completion)
+            fetch(modelType: FuelExpenses.self,
+                  predicate: predicate,
+                  limit: limit,
+                  ascendingDate: ascendingDate,
+                  completion: completion)
         case .finance:
-            fetch(modelType: FinanceExpenses.self, predicate: predicate, limit: limit, completion: completion)
+            fetch(modelType: FinanceExpenses.self,
+                  predicate: predicate,
+                  limit: limit,
+                  ascendingDate: ascendingDate,
+                  completion: completion)
         case .other:
-            fetch(modelType: OtherExpenses.self, predicate: predicate, limit: limit, completion: completion)
+            fetch(modelType: OtherExpenses.self,
+                  predicate: predicate,
+                  limit: limit,
+                  ascendingDate: ascendingDate,
+                  completion: completion)
         }
     }
     
     func fetchExpenses(use model: ExpensesModel,
+                       ascendingDate: Bool = false,
                        completion: @escaping (([ManagedExpensesObject]) -> ())) {
         let predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [
             NSPredicate(format: "date = %@", model.date as NSDate),
@@ -120,14 +147,18 @@ final class ExpensesRepository {
             NSPredicate(format: "distance = %f", model.distance),
             NSPredicate(format: "comment = %@", model.comment)
         ])
-        fetch(by: model.expensesType, predicate: predicate, completion: completion)
+        fetch(by: model.expensesType, predicate: predicate, ascendingDate: ascendingDate, completion: completion)
     }
     
     func fetchExpenses(by expensesType: ExpensesType,
                        predicate: NSPredicate? = nil,
                        limit: Int = 10,
+                       ascendingDate: Bool = false,
                        completion: @escaping (([ExpensesModel]) -> ())) {
-        fetch(by: expensesType, predicate: predicate, limit: limit) { [unowned self] items in
+        fetch(by: expensesType,
+              predicate: predicate,
+              limit: limit,
+              ascendingDate: ascendingDate) { [unowned self] items in
             let models = items.compactMap { buildExpensesModel($0) }
             completion(models)
         }
@@ -135,6 +166,7 @@ final class ExpensesRepository {
     
     func fetchExpenses(by expensesType: ExpensesType,
                        period: Period,
+                       ascendingDate: Bool = false,
                        completion: @escaping (([ExpensesModel]) -> ())) {
         let periodOfDates = period.getPeriod()
         let startOfDate = periodOfDates.start
@@ -145,10 +177,25 @@ final class ExpensesRepository {
             NSPredicate(format: "date <= %@", endOfDate as NSDate),
         ])
         
-        fetch(by: expensesType, predicate: predicate, limit: .max) { [unowned self] items in
+        fetch(by: expensesType,
+              predicate: predicate,
+              limit: .max,
+              ascendingDate: ascendingDate) { [unowned self] items in
             let models = items.compactMap { buildExpensesModel($0) }
             completion(models)
         }
+    }
+    
+    func fetchAllExpenses(period: Period,
+                          ascendingDate: Bool = false,
+                          completion: @escaping (([ExpensesModel]) -> ())) {
+        var result: [ExpensesModel] = []
+        for expensesType in ExpensesType.allCases {
+            fetchExpenses(by: expensesType, period: period, ascendingDate: ascendingDate) { models in
+                result += models
+            }
+        }
+        completion(result)
     }
     
     

@@ -31,6 +31,37 @@ struct SettingsView: View {
                     .cornerRadius(10)
                     .padding()
                     .foregroundColor(.white)
+                    
+                    HStack {
+                        Spacer()
+                        Button {
+                            viewModel.createTestingExpenses()
+                        } label: {
+                            Text("Расходы для теста").font(.title3).foregroundColor(.green)
+                        }
+                        Spacer()
+                    }
+                    .padding()
+                    .background(Color(red: 28/255, green: 42/255, blue: 90/255))
+                    .cornerRadius(10)
+                    .padding()
+                    .foregroundColor(.white)
+                    
+                    HStack {
+                        Spacer()
+                        Button {
+                            viewModel.deleteAllExpenses()
+                        } label: {
+                            Text("Удалить все расходы").font(.title3).foregroundColor(.red)
+                        }
+                        Spacer()
+                    }
+                    .padding()
+                    .background(Color(red: 28/255, green: 42/255, blue: 90/255))
+                    .cornerRadius(10)
+                    .padding()
+                    .foregroundColor(.white)
+
                 }
             }
             .navigationBarTitleDisplayMode(.inline)

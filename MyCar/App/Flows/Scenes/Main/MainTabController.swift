@@ -21,7 +21,8 @@ class MainTabController: UITabBarController {
                                          image: UIImage(systemName: "house"),
                                          selectedImage: UIImage(systemName: "house.fill"))
         
-        let statisticsVC = StaticticsViewController()
+        let statisticsView = StatisticsView()
+        let statisticsVC = UIHostingViewControllerCustom(rootView: statisticsView)
         statisticsVC.tabBarItem = UITabBarItem(title: nil,
                                          image: UIImage(systemName: "waveform.path.ecg.rectangle"),
                                          selectedImage: UIImage(systemName: "waveform.path.ecg.rectangle.fill"))
