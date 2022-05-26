@@ -41,18 +41,21 @@ struct ExpenseCategoryView: View {
                             .focused($textFieldsFocused)
                             .keyboardType(.decimalPad)
                             .disableAutocorrection(true)
+                            .multilineTextAlignment(.center)
                     }
                     HStack {
                         Text(rows[2])
+                        Spacer()
                         TextField("", value: $viewModel.mileage, formatter: numberFormatter)
                             .focused($textFieldsFocused)
                             .keyboardType(.decimalPad)
                             .disableAutocorrection(true)
+                            .multilineTextAlignment(.center)
                     }
                     HStack {
                         Text(rows[3])
-                        TextField("", text: $viewModel.description)
-                            .multilineTextAlignment(.trailing)
+                        TextEditor(text: $viewModel.description)
+                            .multilineTextAlignment(.center)
                     }
                     Button(action: {
                         textFieldsFocused = false

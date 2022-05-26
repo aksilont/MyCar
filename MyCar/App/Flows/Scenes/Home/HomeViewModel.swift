@@ -27,6 +27,7 @@ class HomeViewModel: ObservableObject {
     @Published var shouldShowAverage: Bool = false
     private var currencySign: String = "₽"
     private var distanceUnit: String = "км"
+    private var maxMileage: Float = 0
     var garageButtonSubject = PassthroughSubject<Void, Never>()
     
     private var car: Car?
@@ -51,8 +52,13 @@ class HomeViewModel: ObservableObject {
     func calculateExpenses() {
         var allExpenses: [ExpensesType: Double] = [:]
         expensesTypes.forEach { type in
-            expensesRepository.fetchExpenses(by: type, limit: .max) { expenses in
-                let summ = expenses.map {$0.price}.reduce(0, +)
+            expensesRepository.fetchExpenses(by: type, limit: .max) { [weak self] expenses in
+                guard let self = self else { return }
+                var summ: Float = 0
+                expenses.forEach { expense in
+                    summ += expense.price
+                    self.maxMileage = expense.distance > self.maxMileage ? expense.distance : self.maxMileage
+                }
                 allExpenses[type] = Double(summ)
             }
         }
@@ -60,8 +66,8 @@ class HomeViewModel: ObservableObject {
         segments = expensesTypes.map { allExpenses[$0] ?? 0 }
         let calculatedTotal = segments.reduce(0, +)
         total = "Всего \(String(format: "%.2f", calculatedTotal)) \(currencySign)"
-        if let car = car, car.distance > 0 {
-            expenciesPerDistanceUnit = String(format: "%.2f", calculatedTotal / Double(car.distance))
+        if let carDistance = car?.distance, maxMileage - carDistance > 0 {
+            expenciesPerDistanceUnit = String(format: "%.2f", calculatedTotal / Double(maxMileage - carDistance))
             shouldShowAverage = true
         } else {
             shouldShowAverage = false
