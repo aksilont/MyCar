@@ -69,8 +69,8 @@ class SettingsViewModel: ObservableObject {
     
     func createTestingExpenses(by expensesType: ExpensesType) {
         let day = 86400
-        // Создание 50 случайных записей
-        for _ in (1...50) {
+        let numberOfExpenses = Int.random(in: 30...60)
+        for _ in (1...numberOfExpenses) {
             let date = Date() - Double(Int.random(in: day...day * 365))
             let comment = "\(date)"
             let distance = Float(Int.random(in: 100...500000) / 100)

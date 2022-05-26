@@ -28,11 +28,12 @@ struct StatisticsView: View {
 
                 }
                 .pickerStyle(SegmentedPickerStyle())
+                
                 Spacer()
             }
-        }
-        .onAppear {
-            viewModel.getExpenses(period: viewModel.period)
+            .onAppear {
+                viewModel.getExpenses(period: viewModel.period)
+            }
         }
     }
 }
