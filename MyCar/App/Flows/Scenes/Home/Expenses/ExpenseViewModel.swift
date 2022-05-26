@@ -18,7 +18,6 @@ class ExpenseViewModel: ObservableObject {
     @Published var description = String()
     @Published var previousExpenses = [ExpensesByDate]()
     @Published var alert = false
-    var errorMessage: String = ""
     private let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.timeStyle = .none

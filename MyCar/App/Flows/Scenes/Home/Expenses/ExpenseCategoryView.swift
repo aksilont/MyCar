@@ -89,7 +89,7 @@ struct ExpenseCategoryView: View {
         .alert(isPresented: $viewModel.alert) {
             Alert(
                 title: Text("Неправильное значение пробега"),
-                message: Text("Значение пробега меньше значений за предыдущие даты"),
+                message: Text("Значение пробега не согласуется с ранее введенными значениями"),
                 dismissButton: .default(
                     Text("Закрыть")
                 )
