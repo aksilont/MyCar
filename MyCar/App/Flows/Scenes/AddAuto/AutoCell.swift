@@ -36,6 +36,8 @@ class AutoCell: UITableViewCell {
         textField.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         textField.returnKeyType = UIReturnKeyType.done
         textField.clearsOnBeginEditing = true
+        textField.autocorrectionType = .no
+        textField.keyboardType = .alphabet
         return textField
     }()
     

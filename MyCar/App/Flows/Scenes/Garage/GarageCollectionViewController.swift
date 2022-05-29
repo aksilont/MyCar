@@ -158,10 +158,10 @@ extension GarageCollectionViewController: CheckMarkerDelegate {
 
 extension GarageCollectionViewController {
     func gotoCarInfo(index: IndexPath) {
-    let vc = AddAutoViewController(nibName: "AddAutoViewController", bundle: nil)
-        vc.delegate = self
-        vc.carModel = cars[index.row]
-        vc.status = .correct
-    self.navigationController?.pushViewController(vc, animated: true)
+        let addAutoVC = AddAutoViewController(nibName: "AddAutoViewController", bundle: nil)
+        addAutoVC.delegate = self
+        addAutoVC.carModel = cars[index.row]
+        addAutoVC.status = .correct
+        navigationController?.pushViewController(addAutoVC, animated: true)
     }
 }
