@@ -12,6 +12,14 @@ extension Calendar {
 }
 
 extension Date {
+    var description: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
+        return formatter.string(from: self)
+    }
+}
+
+extension Date {
     
     // Days
     
