@@ -33,6 +33,14 @@ final class StatisticsViewModel: ObservableObject {
         }
     }
     
+    var startOfPeriod: Date {
+        period.getPeriod().start
+    }
+    
+    var endOfPeriod: Date {
+        period.getPeriod().end
+    }
+    
     init() {
         getExpenses(period: period)
     }
@@ -104,10 +112,9 @@ final class StatisticsViewModel: ObservableObject {
     func groupByPeriod(period: Period) {
         expensesRepository.fetchAllExpenses(period: period, ascendingDate: true) { [unowned self] items in
             expensesGroupedModels = group(models: items, by: period).compactMap { $0.groupByType() }
-            
-            let test = expensesGroupedModels
+            let values = expensesGroupedModels
                 .compactMap { $0.models.compactMap { Double($0.price) }.reduce(0.0, +) }
-            data = test
+            data = values
         }
     }
     

@@ -45,6 +45,12 @@ struct StatisticsView: View {
                                 .padding(.horizontal, 70)
                             }
                         }
+                    } else {
+                        VStack {
+                            Divider()
+                            Text("\(viewModel.startOfPeriod.description) - \(viewModel.endOfPeriod.description)")
+                            Divider()
+                        }
                     }
                     
                     Spacer()
