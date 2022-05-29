@@ -101,8 +101,11 @@ class LoginViewController: UIViewController {
     
     private func checkPin() {
         resetAllDots()
-        currentPin = ""
-        navigationController?.pushViewController(MainTabController(), animated: true)
+        if viewModel.checkPin(currentPin) {
+            navigationController?.pushViewController(MainTabController(), animated: true)
+        } else {
+            currentPin = ""
+        }
     }
     
 }

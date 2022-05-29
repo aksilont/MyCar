@@ -8,14 +8,20 @@
 import Foundation
 
 final class LoginViewModel {
-    let keyChain = KeychainService.standart
+    private let keyChain = KeychainService.standart
+    private let pinCodeKey = "PinCode"
+    
+    func getPinCode() -> String {
+        guard let savedPin = keyChain.string(forKey: pinCodeKey)
+        else { return "" }
+        return savedPin
+    }
     
     func hasPinCode() -> Bool {
-        guard let data = keyChain.data(forKey: "PinCode"),
-              let pinCode = String(data: data, encoding: .utf8),
-              pinCode != ""
-        else { return false }
-        
-        return true
+        !getPinCode().isEmpty
+    }
+    
+    func checkPin(_ pinCode: String) -> Bool {
+        pinCode == getPinCode()
     }
 }

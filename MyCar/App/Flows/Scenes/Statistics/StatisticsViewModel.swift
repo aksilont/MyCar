@@ -66,6 +66,9 @@ final class StatisticsViewModel: ObservableObject {
         var separatorDays = 2
         
         switch period {
+        case .last30Days:
+            numberOfGroups = 15
+            separatorDays = 2
         case .last90Days:
             numberOfGroups = 15
             separatorDays = 6

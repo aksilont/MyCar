@@ -19,9 +19,7 @@ struct Line: View {
     
     var gradient: GradientColor = GradientColor(start: Colors.GradientPurple,
                                                 end: Colors.GradientNeonBlue)
-    var index: Int = 0
     let padding: CGFloat = 30
-    var curvedLines: Bool = true
     var stepWidth: CGFloat {
         if data.points.count < 2 { return 0 }
         return frame.size.width / CGFloat(data.points.count-1)
@@ -52,39 +50,13 @@ struct Line: View {
     
     var path: Path {
         let points = data.onlyPoints()
-        if curvedLines {
-            return Path.quadCurvedPathWithPoints(points: points,
-                                                 step: CGPoint(x: stepWidth, y: stepHeight),
-                                                 globalOffset: minDataValue)
-        } else {
-            return Path.linePathWithPoints(points: points, step: CGPoint(x: stepWidth, y: stepHeight))
-        }
-    }
-    
-    var closedPath: Path {
-        let points = data.onlyPoints()
-        if curvedLines {
-            return Path.quadClosedCurvedPathWithPoints(points: points,
-                                                       step: CGPoint(x: stepWidth, y: stepHeight),
-                                                       globalOffset: minDataValue)
-        } else {
-            return Path.closedLinePathWithPoints(points: points,
-                                                 step: CGPoint(x: stepWidth, y: stepHeight))
-        }
+        return Path.quadCurvedPathWithPoints(points: points,
+                                             step: CGPoint(x: stepWidth, y: stepHeight),
+                                             globalOffset: minDataValue)
     }
     
     public var body: some View {
         ZStack {
-            if (showFull && showBackground) {
-                closedPath
-                    .fill(LinearGradient(gradient: Gradient(colors: [Colors.GradientUpperBlue, .white]),
-                                         startPoint: .bottom,
-                                         endPoint: .top))
-                    .rotationEffect(.degrees(180), anchor: .center)
-                    .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
-                    .transition(.opacity)
-                    .animation(.easeIn(duration: 1.6), value: showFull)
-            }
             path
                 .trim(from: 0, to: showFull ? 1:0)
                 .stroke(LinearGradient(gradient: gradient.getGradient(),
@@ -93,12 +65,20 @@ struct Line: View {
                         style: StrokeStyle(lineWidth: 3, lineJoin: .round))
                 .rotationEffect(.degrees(180), anchor: .center)
                 .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
-                .animation(
-                    Animation.easeOut(duration: 1.2).delay(Double(index) * 0.4),
-                    value: showFull
-                )
-                .onAppear { showFull = true }
-                .onDisappear { showFull = false }
+                .onAppear {
+                    withAnimation(.linear(duration: 1.2)) {
+                        showFull = true
+                    }
+                }
+                .onDisappear {
+                    showFull = false
+                }
+                .onChange(of: data.onlyPoints()) { _ in
+                    showFull = false
+                    withAnimation(.linear(duration: 1.2)) {
+                        showFull = true
+                    }
+                }
             if(showIndicator) {
                 IndicatorPoint()
                     .position(getClosestPointOnPath(touchLocation: touchLocation))

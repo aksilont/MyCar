@@ -28,10 +28,12 @@ struct LineView: View {
     
     @Binding var currentIndex: Int
     
+    private let lineLeadingInsets = 60.0
+    
     init(data: [Double],
          title: String? = nil,
          legend: String? = nil,
-         style: ChartStyle = Styles.lineChartStyleOne,
+         style: ChartStyle = Styles.barChartStyleNeonBlueDark,
          frameRect: CGRect,
          currentIndex: Binding<Int>,
          valueSpecifier: String = "%.1f",
@@ -87,7 +89,7 @@ struct LineView: View {
                          showBackground: false,
                          gradient: style.gradientColor
                     )
-                    .offset(x: 60, y: 0)
+                    .offset(x: lineLeadingInsets, y: 0)
                     .onAppear(){
                         showLegend = true
                     }
@@ -103,7 +105,7 @@ struct LineView: View {
             .gesture(DragGesture()
                 .onChanged { value in
                     dragLocation = value.location
-                    indicatorLocation = CGPoint(x: max(value.location.x - 50, 0), y: 32)
+                    indicatorLocation = CGPoint(x: max(value.location.x - lineLeadingInsets, 0), y: 32)
                     opacity = 1
                     closestPoint = getClosestDataPoint(
                         toPoint: value.location,
