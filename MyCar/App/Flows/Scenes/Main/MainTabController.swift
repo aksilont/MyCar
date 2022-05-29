@@ -15,6 +15,8 @@ class MainTabController: UITabBarController {
     }
     
     func setupUI() {
+        title = "Мой авто"
+        
         tabBar.backgroundImage = UIImage()
         // Blur effect for tabBar
         let blurEffect = UIBlurEffect(style: .systemUltraThinMaterial)

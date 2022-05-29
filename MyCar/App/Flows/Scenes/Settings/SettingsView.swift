@@ -13,7 +13,7 @@ struct SettingsView: View {
     
     var body: some View {
         NavigationView {
-            GeometryReader { geometry in
+            ScrollView {
                 VStack {
                     HStack {
                         CheckBoxView(checked: $viewModel.usePinCode) {
@@ -61,17 +61,16 @@ struct SettingsView: View {
                     .cornerRadius(10)
                     .padding()
                     .foregroundColor(.white)
-
+                    
                 }
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItemGroup(placement: .principal) {
+                ToolbarItem(placement: .principal) {
                     Text("Настройки").foregroundColor(.white).fontWeight(.bold)
                 }
             }
         }
-        
     }
     
     var textFieldView: some View {

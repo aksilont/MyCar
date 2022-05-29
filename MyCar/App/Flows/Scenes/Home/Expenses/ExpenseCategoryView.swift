@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct ExpenseCategoryView: View {
+    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     
     private let rows = ["Дата", "Сумма", "Пробег", "Описание"]
+    private let maxHeightRows = 45.0
     
     @FocusState private var textFieldsFocused: Bool
     @Binding var homeNeedsToUpdate: Bool
@@ -26,64 +28,81 @@ struct ExpenseCategoryView: View {
     
     var body: some View {
         GeometryReader { geometry in
-            NavigationView {
-                List {
-                    HStack {
-                        Text(rows[0])
-                        DatePicker("",
-                                   selection: $viewModel.date,
-                                   in: ...Date(),
-                                   displayedComponents: [.date])
-                    }
-                    HStack {
-                        Text(rows[1])
-                        TextField("", value: $viewModel.summ, formatter: numberFormatter)
-                            .focused($textFieldsFocused)
-                            .keyboardType(.decimalPad)
-                            .disableAutocorrection(true)
-                            .multilineTextAlignment(.center)
-                    }
-                    HStack {
-                        Text(rows[2])
-                        Spacer()
-                        TextField("", value: $viewModel.mileage, formatter: numberFormatter)
-                            .focused($textFieldsFocused)
-                            .keyboardType(.decimalPad)
-                            .disableAutocorrection(true)
-                            .multilineTextAlignment(.center)
-                    }
-                    HStack {
-                        Text(rows[3])
-                        TextEditor(text: $viewModel.description)
-                            .multilineTextAlignment(.center)
-                    }
-                    Button(action: {
-                        textFieldsFocused = false
-                        viewModel.addExpense()
-                        
-                    }) {
-                        Text("Добавить")
-                            .frame(maxWidth: .infinity, minHeight: 44)
-                            .background {
-                                RoundedRectangle(cornerRadius: 5)
-                                    .fill(Color.button)
-                            }
-                    }
-                    Text("Предыдущие расходы")
-                        .padding()
-                    ForEach(0 ..< viewModel.previousExpenses.count, id: \.self) { index in
-                        HStack {
-                            Text(viewModel.previousExpenses[index].dateString)
-                            Spacer()
-                            Text(viewModel.previousExpenses[index].summString)
+            VStack {
+                HStack {
+                    Text(rows[0])
+                    DatePicker("",
+                               selection: $viewModel.date,
+                               in: ...Date(),
+                               displayedComponents: [.date])
+                }.frame(maxHeight: maxHeightRows)
+                HStack {
+                    Text(rows[1])
+                    TextField("", value: $viewModel.summ, formatter: numberFormatter)
+                        .focused($textFieldsFocused)
+                        .keyboardType(.decimalPad)
+                        .disableAutocorrection(true)
+                        .multilineTextAlignment(.center)
+                }.frame(maxHeight: maxHeightRows)
+                HStack {
+                    Text(rows[2])
+                    Spacer()
+                    TextField("", value: $viewModel.mileage, formatter: numberFormatter)
+                        .focused($textFieldsFocused)
+                        .keyboardType(.decimalPad)
+                        .disableAutocorrection(true)
+                        .multilineTextAlignment(.center)
+                }.frame(maxHeight: maxHeightRows)
+                HStack {
+                    Text(rows[3])
+                    TextEditor(text: $viewModel.description)
+                        .disableAutocorrection(true)
+                        .keyboardType(.alphabet)
+                        .multilineTextAlignment(.center)
+                }.frame(maxHeight: maxHeightRows)
+                
+                Button(action: {
+                    textFieldsFocused = false
+                    viewModel.addExpense()
+                }) {
+                    Text("Добавить")
+                        .tint(.white)
+                        .frame(maxWidth: .infinity, minHeight: 44)
+                        .background {
+                            RoundedRectangle(cornerRadius: 5)
+                                .fill(Color.button)
                         }
+                }
+                
+                
+                Text("Предыдущие расходы")
+                    .padding()
+                
+                List(viewModel.previousExpenses, id: \.date) { item in
+                    HStack {
+                        Text(item.dateString)
+                        Spacer()
+                        Text(item.summString)
                     }
                 }
-                .navigationBarHidden(true)
                 .listStyle(.plain)
             }
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationTitle(viewModel.title)
+            .onTapGesture {
+                UIApplication.shared.endEditing()
+            }
+        }
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle(viewModel.title)
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: { mode.wrappedValue.dismiss() }) {
+                    HStack {
+                        Image(systemName: "chevron.backward").font(.body.bold())
+                        Text("Мой авто")
+                    }
+                }
+            }
         }
         .onDisappear(perform: { homeNeedsToUpdate = true})
         .alert(isPresented: $viewModel.alert) {

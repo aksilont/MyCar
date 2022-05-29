@@ -77,11 +77,15 @@ struct HomeView: View {
                     }
                 }
             }
-            .navigationBarItems(leading: Button(action: { viewModel.didTapGarageButton() }) {
-                Text("Гараж")
-            })
-            .navigationBarTitleDisplayMode(.inline)
             .navigationTitle("Мой автомобиль")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: { viewModel.didTapGarageButton() }) {
+                        Text("Гараж")
+                    }
+                }
+            }
         }
         .onAppear(perform: { viewModel.calculateExpenses() })
         
