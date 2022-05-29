@@ -33,9 +33,9 @@ struct StatisticsView: View {
                     
                     if let currentModel = viewModel.currentModel {
                         VStack {
-                            Divider().padding(.vertical, 5)
+                            Divider()
                             Text("\(currentModel.period.start.description) - \(currentModel.period.end.description)")
-                            Divider().padding(.vertical, 5)
+                            Divider()
                             ForEach(currentModel.models, id: \.expensesType) { expenses in
                                 HStack {
                                     Text("\(expenses.expensesType.rawValue)")
