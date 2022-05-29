@@ -21,13 +21,16 @@ class SettingsViewModel: ObservableObject {
         didSet {
             if !usePinCode {
                 pinCode = ""
+                if savePinCode() { UIApplication.shared.endEditing() }
             }
         }
     }
     @Published var correctPinCode = false
     @Published var pinCode = "" {
         didSet {
-            if pinCode.count == lenghtPinCode {
+            if pinCode == "" {
+                correctPinCode = false
+            } else if pinCode.count == lenghtPinCode || !usePinCode {
                 correctPinCode = true
                 if savePinCode() { UIApplication.shared.endEditing() }
             } else {
