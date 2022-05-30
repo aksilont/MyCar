@@ -11,16 +11,25 @@ final class StatisticsViewModel: ObservableObject {
     private let expensesRepository = ExpensesRepository()
     
     @Published var data: [Double] = []
+    
     @Published var expensesGroupedModels: [ExpensesGroupedModel] = []
+    @Published var wrappedExpensesModels: [ExpensesModel] = []
+    
     @Published var periodChoice = 0 {
         didSet {
             groupByPeriod(period: period)
+            wrapModelsByTypeAndPeriod(period: period)
         }
     }
+    
     @Published var currentIndex: Int = -1
     var currentModel: ExpensesGroupedModel? {
         if currentIndex >= 0 { return expensesGroupedModels[currentIndex] }
         return nil
+    }
+    
+    var totalExpenses: Double {
+        wrappedExpensesModels.compactMap { Double($0.price) }.reduce(0.0, +)
     }
     
     var period: Period {
@@ -43,6 +52,7 @@ final class StatisticsViewModel: ObservableObject {
     
     init() {
         getExpenses(period: period)
+        wrapModelsByTypeAndPeriod(period: period)
     }
     
     func getExpenses(period: Period) {
@@ -118,4 +128,12 @@ final class StatisticsViewModel: ObservableObject {
         }
     }
     
+    func wrapModelsByTypeAndPeriod(period: Period) {
+        expensesRepository.fetchAllExpenses(period: period, ascendingDate: true) { [unowned self] items in
+            let expensesGroupedModel = ExpensesGroupedModel(period: period.getPeriod(), models: items)
+            let wrapedGroupedModel = expensesGroupedModel.groupByType()
+            wrappedExpensesModels = wrapedGroupedModel.models
+        }
+    }
+
 }

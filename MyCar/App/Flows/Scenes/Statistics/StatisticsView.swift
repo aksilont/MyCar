@@ -41,8 +41,7 @@ struct StatisticsView: View {
                                     Text("\(expenses.expensesType.rawValue)")
                                     Spacer()
                                     Text("\(expenses.price, specifier: "%.2f")")
-                                }
-                                .padding(.horizontal, 70)
+                                }.padding(.horizontal, 70)
                             }
                         }
                     } else {
@@ -50,6 +49,19 @@ struct StatisticsView: View {
                             Divider()
                             Text("\(viewModel.startOfPeriod.description) - \(viewModel.endOfPeriod.description)")
                             Divider()
+                            ForEach(viewModel.wrappedExpensesModels, id: \.expensesType) { expenses in
+                                HStack {
+                                    Text("\(expenses.expensesType.rawValue)")
+                                    Spacer()
+                                    Text("\(expenses.price, specifier: "%.2f")")
+                                }.padding(.horizontal, 70)
+                            }
+                            Divider()
+                            HStack {
+                                Text("Всего")
+                                Spacer()
+                                Text("\(viewModel.totalExpenses, specifier: "%.2f")")
+                            }.padding(.horizontal, 70)
                         }
                     }
                     
