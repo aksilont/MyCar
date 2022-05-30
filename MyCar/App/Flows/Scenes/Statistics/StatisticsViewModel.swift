@@ -132,7 +132,9 @@ final class StatisticsViewModel: ObservableObject {
         expensesRepository.fetchAllExpenses(period: period, ascendingDate: true) { [unowned self] items in
             let expensesGroupedModel = ExpensesGroupedModel(period: period.getPeriod(), models: items)
             let wrapedGroupedModel = expensesGroupedModel.groupByType()
-            wrappedExpensesModels = wrapedGroupedModel.models
+            wrappedExpensesModels = wrapedGroupedModel.models.sorted(by: { first, second in
+                first.expensesType.rawValue > second.expensesType.rawValue
+            })
         }
     }
 

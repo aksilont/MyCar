@@ -67,9 +67,9 @@ struct StatisticsView: View {
                     
                     Spacer()
                 }
-                
                 .onAppear {
                     viewModel.groupByPeriod(period: viewModel.period)
+                    viewModel.wrapModelsByTypeAndPeriod(period: viewModel.period)
                 }
             }
             .padding(.horizontal, 20)
