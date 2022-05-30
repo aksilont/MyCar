@@ -26,11 +26,16 @@ struct LineView: View {
     var legendSpecifier: String
     var frameRect: CGRect
     
+    @Binding var currentIndex: Int
+    
+    private let lineLeadingInsets = 60.0
+    
     init(data: [Double],
          title: String? = nil,
          legend: String? = nil,
-         style: ChartStyle = Styles.lineChartStyleOne,
+         style: ChartStyle = Styles.barChartStyleNeonBlueDark,
          frameRect: CGRect,
+         currentIndex: Binding<Int>,
          valueSpecifier: String = "%.1f",
          legendSpecifier: String = "%.2f") {
         self.data = ChartData(points: data)
@@ -41,6 +46,7 @@ struct LineView: View {
         self.legendSpecifier = legendSpecifier
         self.darkModeStyle = style.darkModeStyle != nil ? style.darkModeStyle! : Styles.lineViewDarkMode
         self.frameRect = frameRect
+        self._currentIndex = currentIndex
     }
     
     var body: some View {
@@ -74,7 +80,7 @@ struct LineView: View {
                     Line(data: data,
                          frame: .constant(CGRect(x: 0,
                                                  y: 0,
-                                                 width: reader.frame(in: .local).width - 60,
+                                                 width: reader.frame(in: .local).width - 70,
                                                  height: reader.frame(in: .local).height + 25)),
                          touchLocation: $indicatorLocation,
                          showIndicator: $hideHorizontalLines,
@@ -83,7 +89,7 @@ struct LineView: View {
                          showBackground: false,
                          gradient: style.gradientColor
                     )
-                    .offset(x: 50, y: 0)
+                    .offset(x: lineLeadingInsets, y: 0)
                     .onAppear(){
                         showLegend = true
                     }
@@ -94,12 +100,12 @@ struct LineView: View {
                 .frame(width: frameRect.size.width, height: 240)
                 MagnifierRect(currentNumber: $currentDataNumber, valueSpecifier: valueSpecifier)
                     .opacity(opacity)
-                    .offset(x: dragLocation.x - frameRect.size.width / 2 + 20, y: -15)
+                    .offset(x: dragLocation.x - frameRect.size.width / 2, y: -15)
             }
             .gesture(DragGesture()
                 .onChanged { value in
                     dragLocation = value.location
-                    indicatorLocation = CGPoint(x: max(value.location.x - 30, 0), y: 32)
+                    indicatorLocation = CGPoint(x: max(value.location.x - lineLeadingInsets, 0), y: 32)
                     opacity = 1
                     closestPoint = getClosestDataPoint(
                         toPoint: value.location,
@@ -110,6 +116,7 @@ struct LineView: View {
                 .onEnded { _ in
                     opacity = 0
                     hideHorizontalLines = false
+                    currentIndex = -1
                 }
             )
         }
@@ -123,6 +130,7 @@ struct LineView: View {
         let index:Int = Int(floor((toPoint.x-15)/stepWidth))
         if (index >= 0 && index < points.count) {
             currentDataNumber = points[index]
+            currentIndex = index
             return CGPoint(x: CGFloat(index) * stepWidth, y: CGFloat(points[index]) * stepHeight)
         }
         return .zero
@@ -135,15 +143,14 @@ struct LineView_Previews: PreviewProvider {
             LineView(data: [282.502, 284.495, 283.51, 285.019, 285.197, 286.118, 288.737, 288.455, 289.391, 287.691, 285.878, 286.46, 286.252, 284.652, 284.129, 284.188],
                      title: "Full chart",
                      style: Styles.lineChartStyleOne,
-                     frameRect: geometry.frame(in: .local))
+                     frameRect: geometry.frame(in: .local), currentIndex: .constant(-1))
         }
         
         GeometryReader { geometry in
             LineView(data: [8,23,54,32,12,37,7,23,43],
                      title: "Full chart",
                      style: Styles.lineChartStyleOne,
-                     frameRect: geometry.frame(in: .local))
+                     frameRect: geometry.frame(in: .local), currentIndex: .constant(-1))
         }
     }
 }
-

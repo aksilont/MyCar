@@ -21,13 +21,16 @@ class SettingsViewModel: ObservableObject {
         didSet {
             if !usePinCode {
                 pinCode = ""
+                if savePinCode() { UIApplication.shared.endEditing() }
             }
         }
     }
     @Published var correctPinCode = false
     @Published var pinCode = "" {
         didSet {
-            if pinCode.count == lenghtPinCode || !usePinCode {
+            if pinCode == "" {
+                correctPinCode = false
+            } else if pinCode.count == lenghtPinCode || !usePinCode {
                 correctPinCode = true
                 if savePinCode() { UIApplication.shared.endEditing() }
             } else {
@@ -42,8 +45,7 @@ class SettingsViewModel: ObservableObject {
     }
     
     func getPinCode() -> String {
-        guard let data = keyChain.data(forKey: pinCodeKey),
-              let savedPin = String(data: data, encoding: .utf8)
+        guard let savedPin = keyChain.string(forKey: pinCodeKey)
         else { return "" }
         return savedPin
     }

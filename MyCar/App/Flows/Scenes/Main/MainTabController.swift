@@ -15,6 +15,16 @@ class MainTabController: UITabBarController {
     }
     
     func setupUI() {
+        title = "Мой авто"
+        
+        tabBar.backgroundImage = UIImage()
+        // Blur effect for tabBar
+        let blurEffect = UIBlurEffect(style: .systemUltraThinMaterial)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = tabBar.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        tabBar.addSubview(blurEffectView)
+        
         let homeViewModel = HomeViewModel()
         let homeVC = HomeViewController(viewModel: homeViewModel)
         homeVC.tabBarItem = UITabBarItem(title: nil,

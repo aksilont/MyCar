@@ -48,11 +48,13 @@ class AddItemAndModelViewController: UIViewController {
         textField.textColor = .white
         textField.textAlignment = .center
         textField.becomeFirstResponder()
-        textField.placeholder = "начните ввод марки авто"
+        textField.placeholder = "Начните ввод марки авто"
         textField.backgroundColor = .black
         textField.font = UIFont.systemFont(ofSize: 17, weight: .light)
         textField.returnKeyType = UIReturnKeyType.done
         textField.clearsOnBeginEditing = true
+        textField.autocorrectionType = .no
+        textField.keyboardType = .alphabet
         return textField
     }()
     
