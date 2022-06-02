@@ -75,7 +75,7 @@ public struct Styles {
         dropShadowColor: Color.gray)
     
     public static let barChartStyleNeonBlueDark = ChartStyle(
-        backgroundColor: Color.black,
+        backgroundColor: Color.clear,
         accentColor: Colors.GradientNeonBlue,
         secondGradientColor: Colors.GradientPurple,
         textColor: Color.white,

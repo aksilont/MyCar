@@ -14,7 +14,6 @@ struct PieChartView: View {
     var withText: Bool
     var withRows: Bool
     
-    var backgroundColor: Color
     var innerRadiusFraction: CGFloat
     
     var slices: [PieSliceData] {
@@ -34,11 +33,10 @@ struct PieChartView: View {
         return tempSlices
     }
     
-    init(values: [Double], colors: [Color], names: [String], backgroundColor: Color = .black, innerRadiusFraction: CGFloat = 0, withText: Bool = false, withRows: Bool = false) {
+    init(values: [Double], colors: [Color], names: [String], innerRadiusFraction: CGFloat = 0, withText: Bool = false, withRows: Bool = false) {
         self.values = values
         self.colors = colors
         self.names = names
-        self.backgroundColor = backgroundColor
         self.innerRadiusFraction = innerRadiusFraction
         self.withText = withText
         self.withRows = withRows
@@ -54,7 +52,6 @@ struct PieChartView: View {
                     .frame(width: geometry.size.width, height: geometry.size.width)
                     
                     Circle()
-                        .fill(self.backgroundColor)
                         .frame(width: geometry.size.width * innerRadiusFraction, height: geometry.size.width * innerRadiusFraction)
                     
                     if withText {
@@ -71,8 +68,6 @@ struct PieChartView: View {
                     PieChartRows(colors: self.colors, names: self.names, values: self.values.map { String($0) }, percents: self.values.map { String(format: "%.0f%%", $0 * 100 / self.values.reduce(0, +)) })
                 }
             }
-            .background(self.backgroundColor)
-            .foregroundColor(Color.white)
         }
     }
 }

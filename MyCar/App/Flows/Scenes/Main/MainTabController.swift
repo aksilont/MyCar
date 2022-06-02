@@ -44,7 +44,6 @@ class MainTabController: UITabBarController {
                                          selectedImage: UIImage(systemName: "ellipsis"))
         
         tabBar.tintColor = UIColor.systemTeal
-        tabBar.unselectedItemTintColor = UIColor.white
         viewControllers = [homeVC, statisticsVC, settingsVC]
     }
 }

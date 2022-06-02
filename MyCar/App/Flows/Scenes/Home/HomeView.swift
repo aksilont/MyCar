@@ -15,80 +15,65 @@ struct HomeView: View {
             Group {
                 if viewModel.isActiveCar {
                     GeometryReader { geometry in
-                        let pieChartSize = geometry.size.width * 0.75
                         let buttonHeight = min(geometry.size.width, geometry.size.height - geometry.size.width) * 0.25
                         let buttonWidth = geometry.size.width * 0.25
-                        ZStack {
-                            Color.black
-                            
-                            VStack(alignment: .center) {
-                                Text(viewModel.carName)
-                                    .foregroundColor(Color.white)
-                                    .font(Font.title)
-                                Text(viewModel.carNumber)
-                                    .foregroundColor(Color.white)
-                                Spacer()
-                                PieChartView(values: viewModel.segments, colors: viewModel.colors, names: viewModel.names)
-                                    .frame(width: pieChartSize, height: pieChartSize)
-                                    .background(Color.black)
-                                Spacer()
-                                HStack(alignment: .center, spacing: 20.0) {
-                                    Text(viewModel.total)
-                                        .foregroundColor(Color.white)
-                                        .font(Font.title2)
-                                    if viewModel.shouldShowAverage {
-                                        Text(viewModel.expenciesPerDistanceUnit)
-                                            .foregroundColor(viewModel.colors[2])
-                                    }
+                        
+                        VStack(alignment: .center) {
+                            Text(viewModel.carName).font(Font.title)
+                            Text(viewModel.carNumber)
+                            Spacer()
+                            PieChartView(values: viewModel.segments, colors: viewModel.colors, names: viewModel.names)
+                                .scaleEffect(0.75)
+                            Spacer()
+                            HStack(alignment: .center, spacing: 20.0) {
+                                Text(viewModel.total).font(Font.title2)
+                                if viewModel.shouldShowAverage {
+                                    Text(viewModel.expenciesPerDistanceUnit)
+                                        .foregroundColor(viewModel.colors[2])
                                 }
-                                Spacer()
-                                VStack(spacing: geometry.size.width / 16) {
-                                    ForEach(0...1, id: \.self) { row in
-                                        HStack(spacing: geometry.size.width / 16) {
-                                            ForEach(0...2, id: \.self) { col in
-                                                let index = row * 3 + col
-                                                let tag = String(index)
-                                                NavigationLink(destination:
-                                                                LazyView(
-                                                                    ExpenseCategoryView(homeNeedsToUpdate: $viewModel.homeNeedsToUpdate, viewModel: ExpenseViewModel(type: viewModel.expensesTypes[index]))),
-                                                               tag: tag,
-                                                               selection: $selection) {
-                                                    Button(action: { selection = tag }) {
-                                                        Text(viewModel.names[index])
-                                                            .foregroundColor(Color.white)
-                                                            .frame(width: buttonWidth, height: buttonHeight)
-                                                            .background {
-                                                                RoundedRectangle(cornerRadius: 10)
-                                                                    .fill(viewModel.colors[index])
-                                                            }
-                                                    }
+                            }
+                            Spacer()
+                            VStack(spacing: geometry.size.width / 16) {
+                                ForEach(0...1, id: \.self) { row in
+                                    HStack(spacing: geometry.size.width / 16) {
+                                        ForEach(0...2, id: \.self) { col in
+                                            let index = row * 3 + col
+                                            let tag = String(index)
+                                            NavigationLink(destination:
+                                                            LazyView(
+                                                                ExpenseCategoryView(homeNeedsToUpdate: $viewModel.homeNeedsToUpdate, viewModel: ExpenseViewModel(type: viewModel.expensesTypes[index]))),
+                                                           tag: tag,
+                                                           selection: $selection) {
+                                                Button(action: { selection = tag }) {
+                                                    Text(viewModel.names[index])
+                                                        .foregroundColor(Color.white)
+                                                        .frame(width: buttonWidth, height: buttonHeight)
+                                                        .background {
+                                                            RoundedRectangle(cornerRadius: 10)
+                                                                .fill(viewModel.colors[index])
+                                                        }
                                                 }
                                             }
                                         }
                                     }
                                 }
-                                Spacer()
                             }
+                            Spacer()
                         }
                     }
                 } else {
-                    VStack {
-                        Text("Не выбран автомобиль в гараже")
-                    }
+                    Text("Не выбран автомобиль в гараже")
                 }
             }
             .navigationTitle("Мой автомобиль")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: { viewModel.didTapGarageButton() }) {
-                        Text("Гараж")
-                    }
+                    Button("Гараж") { viewModel.didTapGarageButton() }
                 }
             }
         }
         .onAppear(perform: { viewModel.calculateExpenses() })
-        
     }
 }
 

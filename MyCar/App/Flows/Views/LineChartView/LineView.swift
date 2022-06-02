@@ -149,7 +149,7 @@ struct LineView_Previews: PreviewProvider {
         GeometryReader { geometry in
             LineView(data: [8,23,54,32,12,37,7,23,43],
                      title: "Full chart",
-                     style: Styles.lineChartStyleOne,
+                     style: Styles.barChartStyleNeonBlueDark,
                      frameRect: geometry.frame(in: .local), currentIndex: .constant(-1))
         }
     }
