@@ -22,7 +22,7 @@ class GarageCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         self.collectionView.register(registerClass: GarageCollectionViewCell.self)
         self.collectionView.collectionViewLayout = createLayout()
-        collectionView.backgroundColor = .black
+        collectionView.backgroundColor = .systemGray6
         setupNavigationAttributes()
         getCarsFromCoreData()
     }

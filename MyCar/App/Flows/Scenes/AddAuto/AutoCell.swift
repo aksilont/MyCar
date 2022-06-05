@@ -22,17 +22,17 @@ class AutoCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Кастомный текст"
         label.font = UIFont.systemFont(ofSize: 20)
-        label.textColor = .white
+//        label.textColor = .white
         return label
     }()
     
     let infoTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.textColor = .white
+//        textField.textColor = .white
         textField.textAlignment = .center
         textField.autocapitalizationType = .allCharacters
-        textField.backgroundColor = .black
+//        textField.backgroundColor = .black
         textField.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         textField.returnKeyType = UIReturnKeyType.done
         textField.clearsOnBeginEditing = true

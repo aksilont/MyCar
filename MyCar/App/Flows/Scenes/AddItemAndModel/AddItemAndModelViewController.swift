@@ -37,7 +37,7 @@ class AddItemAndModelViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = ""
         label.font = UIFont.systemFont(ofSize: 22)
-        label.textColor = .white
+//        label.textColor = .white
         label.textAlignment = .center
         return label
     }()
@@ -45,11 +45,11 @@ class AddItemAndModelViewController: UIViewController {
     let infoTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.textColor = .white
+//        textField.textColor = .white
         textField.textAlignment = .center
         textField.becomeFirstResponder()
         textField.placeholder = "Начните ввод марки авто"
-        textField.backgroundColor = .black
+//        textField.backgroundColor = .black
         textField.font = UIFont.systemFont(ofSize: 17, weight: .light)
         textField.returnKeyType = UIReturnKeyType.done
         textField.clearsOnBeginEditing = true
@@ -60,7 +60,7 @@ class AddItemAndModelViewController: UIViewController {
     
     let lineView: UIView = {
         let lineView = UIView()
-        lineView.backgroundColor = .white
+//        lineView.backgroundColor = .white
         lineView.translatesAutoresizingMaskIntoConstraints = false
         return lineView
     }()

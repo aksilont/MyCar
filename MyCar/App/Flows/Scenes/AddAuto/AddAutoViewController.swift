@@ -28,9 +28,9 @@ class AddAutoViewController: UIViewController {
         let tableView = UITableView()
         tableView.register(registerClass: AutoCell.self)
         tableView.separatorStyle = .singleLine
-        tableView.separatorColor = .white
+//        tableView.separatorColor = .white
         tableView.rowHeight = 60
-        tableView.backgroundColor = .black
+//        tableView.backgroundColor = .black
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -48,7 +48,7 @@ class AddAutoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .black
+//        view.backgroundColor = .black
         setupNavigationAttributes()
         setupElements()
         setupConstraints()

@@ -13,8 +13,8 @@ protocol PopoverTableViewControllerDelegate: AnyObject {
 
 class PopoverTableViewController: UITableViewController {
     weak var delegate: PopoverTableViewControllerDelegate?
-    var model:[String] = []
-    var index:IndexPath = [0,0]
+    var model: [String] = []
+    var index: IndexPath = [0,0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
