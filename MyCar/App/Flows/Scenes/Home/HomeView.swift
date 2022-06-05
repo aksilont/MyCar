@@ -69,7 +69,9 @@ struct HomeView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button("Гараж") { viewModel.didTapGarageButton() }
+                    NavigationLink(destination: GarageView()) {
+                        Text("Гараж")
+                    }
                 }
             }
         }

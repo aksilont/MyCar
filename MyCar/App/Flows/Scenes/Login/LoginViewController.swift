@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import SwiftUI
 
 class LoginViewController: UIViewController {
 
@@ -34,8 +35,11 @@ class LoginViewController: UIViewController {
 
     private func setupUI() {
         if !viewModel.hasPinCode() {
-            let mainVC = MainTabController()
-            navigationController?.pushViewController(mainVC, animated: true)
+//            let mainVC = MainTabController()
+            let mainVC = UIHostingController(rootView: MainView())
+            mainVC.modalPresentationStyle = .fullScreen
+            present(mainVC, animated: false)
+//            navigationController?.pushViewController(mainVC, animated: true)
         }
         
         numPadView.subject.sink { [unowned self] value in
@@ -103,7 +107,8 @@ class LoginViewController: UIViewController {
     private func checkPin() {
         resetAllDots()
         if viewModel.checkPin(currentPin) {
-            navigationController?.pushViewController(MainTabController(), animated: true)
+            let mainView = UIHostingController(rootView: MainView())
+            navigationController?.pushViewController(mainView, animated: true)
         } else {
             currentPin = ""
         }

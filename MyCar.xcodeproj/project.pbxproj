@@ -47,6 +47,8 @@
 		7A38D05C28341F3C00FB982F /* ExpensesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A38D05B28341F3C00FB982F /* ExpensesRepository.swift */; };
 		7A38D05E283421F200FB982F /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A38D05D283421F200FB982F /* CoreDataStack.swift */; };
 		7A38D0602834F8A500FB982F /* CoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A38D05F2834F8A500FB982F /* CoreDataTests.swift */; };
+		7A452580284CA3E00057E35F /* GarageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A45257F284CA3E00057E35F /* GarageView.swift */; };
+		7A452582284CA5F50057E35F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A452581284CA5F50057E35F /* MainView.swift */; };
 		7A823626281A6DB6001C2AE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A823625281A6DB6001C2AE3 /* AppDelegate.swift */; };
 		7A823628281A6DB6001C2AE3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A823627281A6DB6001C2AE3 /* SceneDelegate.swift */; };
 		7A82362A281A6DB6001C2AE3 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A823629281A6DB6001C2AE3 /* StartViewController.swift */; };
@@ -164,6 +166,8 @@
 		7A38D05B28341F3C00FB982F /* ExpensesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesRepository.swift; sourceTree = "<group>"; };
 		7A38D05D283421F200FB982F /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		7A38D05F2834F8A500FB982F /* CoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTests.swift; sourceTree = "<group>"; };
+		7A45257F284CA3E00057E35F /* GarageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageView.swift; sourceTree = "<group>"; };
+		7A452581284CA5F50057E35F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		7A823622281A6DB6001C2AE3 /* MyCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A823625281A6DB6001C2AE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A823627281A6DB6001C2AE3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -339,6 +343,14 @@
 				7A9C9359282426AD00FC40DE /* NumPud.xib */,
 			);
 			path = NumPad;
+			sourceTree = "<group>";
+		};
+		7A45257E284CA3CC0057E35F /* GarageNew */ = {
+			isa = PBXGroup;
+			children = (
+				7A45257F284CA3E00057E35F /* GarageView.swift */,
+			);
+			path = GarageNew;
 			sourceTree = "<group>";
 		};
 		7A823619281A6DB6001C2AE3 = {
@@ -603,6 +615,7 @@
 				7AE5A5D6281E688F00F008B0 /* Login */,
 				7AF31183281E6B680097BF5A /* Main */,
 				7A8AA56E281E75E70071FDD4 /* Home */,
+				7A45257E284CA3CC0057E35F /* GarageNew */,
 				435A2EC3282592B800BF10EA /* Garage */,
 				43C9C0F82832A12200F6CED9 /* AddItemAndModel */,
 				435A2ECA2825A25400BF10EA /* FuelPopOver */,
@@ -638,6 +651,7 @@
 			isa = PBXGroup;
 			children = (
 				7AF31188281E6C1B0097BF5A /* MainTabController.swift */,
+				7A452581284CA5F50057E35F /* MainView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -828,6 +842,7 @@
 				92280306283AC58000885342 /* ExpensesByDate.swift in Sources */,
 				7A9C9354282424DD00FC40DE /* UIImage+imageResized.swift in Sources */,
 				7A96BF61283E9AE0005E5FEB /* Path+QuadCurve.swift in Sources */,
+				7A452582284CA5F50057E35F /* MainView.swift in Sources */,
 				435A2F6A282AFA1700BF10EA /* ParkingExpenses+CoreDataClass.swift in Sources */,
 				435A2EC92825943E00BF10EA /* CheckMark.swift in Sources */,
 				435A2ED22825A32300BF10EA /* FuelModel.swift in Sources */,
@@ -890,6 +905,7 @@
 				43C9C0FB2832A17D00F6CED9 /* AddItemAndModelViewController.swift in Sources */,
 				435A2EBC28255B5900BF10EA /* AutoCell.swift in Sources */,
 				435A2EB928255AD200BF10EA /* AddAutoViewController.swift in Sources */,
+				7A452580284CA3E00057E35F /* GarageView.swift in Sources */,
 				7A38D05E283421F200FB982F /* CoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
