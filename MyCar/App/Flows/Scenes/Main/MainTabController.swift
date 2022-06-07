@@ -26,7 +26,8 @@ class MainTabController: UITabBarController {
         tabBar.addSubview(blurEffectView)
         
         let homeViewModel = HomeViewModel()
-        let homeVC = HomeViewController(viewModel: homeViewModel)
+//        let homeVC = HomeViewController(viewModel: homeViewModel)
+        let homeVC = UIHostingViewControllerCustom(rootView: HomeView(viewModel: homeViewModel))
         homeVC.tabBarItem = UITabBarItem(title: nil,
                                          image: UIImage(systemName: "house"),
                                          selectedImage: UIImage(systemName: "house.fill"))

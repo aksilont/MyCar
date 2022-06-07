@@ -7,9 +7,13 @@
 
 import SwiftUI
 
-struct GarageView: View {
-    var body: some View {
-        Text("Hello, World!")
+struct GarageView: UIViewControllerRepresentable {
+    func makeUIViewController(context: Context) -> GarageCollectionViewController {
+        return GarageCollectionViewController()
+    }
+
+    func updateUIViewController(_ uiViewController: GarageCollectionViewController,
+                                context: Context) {
     }
 }
 

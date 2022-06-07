@@ -26,20 +26,33 @@ class LoginViewController: UIViewController {
     private let imageFilled = UIImage(systemName: "circle.fill")
     
     private var subscriptions: Set<AnyCancellable> = []
-    
+        
+    private var observer: NSKeyValueObservation?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        observer = navigationController?.observe(
+//            \.navigationBar.isHidden,
+//             options: [.new]
+//        ) { [weak self] _, change in
+//            guard change.newValue == false else { return }
+//            self?.navigationController?.navigationBar.isHidden = true
+//        }
+        
         setupUI()
-        navigationItem.hidesBackButton = true
     }
-
+    
+    
     private func setupUI() {
         if !viewModel.hasPinCode() {
-//            let mainVC = MainTabController()
-            let mainVC = UIHostingController(rootView: MainView())
-            mainVC.modalPresentationStyle = .fullScreen
-            present(mainVC, animated: false)
-//            navigationController?.pushViewController(mainVC, animated: true)
+            let mainView = UIHostingViewControllerCustom(rootView: MainView())
+            mainView.modalPresentationStyle = .fullScreen
+            present(mainView, animated: false)
+//            navigationController?.setNavigationBarHidden(true, animated: false)
+//            navigationController?.pushViewController(mainView, animated: false)
+//            mainView.navigationController?.isNavigationBarHidden = true
+//            navigationController?.pushViewController(MainTabController(), animated: false)
         }
         
         numPadView.subject.sink { [unowned self] value in
@@ -108,7 +121,8 @@ class LoginViewController: UIViewController {
         resetAllDots()
         if viewModel.checkPin(currentPin) {
             let mainView = UIHostingController(rootView: MainView())
-            navigationController?.pushViewController(mainView, animated: true)
+            mainView.modalPresentationStyle = .fullScreen
+            present(mainView, animated: false)
         } else {
             currentPin = ""
         }

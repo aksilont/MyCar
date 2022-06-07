@@ -27,7 +27,7 @@ struct SettingsView: View {
                             .animation(.easeInOut, value: viewModel.usePinCode)
                     }
                     .padding()
-                    .background(Color(red: 28/255, green: 42/255, blue: 90/255))
+                    .background(.teal)
                     .cornerRadius(10)
                     .padding()
                     .foregroundColor(.white)
@@ -37,12 +37,12 @@ struct SettingsView: View {
                         Button {
                             viewModel.createTestingExpenses()
                         } label: {
-                            Text("Расходы для теста").font(.title3).foregroundColor(.green)
+                            Text("Расходы для теста").font(.title3).foregroundColor(.white)
                         }
                         Spacer()
                     }
                     .padding()
-                    .background(Color(red: 28/255, green: 42/255, blue: 90/255))
+                    .background(.teal)
                     .cornerRadius(10)
                     .padding()
                     .foregroundColor(.white)
@@ -57,17 +57,16 @@ struct SettingsView: View {
                         Spacer()
                     }
                     .padding()
-                    .background(Color(red: 28/255, green: 42/255, blue: 90/255))
+                    .background(.teal)
                     .cornerRadius(10)
                     .padding()
-                    .foregroundColor(.white)
                     
                 }
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
-                    Text("Настройки").foregroundColor(.white).fontWeight(.bold)
+                    Text("Настройки").fontWeight(.bold)
                 }
             }
         }

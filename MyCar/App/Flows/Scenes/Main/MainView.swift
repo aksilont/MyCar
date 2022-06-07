@@ -8,6 +8,13 @@
 import SwiftUI
 
 struct MainView: View {
+    
+//    init() {
+//        UITabBar.appearance().unselectedItemTintColor = UIColor(Color.primary)
+//        UITabBar.appearance().barTintColor = .systemTeal
+//        UITabBar.appearance().backgroundColor = .systemTeal
+//    }
+    
     var body: some View {
         TabView {
             HomeView(viewModel: HomeViewModel())
